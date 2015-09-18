@@ -6,20 +6,25 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[automark]{scrpage2}
-\usepackage{hyperref}
+\usepackage[colorlinks = true]{hyperref}
 \usepackage{color}
 \usepackage[normalem]{ulem}
 \usepackage{scrpage2}
 \usepackage{graphicx}
 \usepackage{tabularx}
 \graphicspath{ {./images/} }
+\usepackage{tikz}
+\usetikzlibrary{positioning,shadings}
+\usetikzlibrary{arrows}
 \pagestyle{scrheadings}
+
+\definecolor{logocolor}{RGB}{6,103,236}
 
 \clearscrheadfoot
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Projektplan: SDDC}
-\cfoot{Version: 1.00}
+\cfoot{Version: 1.01}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -49,10 +54,12 @@
 
 \newpage
 \section{Änderungshistorie}
-\begin{tabularx}{\linewidth}{l l l l}
+\begin{tabularx}{\textwidth}{l l X l}
 \textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
 \hline
 \textbf{17.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
+\textbf{18.09.15} & 1.01 & Organisationsstruktur + Einführung + 
+Projektübersicht & Silvan Adrian\\
 
 \end{tabularx}
 
@@ -61,23 +68,26 @@
 \newpage
 
 \section{Einführung}
-\label{sec:Einführung}
 \subsection{Zweck}
-
+Dieses Dokument beschreibt die Planung der SA SDDC.
 \subsection{Gültigkeitsbereich}
+Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktualisiert.
 
 \subsection{Referenzen}
-
+-
 \section{Projektübersicht}
-
+Es soll eine generische API oder bestehende API verwendet werden, um über ein 
+Dashboard direkt Services zu abonnieren, dabei wird für jede Virtuelle Maschine 
+Compute, Storage und Network benötigt.
 
 \subsection{Zweck und Ziel}
- 
+ Gelerntes anwenden und sich mit der gestellten Aufgabenstellung auseinandersetzen 
+ und dabei neues lernen.
+
 
 \subsection{Primäre Features}
 
 \subsection{Erweiterte Features}
-
 
 \subsection{Lieferumfang}
 
@@ -87,10 +97,36 @@
 \section{Projektorganisation}
 
 \subsection{Organisationsstruktur}
-
+\begin{tikzpicture}[auto, node distance = 0.4cm, thick,
+  every node/.style = {rectangle, font = \sffamily, white,
+    top color = logocolor!90!black, bottom color = logocolor!60!black,
+    text width = 3cm, align = center, minimum height = 1cm}]
+  \node (PO) {\textbf{Beat Stettler} \\
+      \vspace{0.2cm}
+  \includegraphics[width=0.8\textwidth]{stettler}
+   \vspace{0.2cm}
+  Product Owner};
+  \coordinate [below = 3cm of PO] (Mitte);
+  \node (Silvan) [left  = 2mm of Mitte]  {\textbf{Silvan Adrian} \\
+    \vspace{0.2cm}
+  \includegraphics[width=0.8\textwidth]{silvan}
+   \vspace{0.2cm}
+Entwickler};
+  \node (Fabian) [right = 2mm of Mitte]  {\textbf{Fabian Binna} \\
+  \vspace{0.2cm}
+  \includegraphics[width=0.8\textwidth]{fabian}
+   \vspace{0.2cm}
+ Entwickler};
+  \draw [logocolor!60!black,thick]
+    (PO)    -- (Mitte) -- (Silvan)
+    (Fabian)   -- (Mitte); 
+\end{tikzpicture}
 
 \subsection{Externe Schnittstellen}
-
+\textbf{Projektbetreuer:} \\
+Beat Stettler (\href{mailto:Beat.Stettler@ins.hsr.ch}{Beat.Stettler@ins.hsr.ch})  
+\\
+Urs Baumann (\href{mailto:Urs.Baumann@ins.hsr.ch}{Urs.Baumann@ins.hsr.ch})
 
 
 \section{Managment Abläufe}
@@ -113,6 +149,11 @@
 \subsection{Umgang mit Risiken}
 
 \section{Arbeitspakete}
+
+Die Arbeitspakete werden in Open Project erstellt und gepflegt.
+Lesender Zugriff ist anonym möglich, schreibender nur eingeloggt (Projekt ist öffentlich). 
+\\
+Link zur Open Project Instanz : \href{http://sddc.silvn.com}{http://sddc.silvn.com}
 
 \section{Infrastruktur}
 
