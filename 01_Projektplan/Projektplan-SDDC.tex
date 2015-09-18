@@ -6,7 +6,8 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[automark]{scrpage2}
-\usepackage[colorlinks = true]{hyperref}
+\usepackage[colorlinks = true,
+linkcolor = black]{hyperref}
 \usepackage{color}
 \usepackage[normalem]{ulem}
 \usepackage{scrpage2}
@@ -95,7 +96,15 @@ Compute, Storage und Network benötigt.
 \subsection{Annahmen und Einschränkungen}
 
 \section{Projektorganisation}
-
+Wir setzen beim Project auf Scrum, wodurch lediglich die Projektrollen Product 
+Owner, Entwickler und Scrum-Master vorhanden sind.
+Es gibt keine Unterscheidung zwischen speziellen Fachgebieten und das Team 
+als ganzes ist gefragt.
+Daily Meetings (ca. 10 - 15min) werden während der Pause oder über Skype stattfinden, um sich 
+gegenseitig über Probleme, abgeschlossene Arbeitspakete etc. zu informieren.
+Nach jedem Abschluss eines Sprints wird ein Sprintreview geplant, um zu prüfen 
+ob alles gemäss Plan erledigt werden konnte + die neuste Version der Software 
+released.
 \subsection{Organisationsstruktur}
 \begin{tikzpicture}[auto, node distance = 0.4cm, thick,
   every node/.style = {rectangle, font = \sffamily, white,
@@ -162,15 +171,28 @@ Link zur Open Project Instanz : \href{http://sddc.silvn.com}{http://sddc.silvn.c
 \begin{tabularx}{\textwidth}{c c c c}
 \textbf{Name} & \textbf{Hardware} & \textbf{Betriebssystem} & \textbf{IDE} \\
 \hline
-Silvan Adrian & MacBook Pro & OSX 10.10.5 &  \\
+Silvan Adrian & MacBook Pro & OSX 10.10.5 &  N/A \\
 \hline
-Fabian Binna & Lenovo T530s & Ubuntu 14.04.1 &  \\
+Fabian Binna & Lenovo T530s & Windows 10 &  N/A\\
 \hline
 \end{tabularx}
 
 \subsection{Tools/Software}
+\begin{itemize}
+    \item \textbf{BuildServer:} Travis-CI
+    \item \textbf{Konfigurationsmanagement:} GIT
+    \item \textbf{Notifications:} Slack
+\end{itemize}
 
 \subsection{Kommunikationsmittel}
+\begin{itemize}
+    \item E-Mail
+    \item Skype
+    \item Open Project (Kommentare)
+    \item GitHub (Issues,Kommentare)
+    \item Whatsapp
+    \item Slack
+\end{itemize}
 
 \section{Qualitätsmassnahmen}
 
