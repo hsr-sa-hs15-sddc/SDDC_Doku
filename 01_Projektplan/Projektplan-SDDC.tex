@@ -6,7 +6,8 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[automark]{scrpage2}
-\usepackage[colorlinks = true]{hyperref}
+\usepackage[colorlinks = true,
+linkcolor = black]{hyperref}
 \usepackage{color}
 \usepackage[normalem]{ulem}
 \usepackage{scrpage2}
@@ -95,7 +96,10 @@ Compute, Storage und Network benötigt.
 \subsection{Annahmen und Einschränkungen}
 
 \section{Projektorganisation}
-
+Wir setzen beim Project auf Scrum, wodurch lediglich die Projektrollen Product 
+Owner, Entwickler und Scrum-Master vorhanden sind.
+Es gibt keine Unterscheidung zwischen speziellen Fachgebieten und das Team 
+als ganzes ist gefragt.
 \subsection{Organisationsstruktur}
 \begin{tikzpicture}[auto, node distance = 0.4cm, thick,
   every node/.style = {rectangle, font = \sffamily, white,
@@ -132,13 +136,22 @@ Urs Baumann (\href{mailto:Urs.Baumann@ins.hsr.ch}{Urs.Baumann@ins.hsr.ch})
 \section{Managment Abläufe}
 
 \subsection{Kostenvoranschlag}
-
+Gemäss Vorgaben wird mit 240 Stunden gesamt gerechnet + die einberechneten 
+Risiken von 41 Stunden.
+\newline
+\textbf{Gesamtaufwand:} 281 Stunden\\
+\textbf{Risikoaufwand:} 41 Stunden\\
+\textbf{Aufwand pro Woche:} ca.:  20 Stunden\\
+\textbf{Aufwand pro Woche pro Teammitglied:} ca.: \uline{10 Stunden}
 
 \subsection{Sprints}
 
 \subsection{Besprechungen}
-
-
+Daily Meetings (ca. 10 - 15min) werden während der Pause oder über Skype stattfinden, um sich 
+gegenseitig über Probleme, abgeschlossene Arbeitspakete etc. zu informieren.
+Nach jedem Abschluss eines Sprints wird ein Sprintreview geplant und durchgeführt, um zu prüfen 
+ob alles gemäss Plan erledigt wurde + die aktuellste Version der Software 
+released.
 
 \section{Risikomanagement}
 
@@ -159,18 +172,31 @@ Link zur Open Project Instanz : \href{http://sddc.silvn.com}{http://sddc.silvn.c
 
 \subsection{Entwicklungsinfrastruktur}
 
-\begin{tabularx}{\textwidth}{c c c c}
+\begin{tabularx}{\textwidth}{X X X X}
 \textbf{Name} & \textbf{Hardware} & \textbf{Betriebssystem} & \textbf{IDE} \\
 \hline
-Silvan Adrian & MacBook Pro & OSX 10.10.5 &  \\
+Silvan Adrian & MacBook Pro & OSX 10.10.5 &  N/A \\
 \hline
-Fabian Binna & Lenovo T430s & Windows 10 &  \\
+Fabian Binna & Lenovo T430s & Windows 10 &  N/A\\
 \hline
 \end{tabularx}
 
 \subsection{Tools/Software}
+\begin{itemize}
+    \item \textbf{BuildServer:} Travis-CI
+    \item \textbf{Konfigurationsmanagement:} GIT
+    \item \textbf{Notifications:} Slack
+\end{itemize}
 
 \subsection{Kommunikationsmittel}
+\begin{itemize}
+    \item E-Mail
+    \item Skype
+    \item Open Project (Kommentare)
+    \item GitHub (Issues,Kommentare)
+    \item Whatsapp
+    \item Slack
+\end{itemize}
 
 \section{Qualitätsmassnahmen}
 \subsection{Dokumentation}
