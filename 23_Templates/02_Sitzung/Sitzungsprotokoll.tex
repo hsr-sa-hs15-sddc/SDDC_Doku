@@ -1,5 +1,3 @@
-\begin{document}
-  
 \def\minfileversion{V1.8d}     %^^Aof minutes.sty
 \def\minfiledate{2009/12/04}   %^^Aof minutes.sty
 %%
@@ -19,6 +17,17 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 %%
+\documentclass{scrreprt}
+%%\documentclass{article}
+%%\documentclass{scrreprt}
+%%\documentclass{scrarctl}
+\usepackage[german]{babel}
+\usepackage{minutes}
+
+
+\begin{document}
+
+
 \begin{Protokoll}{Titel des deutschen Protokolls}
 \untertitel{Untertitel}
 \moderation{Moderator, Sitzungsleiter}
@@ -111,7 +120,8 @@ Und noch eine Abstimmung mit Ergebnis:\par
 \beschluss{Thema}{Entscheidung gefallen}
 \beschluss*{Entscheidung ohne Thema}[Langtext zur Entscheidung]
 \end{Protokoll}
-\endinput
-%%
-%% End of file `SampleDE.tex'.
+
+
+
 \end{document}
+\endinput
