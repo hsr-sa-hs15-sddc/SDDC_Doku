@@ -25,7 +25,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Projektplan: SDDC}
-\cfoot{Version: 1.02}
+\cfoot{Version: 1.03}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -62,6 +62,7 @@ linkcolor = black]{hyperref}
 \textbf{18.09.15} & 1.01 & Organisationsstruktur + Einführung + 
 Projektübersicht & Silvan Adrian\\
 \textbf{18.09.15} & 1.02 & Qualitätsmassnahmen & Fabian Binna\\
+\textbf{20.09.15} & 1.03 &  Text verbessert und zusätzliche Infos eingefügt & Silvan Adrian\\
 
 \end{tabularx}
 
@@ -76,26 +77,37 @@ Dieses Dokument beschreibt die Planung der SA SDDC.
 Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktualisiert.
 
 \subsection{Referenzen}
--
+\textbf{Generische API:} 
+\href{https://libcloud.apache.org/}{https://libcloud.apache.org/}\\
+\textbf{OpenStack API:} \href{http://developer.openstack.org/}{http://developer.openstack.org/}
 \section{Projektübersicht}
-Es soll eine generische API oder bestehende API verwendet werden, um über ein 
+Es soll eine generische API erstellt oder eine bestehende API verwendet werden, um über ein 
 Dashboard direkt Services zu abonnieren, dabei wird für jede Virtuelle Maschine 
 Compute, Storage und Network benötigt.
-
+Es sollen verschiedene Hersteller eingebunden werden können, welche modular 
+der generischen API hinzugefügt werden können (z.B.: als Plugins).
 \subsection{Zweck und Ziel}
- Gelerntes anwenden und sich mit der gestellten Aufgabenstellung auseinandersetzen 
- und dabei neues lernen.
-
+ Gelerntes aus verschiedenen Modulen anwenden, sich mit der gestellten Aufgabenstellung auseinandersetzen 
+ und diese umsetzen.
 
 \subsection{Primäre Features}
-
+\begin{itemize}
+  \item Generische API
+  \item Dashboard
+\end{itemize}
 \subsection{Erweiterte Features}
-
+\begin{itemize}
+  \item TBD
+\end{itemize}
 \subsection{Lieferumfang}
-
+\begin{itemize}
+  \item Source-Code  \item Dokumentation (Projekt und Software)
+\end{itemize}
 
 \subsection{Annahmen und Einschränkungen}
-
+Die Applikation setzte sich aus einem Dashboard und einer generischen API 
+zusammen, beides sollte dabei verteilt betrieben werden können.
+Die generische API soll dabei so viele Anbieter wie möglich abdecken.
 \section{Projektorganisation}
 Wir setzen beim Project auf Scrum, wodurch lediglich die Projektrollen Product 
 Owner, Entwickler und Scrum-Master vorhanden sind.
@@ -146,6 +158,14 @@ Risiken von 41 Stunden.
 \textbf{Aufwand pro Woche pro Teammitglied:} ca.: \uline{10 Stunden}
 
 \subsection{Sprints}
+\begin{tabularx}{\textwidth}{l X l l}
+\textbf{Sprint} & \textbf{Beschreibung} & \textbf{Beginn} &  \textbf{Ende} \\
+\hline
+\textbf{Sprint 1} & Erste Version der API zum Testen  & 21.09.15 & 28.09.15 \\
+\hline
+\textbf{Sprint 2} & tbd  & tbd & tbd \\
+\hline
+\end{tabularx}
 
 \subsection{Besprechungen}
 Daily Meetings (ca. 10 - 15min) werden während der Pause oder über Skype stattfinden, um sich 
@@ -153,15 +173,13 @@ gegenseitig über Probleme, abgeschlossene Arbeitspakete etc. zu informieren.
 Nach jedem Abschluss eines Sprints wird ein Sprintreview geplant und durchgeführt, um zu prüfen 
 ob alles gemäss Plan erledigt wurde + die aktuellste Version der Software 
 released.
-
 \section{Risikomanagement}
-
 \subsection{Risiken}
-
-
-
+Risiken werden im Dokument TechnischeRisiken-JBomberman.pdf beschrieben
 \subsection{Umgang mit Risiken}
-
+Für die Risiken werden Reserven eingeplant. Die Reserven werden direkt in die einzelnen Tickets 
+eingerechnet. Falls Risiken eintreffen werden diese sofort an einem der Daily-Meetings kommuniziert 
+und mögliche Lösungen evaluiert.
 \section{Arbeitspakete}
 
 Die Arbeitspakete werden in Open Project erstellt und gepflegt.
