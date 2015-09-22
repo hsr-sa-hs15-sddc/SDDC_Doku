@@ -1,0 +1,70 @@
+\def\minfileversion{V1.8d}     %^^Aof minutes.sty
+\def\minfiledate{2009/12/04}   %^^Aof minutes.sty
+%%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\documentclass{scrreprt}
+%%\documentclass{article}
+%%\documentclass{scrreprt}
+%%\documentclass{scrarctl}
+\usepackage[german]{babel}
+\usepackage{minutes}
+\begin{document}
+\begin{Protokoll}{Sitzung 14. September}
+\moderation{Beat Stettler}
+\protokollant{Silvan Adrian, Fabian Binna}
+\teilnehmer{Silvan Adrian, Fabian Binna, Beat Stettler, Urs Baumann}
+\sitzungsdatum{14.\ Septmeber 2015}
+\sitzungsbeginn{15:00}
+\sitzungsende{15:30}
+\sitzungsort{Container C2.101 }
+%\verteiler{Vereinsmitglieder}
+%\fehlend[entschuldigt]{abwesend}
+%%\fehlendEntschuldigt{}
+%%\fehlendUnentschuldigt{}
+\protokollKopf
+
+\topic{SA Software Defined Data Center}%<-- hier Tagesordnungspunkt einfuegen
+\subtopic{Generische API}
+\begin{itemize}
+  \item Modular (Plugins für einzelne Anbieter)
+  \item Distributed - Queue zur Abarbeitung (RabbitMQ)
+\end{itemize}
+\subtopic{Projektplan/Projektmanagement}
+\begin{itemize}
+  \item erstellen eines Projektplans
+  \item Projektmanagement vorgehen auswählen
+\end{itemize}
+\subtopic{Analyse von vorhandenen APIs/Pordukten}
+\begin{itemize}
+  \item Analyse von einzelnen Produkten und deren API's (OpenStack)
+  \item Suchen nach vorhanden API's
+\end{itemize}
+
+\topic{Termine und Aufgaben}
+\subtopic{Termine}
+\termin{2015/09/21}[14:30-14:45]{Projektmeeting im Bau 2.104}
+
+\topic{Aufgaben}
+\aufgabe*{Projektplan erstellen}
+\aufgabe{Silvan Adrian}{Entwicklungsumgebung aufsetzen}
+\aufgabe{Silvan Adrian}{Projekttool aufsetzen}
+
+
+\end{Protokoll}
+\end{document}
+\endinput
