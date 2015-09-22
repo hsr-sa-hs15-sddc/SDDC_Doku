@@ -22,17 +22,18 @@
 %%\documentclass{scrreprt}
 %%\documentclass{scrarctl}
 \usepackage[german]{babel}
-\usepackage[utf8]{inputenc}
 \usepackage{minutes}
+\usepackage[utf8]{inputenc}
 \begin{document}
-\begin{Protokoll}{Sitzung 14. September}
+\begin{Protokoll}{Weekly Meeting 21. September}
 \moderation{Beat Stettler}
 \protokollant{Silvan Adrian, Fabian Binna}
-\teilnehmer{Silvan Adrian, Fabian Binna, Beat Stettler, Urs Baumann}
-\sitzungsdatum{14.\ Septmeber 2015}
-\sitzungsbeginn{15:00}
+\teilnehmer{Silvan Adrian, Fabian Binna, Beat Stettler}
+\fehlendEntschuldigt{Urs Baumann}
+\sitzungsdatum{21.\ September 2015}
+\sitzungsbeginn{14:45}
 \sitzungsende{15:30}
-\sitzungsort{Container C2.101 }
+\sitzungsort{Raum 2.104 }
 %\verteiler{Vereinsmitglieder}
 %\fehlend[entschuldigt]{abwesend}
 %%\fehlendEntschuldigt{}
@@ -42,30 +43,31 @@
 \topic{SA Software Defined Data Center}%<-- hier Tagesordnungspunkt einfuegen
 \subtopic{Generische API}
 \begin{itemize}
-  \item Modular (Plugins für einzelne Anbieter)
-  \item Distributed - Queue zur Abarbeitung (RabbitMQ)
+  \item vorhandene Anbieter (libcloud, jclouds etc.)
+  \item OpenStack bietet auch API
+  \item wenn möglich noch Schweizer Anbieter unterstützen (Swisscom, Nine)
 \end{itemize}
-\subtopic{Projektplan/Projektmanagement}
+\subtopic{Service Dashboard}
 \begin{itemize}
-  \item erstellen eines Projektplans
-  \item Projektmanagement vorgehen auswählen
+  \item Unterteilung IaaS, PaaS, SaaS unterstützen (verschiedene Cloud Anbieter)
+  \item Wichtige rausnehmen (Docker, OpenStack, CloudStack)
+  \item Beispiele PaaS: Object Storage, Cloud Storage, Cloud SQL
 \end{itemize}
-\subtopic{Analyse von vorhandenen APIs/Pordukten}
+\subtopic{Doku/Projektplan}
 \begin{itemize}
-  \item Analyse von einzelnen Produkten und deren API's (OpenStack)
-  \item Suchen nach vorhanden API's
+  \item Planung/Testing fehlt noch so gut wie ganz
+  \item Dokumentation sollte öffentlich einsehbar sein (damit vor Meeting klar ist was gemacht wurde)
+  \item Fehler noch nachbessern und bei nächstem Meeting nachbesprechen
 \end{itemize}
 
 \topic{Termine und Aufgaben}
 \subtopic{Termine}
-\termin{2015/09/21}[14:30-14:45]{Projektmeeting im Bau 2.104}
+\termin{2015/09/28}[14:30-15:15]{Projektmeeting im Bau 2.104}
 
 \topic{Aufgaben}
-\aufgabe*{Projektplan erstellen}
-\aufgabe{Silvan Adrian}{Entwicklungsumgebung aufsetzen}
-\aufgabe{Silvan Adrian}{Projekttool aufsetzen}
-
-
+\aufgabe*{Projektplan verbessern}
+\aufgabe*{Analyse von API's (libcloud,jclouds) und Funktionsumfang bestimmen}
+\aufgabe*{Analysedokument erstellen}
 \end{Protokoll}
 \end{document}
 \endinput
