@@ -19,7 +19,7 @@
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{API Analyse}
-\cfoot{Version: 1.00}
+\cfoot{Version: 1.02}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -55,6 +55,7 @@
 \hline
 \textbf{25.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
 \textbf{25.09.15} & 1.01 & APIs & Fabian Binna\\
+\textbf{25.09.15} & 1.02 & Support & Fabian Binna\\
 
 \end{tabularx}
 
@@ -89,10 +90,136 @@ elibcloud ist ein Wrapper für libcloud.\\
 \subsection{Compute}
 Die grösste Auswahl an Providern liefert Libcloud.JClouds hingegen unterstützt auch Docker, was ein grosser Vorteil gegenüber Libcloud ist. Im Dokument Compute.ods im Ordner 02\_Analyse\//01\_API wird genau aufgeführt, welche Provider von welchen APIs unterstützt werden. Es werden nur public Clouds berücksichtigt.
 
-\subsection{Storage}
+\subsection{Storage (Object/Blob)}
+\textbf{libcloud}
+\begin{itemize}
+\item PCextreme AuroraObjects
+\item Microsoft Azure (blobs)
+\item CloudFiles
+\item Google Storage
+\item KTUCloud Storage
+\item Numbus.io
+\item Ninefold
+\item OpenStack Swift
+\item Amazon
+\end{itemize}
+
+\textbf{jclouds (BlobStore}
+\begin{itemize}
+\item AWS
+\item HP Helion
+\item Azure
+\item Rackspace
+\end{itemize}
+
+\textbf{fog}
+\begin{itemize}
+\item S3
+\item CloudFiles
+\item Google Storage
+\end{itemize}
+
+\textbf{pkgcloud}
+\begin{itemize}
+\item Amazon
+\item Azure
+\item Google
+\item HP
+\item OpenStack
+\item Rackspace
+\end{itemize}
+
 \subsection{Network}
+Alle APIs ausser pkgcloud erwähnen keine Provider für die Unterstützung von Network Providern. Bei libcloud sind jedoch Methoden vorhanden, die auf eine Netzwerkkonfigurationsmöglichkeit hinweisen, werden aber nicht genauer dokumentiert.\\
+
+\textbf{pkgcloud}
+\begin{itemize}
+\item HP
+\item OpenStack
+\item Rackspace
+\end{itemize}
+
 \subsection{Other}
-Database, DNS, Block Storage, Load Balancers, Orchestration\\
+\subsubsection{Database}
+\textbf{pkgcloud}
+\begin{itemize}
+\item IrisCouch
+\item MongoLab
+\item Rackspace
+\item MongoHQ
+\item RedisToGo
+\end{itemize}
+
+\subsubsection{DNS}
+\textbf{libcloud}
+\begin{itemize}
+\item AuroraDNS
+\item DigitalOcean
+\item Gandi
+\item Google
+\item Host Virtual
+\item Linode
+\item Rackspace
+\item AWS Route53
+\item Softlayer
+\item Zerigo
+\end{itemize}
+
+\textbf{fog}
+\begin{itemize}
+\item AWS Route53
+\item Blue Box
+\item DNSimple
+\item Linode
+\item Rackspace
+\item Rage4
+\item Slicehost
+\item Zerigo
+\end{itemize}
+
+\textbf{pkgcloud}
+\begin{itemize}
+\item Rackspace
+\end{itemize}
+
+\subsubsection{Load Balancer}
+\textbf{libcloud}
+\begin{itemize}
+\item Brightbox
+\item CloudStack
+\item DimensionData
+\item Amazon
+\item Google
+\item GoGrid
+\item Ninefold
+\item Rackspace
+\item Softlayer
+\end{itemize}
+
+\textbf{jclouds}
+\begin{itemize}
+\item AWS Elastic LoadBalancer
+\item Rackspace
+\end{itemize}
+
+\textbf{pkgcloud}
+\begin{itemize}
+\item Rackspace
+\end{itemize}
+
+\subsubsection{Orchestration}
+\textbf{pkgcloud (beta)}
+\begin{itemize}
+\item OpenStack
+\item Rackspace
+\end{itemize}
+
+\subsubsection{CDN}
+\textbf{fog}
+\begin{itemize}
+\item CloudFront
+\end{itemize}
+
 \end{document}
 
 
