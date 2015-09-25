@@ -20,7 +20,7 @@
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{API Analyse}
-\cfoot{Version: 1.03}
+\cfoot{Version: 1.04}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -58,11 +58,27 @@
 \textbf{25.09.15} & 1.01 & APIs & Fabian Binna\\
 \textbf{25.09.15} & 1.02 & Support & Fabian Binna\\
 \textbf{25.09.15} & 1.03 & Fazit & Fabian Binna\\
+\textbf{25.09.15} & 1.04 & Einführung + Gültigkeit & Fabian Binna\\
 
 \end{tabularx}
 
 \newpage
 \tableofcontents
+\newpage
+
+\section{Einführung}
+\subsection{Zweck}
+Dieses Dokument beinhaltet die Analyse von APIs die den Zugriff auf diverse Cloud Anbieter ermöglicht.
+\subsection{Gültigkeitsbereich}
+Dieses Dokument ist während des ganzen Projekts gültig.
+
+\subsection{Referenzen}
+\href{https://libcloud.apache.org}{Libcloud}
+\href{https://jclouds.apache.org}{jClouds}
+\href{https://github.com/esl/elibcloud}{elibcloud}
+\href{https://github.com/fog/fog/blob/master/lib/fog/openstack/docs/getting_started.md}{fog}
+\href{https://github.com/pkgcloud/pkgcloud}{pkgcloud}
+
 \newpage
 
 \section{APIs}
@@ -229,7 +245,8 @@ Alle APIs ausser pkgcloud erwähnen keine Provider für die Unterstützung von N
 Im Gesamtbild schneidet libcloud am besten ab. Es bietet deutlich am meisten Compute und Storage Provider. Die Dokumentation ist sehr ausführlich, mit konkreten Ratschlägen zur Implementation (z.B. Thread Safe). Zusätzlich bietet libcloud Module für SSL und Pricing.
 Jclouds ist eine Library für Java, was für uns am besten ist, da wir am meisten Erfahrung mit Java haben. Es gibt jedoch nicht viele Compute Provider, dafür unterstützt jclouds als einziger Docker.
 Der einzige Vorteil von fog ist die Möglichkeit CDNs als Service anzubieten.
-Pkgcloud unterstützt eine breite Auswahl von Services (z.B. Database, Load Balancer, DNS).\\
+Pkgcloud unterstützt eine breite Auswahl von Services (z.B. Database, Load Balancer, DNS).
+Elibcloud ist ein erlang Wrapper für libcloud und unterstützt somit das gleiche wie libcloud (sonlange die Version auf dem neusten stand ist). Erlang würde sich für eine parallele Umgebung eignen, es sind jedoch keinerlei Erlang Kenntnisse im Team vorhanden.\\
 
 \textbf{Wir entscheiden uns für... (Noch zu besprechen)}
 
@@ -240,7 +257,7 @@ Pkgcloud unterstützt eine breite Auswahl von Services (z.B. Database, Load Bala
 \pro Ist zwar nicht Thread-Safe. Es werden jedoch konkrete Lösungsvorschläge gemacht.
 \pro SSL und Pricing Module vorhanden.
 
-\contra Team hat keine Erfahrung mit komplexen/grossen Python Projekten.
+\contra Team hat wenig Erfahrung mit komplexen/grossen Python Projekten.
 \end{Argumentation}
 
 \subsection{jclouds}
