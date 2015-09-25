@@ -1,0 +1,103 @@
+\documentclass[11pt]{scrartcl}
+
+\title{API Analyse}
+\author{Silvan Adrian \\ Fabian Binna}
+\date{\today{}}
+
+\usepackage[ngerman]{babel}
+\usepackage[automark]{scrpage2}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
+\pagestyle{scrheadings}
+
+\clearscrheadfoot
+\ihead{\includegraphics[scale=0.3]{SDDC}}
+\ohead{Projekt: SDDC}
+\ifoot{API Analyse}
+\cfoot{Version: 1.00}
+\ofoot{Datum: \today{}}
+\setheadsepline{0.5pt}
+\setfootsepline{0.5pt}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\def\arraystretch{1.5}
+\begin{titlepage}
+\begin{center}
+\vspace{10em}
+\includegraphics[scale=2]{SDDC}
+\vspace{10em}
+\end{center}
+\begin{center}
+\huge {API Analyse}
+\end{center}
+\begin{center}
+\vspace{10em}
+\LARGE {Silvan Adrian} \\
+\LARGE {Fabian Binna}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\section{Änderungshistorie}
+\begin{tabularx}{\linewidth}{l l l l}
+\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
+\hline
+\textbf{17.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
+
+\end{tabularx}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{APIs}
+\subsection{\href{https://libcloud.apache.org}{Libcloud}}
+\textbf{Sprache: }Python\\
+\textbf{Wichtigste Provider: }Rackspace, Amazon web services, CloudStack, OpenStack, DigitalOcean, Eucalyptus, Joyent, Linode, exoscale,NephoScale, Google Cloud Platform, Zerigo, CloudSigma, iKoula, libvirt\\
+
+\subsection{\href{https://jclouds.apache.org}{jClouds}}
+\textbf{Sprache: }Java\\
+\textbf{Wichtigste Provider: }OpenStack, Docker, DigitalOcean, Google Cloud Platform, Rackspace, HP Cloud, CloudStack, Amazon web services, abiquo, CloudSigma, joyent\\
+
+\subsection{\href{https://github.com/esl/elibcloud}{elibcloud}}
+\textbf{Sprache: }Erlang\\
+elibcloud ist ein Wrapper für libcloud.\\
+
+\subsection{\href{https://github.com/fog/fog/blob/master/lib/fog/openstack/docs/getting_started.md}{fog}}
+\textbf{Sprache: }Ruby\\
+\textbf{Wichtigste Provider: }CloudSigma, CloudStack, GoGrid, Google Cloud Platform, Joyent, Libvirt, Linode, OpenStack, OpenVZ, Rackspace, Zerigo, IBM, HP\\
+
+\subsection{\href{https://github.com/pkgcloud/pkgcloud}{pkgcloud}}
+\textbf{Sprache: }JavaScript (Node.js)\\
+\textbf{Wichtigste Provider: }Amazon, Azure, DigitalOcean, Joyent, OpenStack, Rackspace, Google, HP,\\
+
+\newpage
+
+\section{Support}
+\subsection{Compute}
+\subsection{Storage}
+\subsection{Network}
+\subsection{Other}
+Database, DNS, Block Storage, Load Balancers, Orchestration\\
+\end{document}
+
+
+
+
+
+
+
+
+
+
