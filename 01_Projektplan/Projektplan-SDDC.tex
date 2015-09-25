@@ -25,7 +25,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Projektplan: SDDC}
-\cfoot{Version: 1.03}
+\cfoot{Version: 1.04}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -63,6 +63,7 @@ linkcolor = black]{hyperref}
 Projektübersicht & Silvan Adrian\\
 \textbf{18.09.15} & 1.02 & Qualitätsmassnahmen & Fabian Binna\\
 \textbf{20.09.15} & 1.03 &  Text verbessert und zusätzliche Infos eingefügt & Silvan Adrian\\
+\textbf{25.09.15} & 1.04 & Verbesserungen & Silvan Adrian\\
 
 \end{tabularx}
 
@@ -77,15 +78,15 @@ Dieses Dokument beschreibt die Planung der SA SDDC.
 Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktualisiert.
 
 \subsection{Referenzen}
-\textbf{Generische API:} 
-\href{https://libcloud.apache.org/}{https://libcloud.apache.org/}\\
-\textbf{OpenStack API:} \href{http://developer.openstack.org/}{http://developer.openstack.org/}
+\subsubsection{APIs:} \href{http://developer.openstack.org/}{http://developer.openstack.org/}
+\subsubsection{SCRUM Guide:} \href{http://www.scrumguides.org/docs/scrumguide/v1/Scrum-Guide-DE.pdf}{http://www.scrumguides.org}
 \section{Projektübersicht}
 Es soll eine generische API erstellt oder eine bestehende API verwendet werden, um über ein 
-Dashboard direkt Services zu abonnieren, dabei wird für jede Virtuelle Maschine 
-Compute, Storage und Network benötigt.
-Es sollen verschiedene Hersteller eingebunden werden können, welche modular 
-der generischen API hinzugefügt werden können (z.B.: als Plugins).
+Dashboard direkt Services zu abonnieren, dabei werden direkt Services von 
+verschiedenen Cloud Anbietern angeboten und in einem Dashboard zusammengefasst 
+(IaaS,PaaS,SaaS).
+Die API soll dabei modular aufgebaut sein, damit neue Anbieter einfach 
+hinzugefügt werden können (z.B.: als Plugins).
 \subsection{Zweck und Ziel}
  Gelerntes aus verschiedenen Modulen anwenden, sich mit der gestellten Aufgabenstellung auseinandersetzen 
  und diese umsetzen.
@@ -93,15 +94,21 @@ der generischen API hinzugefügt werden können (z.B.: als Plugins).
 \subsection{Primäre Features}
 \begin{itemize}
   \item Generische API
-  \item Dashboard
+  \item Spartanisches Dashboard
+  \item Unterstützung von Private Cloud Anbietern
+  \item Unterstützung von Docker
+  \item Unterstützung von ausgewählten Public Cloud Anbietern
 \end{itemize}
 \subsection{Erweiterte Features}
 \begin{itemize}
-  \item TBD
+  \item Unterstützung für mehr Public Cloud Anbieter
+  \item Dashboard um Funktionen erweitern und verbessern
+  \item Plugins über Dashboard installieren
 \end{itemize}
 \subsection{Lieferumfang}
 \begin{itemize}
-  \item Source-Code  \item Dokumentation (Projekt und Software)
+  \item Source-Code (Dashboard/API)  \item Dokumentation (Projekt und Software)
+  \item Benutzerdokumentation
 \end{itemize}
 
 \subsection{Annahmen und Einschränkungen}
@@ -111,27 +118,25 @@ Die generische API soll dabei so viele Anbieter wie möglich abdecken.
 \section{Projektorganisation}
 Wir setzen beim Project auf Scrum, wodurch lediglich die Projektrollen Product 
 Owner, Entwickler und Scrum-Master vorhanden sind.
-Es gibt keine Unterscheidung zwischen speziellen Fachgebieten und das Team 
-als ganzes ist gefragt.
 \subsection{Organisationsstruktur}
 \begin{tikzpicture}[auto, node distance = 0.4cm, thick,
   every node/.style = {rectangle, font = \sffamily, white,
     top color = logocolor!90!black, bottom color = logocolor!60!black,
-    text width = 3cm, align = center, minimum height = 1cm}]
+    text width = 4.5cm, align = center, minimum height = 1cm}]
   \node (PO) {\textbf{Beat Stettler} \\
       \vspace{0.2cm}
-  \includegraphics[width=0.8\textwidth]{stettler}
+  \includegraphics[width=0.7\textwidth]{stettler}
    \vspace{0.2cm}
   Product Owner};
   \coordinate [below = 3cm of PO] (Mitte);
   \node (Silvan) [left  = 2mm of Mitte]  {\textbf{Silvan Adrian} \\
     \vspace{0.2cm}
-  \includegraphics[width=0.8\textwidth]{silvan}
+  \includegraphics[width=0.7\textwidth]{silvan}
    \vspace{0.2cm}
-Entwickler};
+Entwickler/Scrum Master};
   \node (Fabian) [right = 2mm of Mitte]  {\textbf{Fabian Binna} \\
   \vspace{0.2cm}
-  \includegraphics[width=0.8\textwidth]{fabian}
+  \includegraphics[width=0.7\textwidth]{fabian}
    \vspace{0.2cm}
  Entwickler};
   \draw [logocolor!60!black,thick]
@@ -203,7 +208,7 @@ Fabian Binna & Lenovo T430s & Windows 10 &  N/A\\
 \subsection{Tools/Software}
 \begin{itemize}
     \item \textbf{BuildServer:} Travis-CI
-    \item \textbf{Konfigurationsmanagement:} GIT
+    \item \textbf{Versionsmanagement:} GIT
     \item \textbf{Notifications:} Slack
 \end{itemize}
 
@@ -246,14 +251,15 @@ Die Review Protokolle werden auf dem GitHub Repository SDDC-Doku abgelegt.
 \subsubsection{Code Style Guidelines}
 Editor Standard
 
-
-
-
-
 \subsection{Testen}
-
 \subsubsection{Komponententest}
-
+Zu jeder Komponente werden Tests geschrieben, um eine mögliche hohe Code 
+Coverage zu erreichen.
+Die Komponententests werden gemäss TDD erstellt, also nur ausgeliefert wenn alle 
+grün sind, diese Tests werden nochmals auf dem Build Server ausgeführt um ``it 
+works on my machine'' abzudecken.
 \subsection{Systemtest}
-
+Systemtests werden nach jedem Sprint durchgeführt um die geplante Funktionalität 
+zu testen und so die neuste Version der Software releasen zu können.
+Systemtestprotokoll Vorlage?!
 \end{document}
