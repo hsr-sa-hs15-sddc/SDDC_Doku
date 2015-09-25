@@ -1,6 +1,6 @@
 \documentclass[11pt]{scrartcl}
 
-\title{Template}
+\title{Analyse Bitnami}
 \author{Silvan Adrian \\ Fabian Binna}
 \date{\today{}}
 
@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Template}
-\cfoot{Version: 1.02}
+\cfoot{Version: 1.03}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -58,6 +58,8 @@ linkcolor = black]{hyperref}
 \textbf{25.09.15} & 1.01 & Einführung + Referenzen & Silvan Adrian \\
 \textbf{25.09.15} & 1.02 & informationen zu Launchpads und Dashboard + 
 Screenshots von den Möglichkeiten & Silvan Adrian \\
+\textbf{25.09.15} & 1.03 & AWS \&Azure \& Google \& Digitalocean \& VMware & 
+Silvan Adrian\\
 \end{tabularx}
 
 \newpage
@@ -66,7 +68,7 @@ Screenshots von den Möglichkeiten & Silvan Adrian \\
 
 \section{Einführung}
 \subsection{Zweck}
-Dieses Dokument beinhaltet die Analyse von Bitnami.
+Dieses Dokument beinhaltet die Analyse vom Bitnami Dashboard.
 \subsection{Gültigkeitsbereich}
 Dieses Dokument ist während des ganzen Projekts gültig.
 
@@ -84,11 +86,57 @@ Bitnami bietet ein Dashboard für einige Cloud Anbieter (VMware, AWS, Google Clo
 Digitalocean), um ganz einfach vorgegebene viel verwendete WebApps,Datenbanken oder Technologie Stacks 
 schnell in der Cloud zu starten.
 Dabei wird bei jedem eine Compute Instanz erstellt und das Image installiert.
+Diese Analyse soll dabei helfen eine gute Lösung für unser Dashboard zu 
+konzipieren und auf bereits bewährtes zurückgreifen können.
 
 \subsection{Cloud Anbieter}
 \includegraphics[width=\textwidth]{clouds}
 \subsubsection{Bitnami Cloud Hosting}
+Beim Bitnami Cloud Hosting steckt AWS dahinter, hier sind die meisten 
+Einstellungen möglich im Vergleich zu den anderen Dashboards.
 
+
+\textbf{Übersicht}
+kurze Übersicht über die möglichen Konfigurationen einer AWS Instanz.
+\includegraphics[width=0.8\textwidth]{aws_overview}
+\newpage
+\textbf{Application Options:}
+
+\includegraphics[width=0.5\textwidth]{aws_application_options}
+
+\textbf{Applikationsauswahl:}
+
+\includegraphics[width=0.5\textwidth]{aws_add_application}
+
+\textbf{Betriebssystem:}
+
+\includegraphics[width=0.5\textwidth]{aws_operating_system}
+
+\textbf{Servertyp:}
+
+\includegraphics[width=0.5\textwidth]{aws_servertype}
+\newpage
+\textbf{Diskgrösse:}
+
+\includegraphics[width=0.5\textwidth]{aws_disk}
+
+\textbf{Region,IP,Account:}
+
+\includegraphics[width=0.5\textwidth]{aws_random}
+
+\textbf{Management:}
+
+\includegraphics[width=\textwidth]{aws_overview_managment}
+
+\includegraphics[width=0.5\textwidth]{aws_resourcen}
+
+\textbf{Ressourcen:}
+
+\includegraphics[width=0.5\textwidth]{aws_managment}
+
+\includegraphics[width=0.5\textwidth]{aws_resrouces}
+
+\newpage
 \subsubsection{Digitalocean Launchpad}
 \includegraphics[width=\textwidth]{digitalocean_launchpad}
 \textbf{Instanzen:}
@@ -162,12 +210,19 @@ oder andere Services angefügt sein.)
 
 
 \subsubsection{VMware Launchpad}
+Das VMware Launchpad kann für die WMware vCloud Air gebraucht werden.
+
+\includegraphics[width=0.8\textwidth]{vmware_creation}
+
+\textbf{Infos:}
+
+\includegraphics[width=0.4\textwidth]{vmware_infos}
 
 \subsection{Security}
 Da durch das zentrale zusammenfassen von mehreren Accounts auch immer 
 Sicherheitsrisiken zu beachten sind, wird bei Bitnami zusätzlich zum normalen 
 Loginpasswort auch noch ein Vaultpasswort festgelegt, welches wohl die 
-Logindaten symmetrisch verschlüsselt und so ablegt.
+Logindaten symmetrisch verschlüsselt und in einem ``Vault'' ablegt.
 
 \includegraphics[width=0.8\textwidth]{bitnami_security}
 
@@ -181,6 +236,16 @@ aufzusetzen.
 \includegraphics[width=\textwidth]{apps}
 
 \subsubsection{Kategorien}
-\includegraphics[width=0.5\textwidth]{categories}
+\includegraphics[width=0.3\textwidth]{categories}
+
+\section{Fazit}
+Bitnami bietet einiges was Computing angeht und ist der einzig grössere 
+Dashboard Anbieter, der mehrere verschiedene Cloud Anbieter unterstützt.
+Allerdings fehlen verschiedene PaaS Angebote (Bspw.: Cloud SQL bei Google etc.), 
+Bitnami ist daher nur für eigene Instanzen/Vms zu gebrauchen und nicht mit einer 
+generellen Service Unterstützung konzipiert worden.
+Das Dashboard bei Bitnami bietet jedenfalls einiges und gibt einem einen guten 
+Überblick über seine eigenen abonnierten Services (VM Instanzen).
+
 
 \end{document}
