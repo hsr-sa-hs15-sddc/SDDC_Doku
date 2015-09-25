@@ -12,6 +12,7 @@
 \usepackage{scrpage2}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{minutes}
 \graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
 \pagestyle{scrheadings}
 
@@ -19,7 +20,7 @@
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{API Analyse}
-\cfoot{Version: 1.02}
+\cfoot{Version: 1.03}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -56,6 +57,7 @@
 \textbf{25.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
 \textbf{25.09.15} & 1.01 & APIs & Fabian Binna\\
 \textbf{25.09.15} & 1.02 & Support & Fabian Binna\\
+\textbf{25.09.15} & 1.03 & Fazit & Fabian Binna\\
 
 \end{tabularx}
 
@@ -219,6 +221,55 @@ Alle APIs ausser pkgcloud erwähnen keine Provider für die Unterstützung von N
 \begin{itemize}
 \item CloudFront
 \end{itemize}
+
+\newpage
+
+\section{Fazit}
+
+Im Gesamtbild schneidet libcloud am besten ab. Es bietet deutlich am meisten Compute und Storage Provider. Die Dokumentation ist sehr ausführlich, mit konkreten Ratschlägen zur Implementation (z.B. Thread Safe). Zusätzlich bietet libcloud Module für SSL und Pricing.
+Jclouds ist eine Library für Java, was für uns am besten ist, da wir am meisten Erfahrung mit Java haben. Es gibt jedoch nicht viele Compute Provider, dafür unterstützt jclouds als einziger Docker.
+Der einzige Vorteil von fog ist die Möglichkeit CDNs als Service anzubieten.
+Pkgcloud unterstützt eine breite Auswahl von Services (z.B. Database, Load Balancer, DNS).\\
+
+\textbf{Wir entscheiden uns für... (Noch zu besprechen)}
+
+\subsection{libcloud}
+\begin{Argumentation}
+\pro Grösste Auswahl an Compute und Storage Provider.
+\pro Am besten dokumentiert. Für jede Methode existiert eine Tabelle, die zeigt welche Provider damit angesprochen werden können.
+\pro Ist zwar nicht Thread-Safe. Es werden jedoch konkrete Lösungsvorschläge gemacht.
+\pro SSL und Pricing Module vorhanden.
+
+\contra Team hat keine Erfahrung mit komplexen/grossen Python Projekten.
+\end{Argumentation}
+
+\subsection{jclouds}
+\begin{Argumentation}
+\pro Unterstützt Docker.
+\pro Java Librariy. Das Team hat am meisten Erfahrung mit Java.
+\pro Code Examples für fast jeden Provider.
+
+\contra Kleine Auswahl an Compute Providern.
+\end{Argumentation}
+
+\subsection{fog}
+\begin{Argumentation}
+\pro Es ist möglich ein CDN als Service anzubieten.
+
+\contra Mässige Dokumentation. Es existieren zwar Examples, die sind aber nicht besonders aussagekräftig.
+\contra Kleine Auswahl an Compute Providern.
+\end{Argumentation}
+
+\subsection{pkgcloud}
+\begin{Argumentation}
+\pro Grösste Auswahl an Services.
+\pro Database as a Service
+\pro Orchestration
+\pro Explizite Unterstützung von Network.
+
+\contra Mässige Dokumentation. Es existieren zwar Examples, die sind aber nicht besonders aussagekräftig.
+\contra Kleine Auswahl an Compute Providern.
+\end{Argumentation}
 
 \end{document}
 
