@@ -1,0 +1,118 @@
+\documentclass[11pt]{scrartcl}
+
+\title{Dashboard Analyse}
+\author{Silvan Adrian \\ Fabian Binna}
+\date{\today{}}
+
+\usepackage[ngerman]{babel}
+\usepackage[automark]{scrpage2}
+\usepackage[colorlinks = true,
+linkcolor = black]{hyperref}
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
+\pagestyle{scrheadings}
+
+\clearscrheadfoot
+\ihead{\includegraphics[scale=0.3]{SDDC}}
+\ohead{Projekt: SDDC}
+\ifoot{Template}
+\cfoot{Version: 1.00}
+\ofoot{Datum: \today{}}
+\setheadsepline{0.5pt}
+\setfootsepline{0.5pt}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\def\arraystretch{1.5}
+\begin{titlepage}
+\begin{center}
+\vspace{10em}
+\includegraphics[scale=2]{SDDC}
+\vspace{10em}
+\end{center}
+\begin{center}
+\huge {Dashboard Analyse}
+\end{center}
+\begin{center}
+\vspace{10em}
+\LARGE {Silvan Adrian} \\
+\LARGE {Fabian Binna}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\section{Änderungshistorie}
+\begin{tabularx}{\linewidth}{l l X l}
+\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
+\hline
+\textbf{17.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
+
+\end{tabularx}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Einführung}
+\subsection{Zweck}
+Dieses Dokument beinhaltet die Analyse für das eigenes Dashboard.
+\subsection{Gültigkeitsbereich}
+Dieses Dokument ist während des ganzen Projekts gültig.
+
+\subsection{Referenzen}
+Bitnami-Analyse.pdf\\
+\href{https://protonmail.ch}{https://protonmail.ch (Security)} 
+
+\section{Dashboard}
+Das Dashboard soll dem Nutzer schnell und einfach die Übersicht über seine 
+eigenen abonnierten Services bieten (IaaS,PaaS,SaaS).
+Dabei soll auf eine Anzahl von Cloud Anbietern zugegriffen werden, sowohl Public 
+Cloud(AWS, Google Cloud, Azure, Digitalocean), wie auch Private Cloud (CloudStack.Open Stack)
+
+\subsection{Services}
+Am Besten auch in etwa gleich gestalten, wie Bitnami und dem User eine Auswahl 
+von Services geben zu dem jeweiligen Cloud Anbieter, welchen er schliesslich 
+abonnieren kann falls gewünscht.
+
+Füge Bild ein (noch ein paar Wireframes machen, damit sich wenigsten etwas darunter vorstellen kann)
+
+\subsection{PaaS}
+
+
+\subsection{IaaS}
+
+\subsection{SaaS}
+
+\subsection{Accounts/Subscriptions/Projects/...}
+Für jeden Anbieter soll dem User eine Übersicht über die 
+Account/Subscriptions/Projects gegeben werden, dadurch vereinfacht sich die 
+Handhabung von mehreren Accounts und alle sind in einem Dashboard zusammengefügt 
+(-> Security beachten).
+
+Nochmals ein Wireframe oder was in der Art zum zeigen!!
+
+
+
+
+
+
+\section{Security}
+Wie bei Bitnami wäre es wohl sicherer die Zugriffsdaten für die Cloud Anbieter 
+abzusichern (bei Bitnami wird dies über ein Vault sichergestellt), ansonsten 
+könnte ein Angreifer ganze Instanzen bei verschiedenen Anbietern löschen oder 
+sonstige Bösartige Absichten ausüben.
+
+Dieser Vault soll auch durch ein zusätzliches Passwort geschützt sein und 
+wird symmetrisch verschlüsselt (Mail Anbieter: Proton Mail macht dies ebenfalls 
+so).
+
+\end{document}
