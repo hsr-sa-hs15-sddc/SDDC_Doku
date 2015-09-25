@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Template}
-\cfoot{Version: 1.01}
+\cfoot{Version: 1.02}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -56,6 +56,8 @@ linkcolor = black]{hyperref}
 \hline
 \textbf{25.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
 \textbf{25.09.15} & 1.01 & Einführung + Referenzen & Silvan Adrian \\
+\textbf{25.09.15} & 1.02 & informationen zu Launchpads und Dashboard + 
+Screenshots von den Möglichkeiten & Silvan Adrian \\
 \end{tabularx}
 
 \newpage
@@ -66,7 +68,7 @@ linkcolor = black]{hyperref}
 \subsection{Zweck}
 Dieses Dokument beinhaltet die Analyse von Bitnami.
 \subsection{Gültigkeitsbereich}
-Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktualisiert.
+Dieses Dokument ist während des ganzen Projekts gültig.
 
 \subsection{Referenzen}
 \textbf{Bitnami Consoles:}\\
@@ -81,6 +83,7 @@ Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktual
 Bitnami bietet ein Dashboard für einige Cloud Anbieter (VMware, AWS, Google Cloud, Azure, 
 Digitalocean), um ganz einfach vorgegebene viel verwendete WebApps,Datenbanken oder Technologie Stacks 
 schnell in der Cloud zu starten.
+Dabei wird bei jedem eine Compute Instanz erstellt und das Image installiert.
 
 \subsection{Cloud Anbieter}
 \includegraphics[width=\textwidth]{clouds}
@@ -92,14 +95,81 @@ schnell in der Cloud zu starten.
 Sobald eine Applikation ausgewählt wurde kann eine Instanz mit dem App gestartet 
 werden, dabei kann noch die Instanzgrösse und Location gewählt werden.
 
+\includegraphics[width=\textwidth]{digitalocean_size}
+Sobald Instanz erstellt lässt sich deren Status überprüfen + App spezifische 
+Links werden gesetzt.
 
+\includegraphics[width=\textwidth]{digitalocean_infos}
+
+\textbf{Authorize Application:}
+Um wirkliche Instanz erstellen zu können muss das Bitnami Dashboard Zugriff auf 
+den Cloud spezifischen Account haben.
+
+\includegraphics[width=\textwidth]{digitalocean_authorize}
+
+Dabei können mehrere Accounts hinzugefügt werden:
+
+\includegraphics[width=\textwidth]{digitalocean_accounts}
+
+Und unter jedem Account können spezifisch VM's erstellt werden:
+
+\includegraphics[width=0.4\textwidth]{digitalocean_account_specific}
+
+Danach taucht die Instanz in der Übersicht auf:
+
+\includegraphics[width=\textwidth]{digitalocean_instances}
+
+\newpage
+\textbf{Instanzinfos:}
+
+\includegraphics[width=\textwidth]{digitalocean_instanceinfo}
+
+\subsubsection{Azure Launchpad}
+Beim Azure Launchpad wird wieder gleich vorgegangen, wie bei Digitalocean.
+Nur das sich die infos ändern (Bspw.: Bei Digitalocean Droplet, jetzt Server).
+
+Ebenfalls ändern sich die Instanzgrössen. welche bei Azure anders als bei 
+Digitalocean sind + wird bei Azure mit Subscriptions und nicht anhand von 
+Accounts unterschieden.
+\textbf{Serverinfo:}
+
+\includegraphics[width=0.5\textwidth]{azure_serverinfo}
+
+\textbf{Authorization:}
+
+Bei Azure wird das Dashboard über ein Managment Certificate autorisiert:
+
+\includegraphics[width=0.8\textwidth]{azure_authorize}
+
+Danach wird die vorhandene Subscription/s vom Microsoft Account eingebunden:
+
+\includegraphics[width=0.8\textwidth]{azure_subscriptions}
+
+
+Sobald dann ein neuer Server erstellt wurde kann dieser auch wieder gelöscht 
+werden und all dessen Infos angesehen werden.
+
+\includegraphics[width=0.8\textwidth]{azure_instanceinfos}
 
 \subsubsection{Google Launchpad}
 
-\subsubsection{Azure Launchpad}
+Beim Google Launchpad wieder dasselbe, wie bei Azure oder Digitalocean.
+Hier wird einfach mit Projekten unterschieden (schliesslich kann jedem Projekt mehrere Compute Instanzen 
+oder andere Services angefügt sein.)
+
+
+\includegraphics[width=0.4\textwidth]{google_instancereation}
+
 
 \subsubsection{VMware Launchpad}
 
+\subsection{Security}
+Da durch das zentrale zusammenfassen von mehreren Accounts auch immer 
+Sicherheitsrisiken zu beachten sind, wird bei Bitnami zusätzlich zum normalen 
+Loginpasswort auch noch ein Vaultpasswort festgelegt, welches wohl die 
+Logindaten symmetrisch verschlüsselt und so ablegt.
+
+\includegraphics[width=0.8\textwidth]{bitnami_security}
 
 \subsection{Applikationen}
 Die Applikationen können sich von Anbieter zu Anbieter unterscheiden, jedoch 
