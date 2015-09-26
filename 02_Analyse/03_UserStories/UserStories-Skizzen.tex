@@ -1,0 +1,125 @@
+\documentclass[11pt]{scrartcl}
+
+\title{User Stories Skizzen}
+\author{Silvan Adrian \\ Fabian Binna}
+\date{\today{}}
+
+\usepackage[ngerman]{babel}
+\usepackage[automark]{scrpage2}
+\usepackage[colorlinks = true,
+linkcolor = black]{hyperref}
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
+\pagestyle{scrheadings}
+
+\clearscrheadfoot
+\ihead{\includegraphics[scale=0.3]{SDDC}}
+\ohead{Projekt: SDDC}
+\ifoot{User Stories Skizzen}
+\cfoot{Version: 1.01}
+\ofoot{Datum: \today{}}
+\setheadsepline{0.5pt}
+\setfootsepline{0.5pt}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\def\arraystretch{1.5}
+\begin{titlepage}
+\begin{center}
+\vspace{10em}
+\includegraphics[scale=2]{SDDC}
+\vspace{10em}
+\end{center}
+\begin{center}
+\huge {User Stories Skizzen}
+\end{center}
+\begin{center}
+\vspace{10em}
+\LARGE {Silvan Adrian} \\
+\LARGE {Fabian Binna}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\section{Änderungshistorie}
+\begin{tabularx}{\linewidth}{l l X l}
+\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
+\hline
+\textbf{26.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
+\textbf{26.09.15} & 1.01 & Einführung + Rollen & Silvan Adrian \\
+\end{tabularx}
+
+\newpage
+\tableofcontents
+\newpage
+\section{Einführung}
+
+\subsection{Zweck}
+
+Dieses Dokument beinhaltet die ersten Skizzen der User Stories.
+
+\subsection{Gültigkeitsbereich}
+
+Dieses Dokument ist während des ganzen Projekts gültig.
+
+\subsection{Referenzen}
+Bitnami-Analyse.pdf\\
+Dashboard-Analyse.pdf\\
+UseCase-Skizzen.pdf
+
+\section{Rollen}
+\subsection{Public User}
+Public User sind alle öffentlichen Besucher des Dashboards.
+
+\subsection{Registered User}
+Der registrierte Nutzer ist Anwender des Dashboards und verwendet dieses zur 
+Aufgabenerleichterung.
+Bei dem Nutzer kann es sich um einen System Administrator, DevOps, Operator oder
+Software Entwickler handlen, da beim Dashboard für jeden was dabei ist.
+
+\subsection{Admin}
+Der Admin ist für die Instandhaltung des Dashboards zuständig und verwaltet die 
+User.
+
+\section{Ziele}
+\begin{itemize}
+  \item Registrierung (Mail Adresse/Passwort)
+  \item Login
+  \item Administrationoberfläche
+  \item Benutzerinfos anpassen
+  \item Auswahl aus mehreren Cloud Anbieter
+  \item mehrere Cloud Accounts hinzufügen
+  \item Abonnieren von Services (Compute/Storage/Network)
+  \item Unterteilung der Services in Compute/Storage/Network
+  \item Übersicht aller zur Verfügung stehenden Services
+  \item Management der Services (erstellen/ändern/löschen)
+  \item Links zu Loginpanels von Cloud Anbieter
+  \item Übersicht über abonnierte Services
+  \item Unterstützung Private Cloud (OpenStack,CloudStack, Docker(Deis -> PaaS))
+  \item Anbieter spezifische Services anbieten
+  \item generische API
+  \item Anstehende Kosten anzeigen
+  \item Einfaches hinzufügen eines Cloud Accounts (Wizard bieten)
+\end{itemize}
+
+
+
+\section{User Stories}
+
+\subsection{Public User}
+Als Public User
+\subsection{Registered User}
+Als registered User
+\subsection{Admin}
+Als Admin
+
+\end{document}
