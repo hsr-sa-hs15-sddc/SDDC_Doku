@@ -55,6 +55,9 @@ linkcolor = black]{hyperref}
 \textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
 \hline
 \textbf{17.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
+\textbf{25.09.15} & 1.01 & Einführung, Security etc. & Silvan Adrian \\
+\textbf{26.09.15} & 1.02 & Beschreibung der einzelnen Offerings und Wireframes 
+dazu & Silvan Adrian\\
 
 \end{tabularx}
 
@@ -76,7 +79,12 @@ Bitnami-Analyse.pdf\\
 Das Dashboard soll dem Nutzer schnell und einfach die Übersicht über seine 
 eigenen abonnierten Services bieten (IaaS,PaaS,SaaS).
 Dabei soll auf eine Anzahl von Cloud Anbietern zugegriffen werden, sowohl Public 
-Cloud(AWS, Google Cloud, Azure, Digitalocean), wie auch Private Cloud (CloudStack.Open Stack)
+Cloud(AWS, Google Cloud, Azure, Digitalocean), wie auch Private Cloud (CloudStack.Open 
+Stack).
+Beim Login wird zwischen Nutzern und Administrator unterschieden, dabei können 
+Admin User ändern/löschen/erstellen.
+
+
 
 \subsection{Services}
 Am Besten auch in etwa gleich gestalten, wie Bitnami und dem User eine Auswahl 
@@ -85,12 +93,24 @@ abonnieren kann falls gewünscht.
 
 Füge Bild ein (noch ein paar Wireframes machen, damit sich wenigsten etwas darunter vorstellen kann)
 
-\subsection{PaaS}
+\subsection{Kategorien}
+\subsubsection{Compute}
+Hier werden nur Compute Offerings angezeigt z.B.: App Engine, Compute Engine, 
+Container Engine, EC2 etc., können nach Anbieter varieieren
 
 
-\subsection{IaaS}
+\subsubsection{Storage}
+Nur Storage spezifische Offerings anzeigen z.B.: Cloud Datastore, Cloud SQL, 
+Cloud BigTable), die sich je nach Anbieter ändern.
 
-\subsection{SaaS}
+
+
+\subsubsection{Network}
+Network spezifische Offerings anbieten (Firewall, VPN, Netzwerke, Cloud DNS etc.) 
+und dann verändert sich die Auswahl auch Anbieter spezifisch.
+
+
+
 
 \subsection{Accounts/Subscriptions/Projects/...}
 Für jeden Anbieter soll dem User eine Übersicht über die 
@@ -99,9 +119,6 @@ Handhabung von mehreren Accounts und alle sind in einem Dashboard zusammengefüg
 (-> Security beachten).
 
 Nochmals ein Wireframe oder was in der Art zum zeigen!!
-
-
-
 
 
 
