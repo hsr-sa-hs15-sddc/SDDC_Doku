@@ -270,18 +270,53 @@ ERROR: Fehler\\
 FATAL: Kritischer Fehler\\
 \\
 
+\subsubsection{Metrikanalyse}
+Die Metriken werden nach jedem Sprint protokolliert und Analysiert. Die Metriken helfen während einem Code-Review auf problematische Code Stücke hinzuweisen. Sie können auch beim Debuggen hilfreich sein.
+
 \subsubsection{Code Style Guidelines}
 Editor Standard
 
 \subsection{Testen}
-\subsubsection{Komponententest}
-Zu jeder Komponente werden Tests geschrieben, um eine mögliche hohe Code 
+
+\subsection{Modultest}
+Die Modultests werden, wie schon beschrieben ,während der Entwicklung mit Test-Driven Development erstellt.
+Zu jedem Modul werden Tests geschrieben, um eine möglichst hohe Code 
 Coverage zu erreichen.
-Die Komponententests werden gemäss TDD erstellt, also nur ausgeliefert wenn alle 
-grün sind, diese Tests werden nochmals auf dem Build Server ausgeführt um ``it 
-works on my machine'' abzudecken.
+Die Tests werden nochmals auf dem Build Server ausgeführt um ``it 
+works on my machine'' abzudecken.\\
+
+Produkte:
+\begin{itemize}
+\item Irgend eine Unit-tester (je nach Sprache)
+\item Travis
+\end{itemize}
+
+\subsection{Integrationstest}
+Bei den Integrationstests kommt eine Kombination aus automatisierten Tests, sowie eine Analyse des Ablaufs zum Einsatz.
+Die Tests werden an verschiedenen Schichten angesetzt (Presentation und Business-Layer). Die Unteren Schichten, die für den Integrationstest nicht relevant sind werden simuliert. Nachdem die automatische Tests durchgelaufen sind, werden die Log-Daten ausgewertet und mit den Sequenzdiagrammen abgeglichen. Es ist wichtig, das die Komponenten korrekt miteinander kommunizieren.\\
+
+Produkte:
+\begin{itemize}
+\item Irgend ein Unit-tester (je nach Sprache)
+\item Für Presentation-Layer kommt \url{http://karma-runner.github.io/0.13/index.html}{Karma} zum Einsatz.
+\item Log-Daten
+\end{itemize}
+
 \subsection{Systemtest}
+Die Systemtests richten sich nach den Use Cases. Auch hier kann mit Karma getestet werden (Das wäre dann eher ein sehr grosser Integrationstest). Die Use Cases werden von einem Tester nach Protokollangaben durchgeführt und dokumentiert.
+Auch hier können Log-Daten eine Hilfe für die Analyse sein.
+
 Systemtests werden nach jedem Sprint durchgeführt um die geplante Funktionalität 
-zu testen und so die neuste Version der Software releasen zu können.
-Systemtestprotokoll Vorlage?!
+zu testen und so die neuste Version der Software releasen zu können.\\
+
+Produkte:
+\begin{itemize}
+\item Karma
+\item Protokoll
+\item Log-Daten
+\end{itemize}
+
+\subsection{Abnahmetest}
+Der Abnahmetest wird vom Kunden selbst durchgeführt.
+
 \end{document}
