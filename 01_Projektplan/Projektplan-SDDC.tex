@@ -86,7 +86,7 @@ Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktual
 Es soll eine generische API erstellt oder eine bestehende API verwendet werden, um über ein 
 Dashboard direkt Services zu abonnieren, dabei werden direkt Services von 
 verschiedenen Cloud Anbietern angeboten und in einem Dashboard zusammengefasst 
-(IaaS,PaaS,SaaS).
+(Compute,Storage,Network).
 Die API soll dabei modular aufgebaut sein, damit neue Anbieter einfach 
 hinzugefügt werden können (z.B.: als Plugins).
 \subsection{Zweck und Ziel}
@@ -105,13 +105,13 @@ hinzugefügt werden können (z.B.: als Plugins).
 \begin{itemize}
   \item Unterstützung für mehr Public Cloud Anbieter
   \item Dashboard um Funktionen erweitern und verbessern
-  \item Plugins über Dashboard installieren
+  \item Plugins über Dashboard installieren (Admin)
 \end{itemize}
 \subsection{Lieferumfang}
 \begin{itemize}
   \item Source-Code (Dashboard/API)
   \item Dokumentation (Projekt und Software)
-  \item Benutzerdokumentation
+  \item Benutzerdokumentation (HowTo)
 \end{itemize}
 
 \subsection{Annahmen und Einschränkungen}
@@ -170,7 +170,7 @@ Risiken von 41 Stunden.
 \textbf{Sprint} & \textbf{Beschreibung} & \textbf{Beginn} &  \textbf{Ende} \\
 \hline
 \textbf{Sprint 1} & Grundgerüst API, API ansprechbar und Services können 
-abonniert werden, allerdings nicht über ein Dashboard sondern direkt über API  & 05.10.15 & 19.10.15 \\
+abonniert werden + API erweitern (für nicht unterstützte Anbieter) & 05.10.15 & 19.10.15 \\
 \hline
 \textbf{Sprint 2} & Sehr einfaches Dashboard für einen Anbieter, 
 um Anbieter spezifische Services abonnieren zu können 
