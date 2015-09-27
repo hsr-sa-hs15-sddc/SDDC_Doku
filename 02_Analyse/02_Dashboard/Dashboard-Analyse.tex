@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Dashboard Analyse}
-\cfoot{Version: 1.04}
+\cfoot{Version: 1.05}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -61,6 +61,7 @@ dazu & Silvan Adrian\\
 \textbf{26.09.15} & 1.03 & Unterteilung nach Services \& Offerings + Mockups 
 eingefügt  & Silvan Adrian\\
 \textbf{26.09.15} & 1.04 & Fazit eingefügt wegen Sicherheitsbedenken  & Silvan Adrian\\
+\textbf{27.09.15} & 1.05 & Verbesserungen & Silvan Adrian\\
 \end{tabularx}
 
 \newpage
@@ -86,14 +87,13 @@ Bitnami-Analyse.pdf\\
 \section{Dashboard}
 Das Dashboard soll dem Nutzer schnell und einfach die Übersicht über seine 
 eigenen abonnierten Services bieten (Compute,Storage,Network).
-Dabei soll auf eine Anzahl von Cloud Anbietern zugegriffen werden, sowohl Public 
-Cloud(AWS, Google Cloud, Azure, Digitalocean), wie auch Private Cloud (CloudStack.Open 
+Dabei soll auf eine Anzahl von Cloud Anbietern angeboten werden, sowohl Public 
+Cloud(z.B.: AWS, Google Cloud, Azure, Digitalocean), wie auch Private Cloud (z.B.:CloudStack.Open 
 Stack).
 Die nachfolgenden Mockups sollen bereits einen ersten Eindruck der 
-Funktionalitäten des Dashboard geben.
-
-
-Beim Login wird zwischen Nutzern und Administrator unterschieden.
+möglichen Funktionalitäten des Dashboard geben.
+\\
+\textbf{Beim Login wird zwischen Nutzern und Administrator unterschieden.}
 
 \subsection{Homescreen Nutzer}
 Der Nutzer kriegt eine Übersicht über die vorhanden Cloud Anbieter und kann 
@@ -117,13 +117,15 @@ sich das jeweilige Dashboard des Anbieters mit dessen spezifischen Services.
   \includegraphics[width=\textwidth]{homescreen_google}
 \end{figure}
 
-
+\newpage
 \subsubsection{Compute:}
 
 Hier werden nur Compute Offerings angezeigt z.B.: App Engine, Compute Engine, 
 Container Engine, EC2 etc., können nach Anbieter variieren
-
-  \includegraphics[width=0.8\textwidth]{homescreen_google_compute}
+\begin{figure}[h]
+   \includegraphics[width=0.8\textwidth]{homescreen_google_compute}
+\end{figure}
+ 
 
 
 
@@ -180,8 +182,10 @@ vielmals nur SSH und HTTP/S zugelassener traffic ist muss man schliesslich auch
 die Möglichkeit haben Firewall Regeln festlegen zu können.
 Das könnte Schlussendlich in etwa so aussehen:
 
+\begin{figure}[h]
+  \includegraphics[width=0.8\textwidth]{service_info_network}
+\end{figure}
 
-\includegraphics[width=0.8\textwidth]{service_info_network}
 
 
 \subsection{Accounts/Subscriptions/Projects/...}
@@ -223,7 +227,7 @@ Und erstellt für jeden Server ein neues keypaar:
 Was ja auch nicht gerade die beste Lösung ist, da in dem fall eigentlich bereits 
 ein Public Key bei Digitalocean besteht und bei jedem neuen Server auch 
 hinzugefügt werden sollte.
-Jedenfalls kann man es gut steuern wie viele Möglichkeiten man eingebaut haben 
-will und sehr modular neue Services einbauen.
+Je nachdem sind es aber zu viele Funktionalitäten und müssten reduziert werden, 
+damit es in dem vorgegebenen Zeitraum programmiert werden kann.
 
 \end{document}
