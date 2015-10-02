@@ -55,6 +55,8 @@ linkcolor = black]{hyperref}
 \textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
 \hline
 \textbf{02.10.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
+\textbf{02.10.15} & 1.01 & Nicht funktionale Anforderungen & Silvan Adrian\\
+
 
 \end{tabularx}
 
@@ -79,6 +81,45 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 \subsection{Dashboard}
 
 
+\section{Nichtfunktionale Anforderungen}
+\subsection{Menge}
+\begin{itemize}
+  \item Die Software unterstützt mehr als 30 Cloud Anbieter (libcloud)
+  \item Bei jedem Cloud Anbieter bestehen eine gewisse Anzahl Services (von Anbieter zu Anbieter verschieden)
+\end{itemize}
 
-
+\subsection{Schnittstellen}
+\begin{itemize}
+  \item Die Software wird über HTTP/HTTPS angesprochen
+  \item Zur Interaktion im Admin-Dashboard werden die herkömmlichen 
+  Schnittstellen gebraucht (Maus,Tastatur,Bildschirm)
+  \item Interaktionen können auch über die Kommandozeile ausgeführt werden
+\end{itemize}
+\subsection{Qualitätsmerkmale}
+\subsubsection{Funktionalität}
+siehe Abschnitt API und Dashboard
+\subsubsection{Zuverlässigkeit}
+\begin{itemize}
+  \item Der Workflow zum erstellen eines Services soll entweder durchgeführt und 
+  abgeschlossen werden oder falls Unterbruch/Fehler rückgängig gemacht 
+  werden.
+  \item Die Software soll verteilt betrieben werden und eine möglichst hohe 
+  Verfügbarkeit bieten
+\end{itemize}
+\subsubsection{Benutzerbarkeit}
+\begin{itemize}
+  \item Die Software kann über das vorgesehene Admin-Dashboard benutzt werden
+  \item Die API kann auch über die Kommandozeile angesprochen werden
+\end{itemize}
+\subsubsection{Effizienz}
+\begin{itemize}
+  \item 
+\end{itemize}
+\subsubsection{Änderbarkeit}
+Die Software soll modular aufgebaut werden, damit Erweiterungen in Zukunft 
+problemlos möglich sind.
+\subsubsection{Übertragbarkeit}
+Das Projekt wird in Python geschrieben ist somit also auf Python mindestens in der Version 2.5 angewiesen, 
+kann allerdings durch den Einsatz eines Docker Containers einfach Übertragbar 
+gemacht werden.
 \end{document}
