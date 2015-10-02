@@ -25,7 +25,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Projektplan: SDDC}
-\cfoot{Version: 1.06}
+\cfoot{Version: 1.07}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -67,6 +67,8 @@ Projektübersicht & Silvan Adrian\\
 \textbf{25.09.15} & 1.05 & Sprint Planungsübersicht eingefügt & Silvan Adrian\\
 \textbf{26.09.15} & 1.06 & Testing erweitert/verbessert + Logging & Fabian 
 Binna\\
+\textbf{02.10.15} & 1.07 & Verbesserungen gemäss neusten Erkenntnissen & Silvan 
+Adrian\\
 \end{tabularx}
 
 \newpage
@@ -84,11 +86,11 @@ Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktual
 \subsubsection{SCRUM Guide:} \href{http://www.scrumguides.org/docs/scrumguide/v1/Scrum-Guide-DE.pdf}{http://www.scrumguides.org}
 \section{Projektübersicht}
 Es soll eine generische API erstellt oder eine bestehende API verwendet werden, um über ein 
-Dashboard direkt Services zu abonnieren, dabei werden direkt Services von 
-verschiedenen Cloud Anbietern angeboten und in einem Dashboard zusammengefasst 
+Dashboard direkt Services zu abonnieren, dabei können bei der API Vorlagen 
+hinterlegt werden, welche mehrere Servicemodule beinhalten 
 (Compute,Storage,Network).
-Die API soll dabei modular aufgebaut sein, damit neue Anbieter einfach 
-hinzugefügt werden können (z.B.: als Plugins).
+Die API soll dabei möglichst modular aufgebaut sein, damit Neuerungen einfach 
+auf den neusten Stand gebracht werden können.
 \subsection{Zweck und Ziel}
  Gelerntes aus verschiedenen Modulen anwenden, sich mit der gestellten Aufgabenstellung auseinandersetzen 
  und diese umsetzen.
@@ -96,27 +98,26 @@ hinzugefügt werden können (z.B.: als Plugins).
 \subsection{Primäre Features}
 \begin{itemize}
   \item Generische API
-  \item Spartanisches Dashboard
   \item Unterstützung von Private Cloud Anbietern
   \item Unterstützung von Docker
   \item Unterstützung von ausgewählten Public Cloud Anbietern
 \end{itemize}
 \subsection{Erweiterte Features}
 \begin{itemize}
+  \item Spartanisches User-Dashboard
   \item Unterstützung für mehr Public Cloud Anbieter
-  \item Dashboard um Funktionen erweitern und verbessern
-  \item Plugins über Dashboard installieren (Admin)
+  \item Admin-Dashboard um Funktionen erweitern und verbessern
 \end{itemize}
 \subsection{Lieferumfang}
 \begin{itemize}
   \item Source-Code (Dashboard/API)
   \item Dokumentation (Projekt und Software)
-  \item Benutzerdokumentation (HowTo)
 \end{itemize}
 
 \subsection{Annahmen und Einschränkungen}
-Die Applikation setzte sich aus einem Dashboard und einer generischen API 
+Die Applikation setzte sich aus einem Admin-Dashboard und einer generischen API 
 zusammen, beides sollte dabei verteilt betrieben werden können.
+Das User-Dashboard würde lediglich zum Testen der API verwendet.
 Die generische API soll dabei so viele Anbieter wie möglich abdecken.
 \section{Projektorganisation}
 Wir setzen beim Project auf Scrum, wodurch lediglich die Projektrollen Product 
@@ -169,19 +170,20 @@ Risiken von 41 Stunden.
 \begin{tabularx}{\textwidth}{l X l l}
 \textbf{Sprint} & \textbf{Beschreibung} & \textbf{Beginn} &  \textbf{Ende} \\
 \hline
-\textbf{Sprint 1} & Grundgerüst API, API ansprechbar und Services können 
-abonniert werden + API erweitern (für nicht unterstützte Anbieter) & 05.10.15 & 19.10.15 \\
+\textbf{Sprint 1} & Grundgerüst API + Workflow, API ansprechbar und vorgefertigte Services können 
+abonniert werden  & 12.10.15 & 26.10.15 \\
 \hline
-\textbf{Sprint 2} & Sehr einfaches Dashboard für einen Anbieter, 
-um Anbieter spezifische Services abonnieren zu können 
-& 19.10.15 & 02.11.15 \\
+\textbf{Sprint 2} & Restful Interface für die API, um Services über HTTP 
+abonnieren zu können
+& 26.10.15 & 09.11.15 \\
 \hline
-\textbf{Sprint 3} & Zusätzliche Anbieter einbinden und deren spezifische Services  & 02.11.15 & 16.11.15 \\
+\textbf{Sprint 3} & Authentifizierung bei API für Client Applikation + Benutzer Authentifizierung 
+für jeweiligen Cloud Anbieter & 09.11.15 & 23.11.15 \\
 \hline
-\textbf{Sprint 4} & Dashboard erweitern und verbessern (Login, Administrationsmöglichkeiten) 
-& 16.11.15 & 30.11.15 \\
+\textbf{Sprint 4} & Admin-Dashboard + User-Dashboard erstellen (sehr spartanischt) 
+und letzter Release der Software
+& 23.11.15 & 7.12.15 \\
 \hline
-\textbf{Sprint 5} & API \& Dashboard abschliessen und letzter Release  & 30.11.15 & 07.12.15 \\
 \end{tabularx}
 
 \subsection{Besprechungen}
@@ -211,9 +213,9 @@ Link zur Open Project Instanz : \href{http://sddc.silvn.com}{http://sddc.silvn.c
 \begin{tabularx}{\textwidth}{X X X X}
 \textbf{Name} & \textbf{Hardware} & \textbf{Betriebssystem} & \textbf{IDE} \\
 \hline
-Silvan Adrian & MacBook Pro & OSX 10.10.5 &  N/A \\
+Silvan Adrian & MacBook Pro & OSX 10.10.5 &  pyCharm CE 4.5 \\
 \hline
-Fabian Binna & Lenovo T430s & Windows 10 &  N/A\\
+Fabian Binna & Lenovo T430s & Windows 10 &  pyCharm CE 4.5\\
 \hline
 \end{tabularx}
 
@@ -223,6 +225,7 @@ Fabian Binna & Lenovo T430s & Windows 10 &  N/A\\
     \item \textbf{Versionsmanagement:} GIT
     \item \textbf{Notifications:} Slack
     \item \textbf{Wireframing:} Pencil
+    \item \textbf{Code Coverage:} Coverage.py
 \end{itemize}
 
 \subsection{Kommunikationsmittel}
@@ -252,7 +255,7 @@ Für das Projektmanagement wird OpenProject verwendet.\\
 \subsubsection{Unit Testing / Test-Driven Development}
 Die Unit Tests kommen in einen separaten Ordner "Test".
 Es wird eine möglichst hohe Code Coverage angestrebt.
-Die Code Coverage wird mit einem Tool (z.B. eclEmma) sichergestellt.\\
+Die Code Coverage wird mit einem Tool sichergestellt.\\
 \\
 Die Klassen werden mit Hilfe von Test-Driven Development implementiert.
 
@@ -262,7 +265,7 @@ Nach jedem Sprint oder bei Abschluss grosser Arbeitspakete wird ein Code Review 
 Die Review Protokolle werden auf dem GitHub Repository SDDC-Doku abgelegt.
 
 \subsubsection{Logging}
-Ein Logging-System (z.B. log4j) untestützt die Entwicklung und später das Operating.\\
+Ein Logging-System unterstützt die Entwicklung und später das Operating.\\
 \\
 TRACE: Ausführliches Debugging\\
 DEBUG: allgemeines Debugging\\
@@ -273,7 +276,9 @@ FATAL: Kritischer Fehler\\
 \\
 
 \subsubsection{Metrikanalyse}
-Die Metriken werden nach jedem Sprint protokolliert und Analysiert. Die Metriken helfen während einem Code-Review auf problematische Code Stücke hinzuweisen. Sie können auch beim Debuggen hilfreich sein.
+Die Metriken werden nach jedem Sprint protokolliert und Analysiert. 
+Die Metriken helfen während einem Code-Review auf problematische 
+Code Stücke hinzuweisen. Sie können auch beim Debugen hilfreich sein.
 
 \subsubsection{Code Style Guidelines}
 Editor Standard
