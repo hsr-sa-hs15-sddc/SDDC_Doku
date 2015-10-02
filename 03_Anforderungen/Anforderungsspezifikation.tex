@@ -13,6 +13,7 @@ linkcolor = black]{hyperref}
 \usepackage{scrpage2}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{longtable, tabu}
 \graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
 \pagestyle{scrheadings}
 
@@ -56,7 +57,8 @@ linkcolor = black]{hyperref}
 \hline
 \textbf{02.10.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
 \textbf{02.10.15} & 1.01 & Nicht funktionale Anforderungen & Silvan Adrian\\
-
+\textbf{02.10.15} & 1.02 & Use Cases Aktoren + User Stories Aktoren & Silvan 
+Adrian\\
 
 \end{tabularx}
 
@@ -79,6 +81,81 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 
 
 \subsection{Dashboard}
+
+\section{Use Cases}
+\subsection{Use Case Diagramm}
+\includegraphics[width=\textwidth]{UseCase-Diagramm}
+\subsection{Aktoren \& Stakeholders}
+\subsubsection{User}
+Als User möchte ich meine abonnierten Services verwalten.
+\\
+\begin{tabularx}{\linewidth}{l l X }
+  \textbf{Aktor} & \textbf{Typ} & \textbf{Ziele}\\
+  \hline
+  User & Primary & 
+  \begin{minipage}{5in}
+  \vskip 4pt
+  \begin{itemize}
+    \item Service abonnieren
+    \item Service kündigen
+  \end{itemize}
+  \vskip 4pt
+ \end{minipage}\\
+ \hline
+\end{tabularx}
+
+
+\subsubsection{Admin}
+Als Admin möchte ich Services und Servicemodule verwalten können.
+\\
+\begin{tabularx}{\linewidth}{l l X }
+  \textbf{Aktor} & \textbf{Typ} & \textbf{Ziele}\\
+  \hline
+  Admin & Primary & 
+  \begin{minipage}{5in}
+  \vskip 4pt
+  \begin{itemize}
+    \item Service erstellen
+    \item Service anpassen
+    \item Service löschen
+    \item Servicemodul erstellen
+    \item Servicemodul anpassen
+    \item Servicemodul löschen
+  \end{itemize}
+  \vskip 4pt
+ \end{minipage}\\
+ \hline
+\end{tabularx}
+
+
+\subsection{Beschreibungen fully dressed}
+\subsubsection{Service abonnieren}
+\begin{longtabu} to \textwidth {X[1,l] X[2,l]}
+	\bfseries Primäraktor & User  \\\hline 
+	\bfseries Steakholders und Interessen & Spieler: Möchte einen Service abonnieren  \\\hline 
+	\bfseries Vorbedingungen & Das User-Dashboard wurde geöffnet  \\\hline 
+	\bfseries Nachbedingungen & Das User-Dashboard wurde geschlossen  \\\hline 
+	\bfseries Standartablauf & 
+		\begin{enumerate}
+			\item Der User gibt die Webadresse für das Dashboard ein
+			
+		\end{enumerate}
+      \\\hline
+	\bfseries Spezielle Anforderungen & siehe nichtfunktionale Anforderungen  \\\hline 
+	\bfseries Technologie- und Datenvarianten & Keine  \\\hline 
+	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
+	\bfseries Offene Fragen & Keine  \\\hline  
+\end{longtabu}
+
+
+\section{User Stories}
+\subsection{Rollen}
+\subsubsection{User}
+Als User benutze ich das Dashboard, um mir einen Service zu abonnieren und 
+\subsubsection{Admin}
+Als Admin benutze ich die API über die Kommandozeile oder nutze das 
+Admin-Dashboard um neue Services zusammenzustellen.
+
 
 
 \section{Nichtfunktionale Anforderungen}
