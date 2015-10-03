@@ -20,8 +20,8 @@ linkcolor = black]{hyperref}
 \clearscrheadfoot
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
-\ifoot{Template}
-\cfoot{Version: 1.03}
+\ifoot{Anforderungsspezifikation}
+\cfoot{Version: 1.04}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -60,6 +60,8 @@ linkcolor = black]{hyperref}
 \textbf{02.10.15} & 1.02 & Use Cases Aktoren + User Stories Aktoren & Silvan 
 Adrian\\
 \textbf{03.10.15} & 1.03 & Anforderungen API & Fabian Binna\\
+\textbf{03.10.15} & 1.04 & Anforderungen Dashboards + Mockups eingefügt & Silvan 
+Adrian\\
 
 \end{tabularx}
 
@@ -80,7 +82,7 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 \section{Anforderungen}
 \subsection{API}
 Die API definiert einen Workflow der einen Service auf einer Cloud erstellt. Es ist offen, ob dieser Service über mehrere Cloud Anbieter hinaus geht. Der Service wird durch ein Konfigurationsfile (z.B. json) definiert. Zusätzlich können Scriptfiles referenziert werden, die die Software auf den Instanzen installieren. Ein Service kann auch wieder gelöscht werden. Es ist nicht die Aufgabe der API existierende Services zu identifizieren. Die API muss Modular sein, das heisst es sollte möglich sein andere oder eigene Programme für die Cloud Kommunikation zu verwenden. Innerhalb der API werden Compute, Storage, Network usw. als ServiceModule bezeichnet. Diese Abstraktion ermöglicht das wiederverwerten und erweitern der API.
-
+\newpage
 \subsection{Customer-Dashboard}
 \subsubsection{Homescreen}
 Im Homescreen (sobald der Customer auf das Dashboard zugreift) werden alle zu 
@@ -104,16 +106,18 @@ Provider gewählt werden (häng auch wieder davon ab von welchem Provider bisher
 wurden).
 Da momentan noch kein Hybrid Betrieb vorgesehen ist muss ein Account gewählt 
 werden unter welchem der Service verrechnet wird.
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{service_settings}
+\end{figure}
 
-\includegraphics[width=\textwidth]{service_settings}
-
+\newpage
 \subsubsection{Cloud Credentials}
 Da für jeden Provider wieder Logindaten benötigt werden müssen diese an einer 
 zentralen Stelle gespeichert werden (anhand von denen kann sich auch das Service Angebot 
 ändern).
-
+\begin{figure}[h]
 \includegraphics[width=\textwidth]{service_accounts}
-
+\end{figure}
 \subsection{Admin-Dashboard}
 Zusätzlich zum Customer-Dashboard soll ein Admin-Dashboard zur Verfügung stellen 
 in welchem der Admin Services und Servicemodule erstellen kann.
