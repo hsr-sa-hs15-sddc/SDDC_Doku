@@ -21,7 +21,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Template}
-\cfoot{Version: 1.00}
+\cfoot{Version: 1.03}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -59,6 +59,7 @@ linkcolor = black]{hyperref}
 \textbf{02.10.15} & 1.01 & Nicht funktionale Anforderungen & Silvan Adrian\\
 \textbf{02.10.15} & 1.02 & Use Cases Aktoren + User Stories Aktoren & Silvan 
 Adrian\\
+\textbf{03.10.15} & 1.03 & Anforderungen API & Fabian Binna\\
 
 \end{tabularx}
 
@@ -78,7 +79,7 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 
 \section{Anforderungen}
 \subsection{API}
-
+Die API definiert einen Workflow der einen Service auf einer Cloud erstellt. Es ist offen, ob dieser Service über mehrere Cloud Anbieter hinaus geht. Der Service wird durch ein Konfigurationsfile (z.B. json) definiert. Zusätzlich können Scriptfiles referenziert werden, die die Software auf den Instanzen installieren. Ein Service kann auch wieder gelöscht werden. Es ist nicht die Aufgabe der API existierende Services zu identifizieren. Die API muss Modular sein, das heisst es sollte möglich sein andere oder eigene Programme für die Cloud Kommunikation zu verwenden. Innerhalb der API werden Compute, Storage, Network usw. als ServiceModule bezeichnet. Diese Abstraktion ermöglicht das wiederverwerten und erweitern der API.
 
 \subsection{Customer-Dashboard}
 \subsubsection{Homescreen}
