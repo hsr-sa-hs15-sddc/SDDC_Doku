@@ -25,7 +25,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Projektplan: SDDC}
-\cfoot{Version: 1.07}
+\cfoot{Version: 1.08}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -69,6 +69,7 @@ Projektübersicht & Silvan Adrian\\
 Binna\\
 \textbf{02.10.15} & 1.07 & Verbesserungen gemäss neusten Erkenntnissen & Silvan 
 Adrian\\
+\textbf{03.10.15} & 1.08 & Testing angepasst + IDE definiert & Fabian Binna\\
 \end{tabularx}
 
 \newpage
@@ -252,6 +253,10 @@ Für das Projektmanagement wird OpenProject verwendet.\\
 
 
 \subsection{Entwicklung}
+
+\subsubsection{IDE}
+PyCharm\\
+
 \subsubsection{Unit Testing / Test-Driven Development}
 Die Unit Tests kommen in einen separaten Ordner "Test".
 Es wird eine möglichst hohe Code Coverage angestrebt.
@@ -265,7 +270,7 @@ Nach jedem Sprint oder bei Abschluss grosser Arbeitspakete wird ein Code Review 
 Die Review Protokolle werden auf dem GitHub Repository SDDC-Doku abgelegt.
 
 \subsubsection{Logging}
-Ein Logging-System unterstützt die Entwicklung und später das Operating.\\
+Für das Logging wird das Python Modul logging verwendet. Der Vorteil von logging ist, dass auch Third-Party Modules am Logging teilnehmen können. So können auch die Events der APIs abgefangen werden und in einem Zentralen Log-File gespeichert werden.\\
 \\
 TRACE: Ausführliches Debugging\\
 DEBUG: allgemeines Debugging\\
@@ -280,8 +285,6 @@ Die Metriken werden nach jedem Sprint protokolliert und Analysiert.
 Die Metriken helfen während einem Code-Review auf problematische 
 Code Stücke hinzuweisen. Sie können auch beim Debugen hilfreich sein.
 
-\subsubsection{Code Style Guidelines}
-Editor Standard
 
 \subsection{Testen}
 
@@ -294,7 +297,7 @@ works on my machine'' abzudecken.\\
 
 Produkte:
 \begin{itemize}
-\item Irgend eine Unit-tester (je nach Sprache)
+\item PyCharm Unit Tester
 \item Travis
 \end{itemize}
 
@@ -304,21 +307,18 @@ Die Tests werden an verschiedenen Schichten angesetzt (Presentation und Business
 
 Produkte:
 \begin{itemize}
-\item Irgend ein Unit-tester (je nach Sprache)
-\item Für Presentation-Layer kommt \url{http://karma-runner.github.io/0.13/index.html}{Karma} zum Einsatz.
+\item PyCharm Unit Tester
 \item Log-Daten
 \end{itemize}
 
 \subsection{Systemtest}
-Die Systemtests richten sich nach den Use Cases. Auch hier kann mit Karma getestet werden (Das wäre dann eher ein sehr grosser Integrationstest). Die Use Cases werden von einem Tester nach Protokollangaben durchgeführt und dokumentiert.
-Auch hier können Log-Daten eine Hilfe für die Analyse sein.
+Die Systemtests richten sich nach den Use Cases. Die Use Cases werden von einem Tester nach Protokollangaben durchgeführt und dokumentiert. Auch hier können Log-Daten eine Hilfe für die Analyse sein.
 
 Systemtests werden nach jedem Sprint durchgeführt um die geplante Funktionalität 
 zu testen und so die neuste Version der Software releasen zu können.\\
 
 Produkte:
 \begin{itemize}
-\item Karma
 \item Protokoll
 \item Log-Daten
 \end{itemize}
