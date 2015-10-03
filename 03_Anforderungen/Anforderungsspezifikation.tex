@@ -111,7 +111,7 @@ angezeigt und können hier auch gekündigt werden.
 
 \subsubsection{Service abonnieren}
 Sobald ein Service auf dem Homescreen ausgewählt wird muss noch der zuständige 
-Provider gewählt werden (häng auch wieder davon ab von welchem Provider bisher Logindaten hinterlegt 
+Provider gewählt werden (häng auch wieder davon ab von welchem Provider bisher Login Daten hinterlegt 
 wurden).
 Da momentan noch kein Hybrid Betrieb vorgesehen ist muss ein Account gewählt 
 werden unter welchem der Service verrechnet wird.
@@ -121,7 +121,7 @@ werden unter welchem der Service verrechnet wird.
 
 \newpage
 \subsubsection{Cloud Credentials}
-Da für jeden Provider wieder Logindaten benötigt werden müssen diese an einer 
+Da für jeden Provider wieder Login Daten benötigt werden müssen diese an einer 
 zentralen Stelle gespeichert werden (anhand von denen kann sich auch das Service Angebot 
 ändern).
 \begin{figure}[h]
@@ -161,9 +161,9 @@ Als Customer möchte ich meine abonnierten Services verwalten.
   \begin{itemize}
     \item Service abonnieren
     \item Service kündigen
-    \item Cloud Logindaten hinzufügen
-    \item Cloud Logindaten anpassen
-    \item Cloud Logindaten löschen
+    \item Cloud Login Daten hinzufügen
+    \item Cloud Login Daten anpassen
+    \item Cloud Login Daten löschen
   \end{itemize}
   \vskip 4pt
  \end{minipage}\\
@@ -328,11 +328,11 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 \end{longtabu}
 %Service kündigen end
 \newpage
-%Cloud Logindaten verwalten begin
-\subsubsection{UC03: Cloud Logindaten verwalten}
+%Cloud Login Daten verwalten begin
+\subsubsection{UC03: Cloud Login Daten verwalten}
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
-	\bfseries Steakholders und Interessen & Customer: Möchte ich Cloud Logindaten verwalten  \\\hline 
+	\bfseries Steakholders und Interessen & Customer: Möchte ich Cloud Login Daten verwalten  \\\hline 
 	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet  \\\hline 
 	\bfseries Nachbedingungen & Die Account Infos wurden gespeichert  \\\hline 
 	\bfseries Standartablauf & 
@@ -373,7 +373,7 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
 	\bfseries Offene Fragen & Keine  \\\hline  
 \end{longtabu}
-%Cloud Logindaten verwalten end
+%Cloud Login Daten verwalten end
 %Services verwalten begin
 \subsubsection{UC04: Services verwalten}
 
@@ -467,15 +467,97 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 	\bfseries Offene Fragen & Keine  \\\hline  
 \end{longtabu}
 %Servicemodule verwalten end
+
+
 \newpage
+\section{Epics}
+\subsection{Customer}
+\begin{itemize}
+  \item Service abonnieren
+  \item Service kündigen
+  \item Cloud Login Daten verwalten
+\end{itemize}
+\subsection{Admin}
+\begin{itemize}
+  \item Service verwalten
+  \item Servicemodul verwalten
+\end{itemize}
 \section{User Stories}
 \subsection{Rollen}
-\subsubsection{User}
-Als User benutze ich das Dashboard, um mir einen Service zu abonnieren und 
+\subsubsection{Customer}
+Als Customer benutze ich das Dashboard, um für mich einen Service zu abonnieren oder zu 
+kündigen, ebenfalls verwalte ich meine Cloud Login Daten
 \subsubsection{Admin}
-Als Admin benutze ich die API über die Kommandozeile oder nutze das 
-Admin-Dashboard um neue Services zusammenzustellen.
-
+Als Admin erstelle ich neue Services und Servicemodule und erweitere diese um 
+neue Funktionen/Verbesserungen.
+\subsection{Customer}
+\subsubsection{Customer greift auf Customer-Dashboard zu}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Prio} & Hoch\\
+  \hline
+  \textbf{Story Points} & 3\\
+  \hline
+  \textbf{Story}& Als Customer möchte ich auf das Customer-Dashboard zugreifen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Der Customer kann den Url des Customer-Dashboard aufrufen und 
+  kriegt das Dashboard angezeigt\\
+  \hline
+   \end{tabularx}
+  
+ \subsection{Admin}
+ \subsubsection{Admin greift auf Dashboard zu}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Prio} & Hoch\\
+  \hline
+  \textbf{Story Points} & 3\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich auf das Admin-Dashboard zugreifen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Der Admin kann den Url des Customer-Dashboard aufrufen und 
+  kriegt ein Login angezeigt.\\
+  \hline
+  \textbf{A2} & Der Admin kann sich einloggen und kriegt die Service Übersicht angezeigt\\
+  \hline
+ \end{tabularx}
+ 
+ 
+  \subsubsection{Admin erstellt Servicemodul}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Prio} & Hoch\\
+  \hline
+  \textbf{Story Points} & 3\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich Servicemodule erstellen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Das Servicemodule kann nur erstellt werden, falls Admin eingeloggt ist.\\
+  \hline
+  \textbf{A2} & Das Servicemodul wird erstellt und wird in der Servicemodule Übersicht angezeigt\\
+  \hline
+ \end{tabularx}
+ 
+   \subsubsection{Admin ändert Servicemodul}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Prio} & Hoch\\
+  \hline
+  \textbf{Story Points} & 3\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich Servicemodule ändern können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Als Admin krieg ich die Übersicht der verfügbaren Servicemodule\\
+  \hline
+  \textbf{A2} & Als Admin kann ich Name, Provider anpassen und speichern\\
+  \hline
+    \textbf{A3} & Als Admin kann ich die Änderungen einsehen\\
+  \hline
+ \end{tabularx}
 
 
 \section{Nichtfunktionale Anforderungen}
@@ -488,9 +570,8 @@ Admin-Dashboard um neue Services zusammenzustellen.
 \subsection{Schnittstellen}
 \begin{itemize}
   \item Die Software wird über HTTP/HTTPS angesprochen
-  \item Zur Interaktion im Admin-Dashboard werden die herkömmlichen 
+  \item Zur Interaktion im Admin-Dashboard/Customer-Dashboard werden die herkömmlichen 
   Schnittstellen gebraucht (Maus,Tastatur,Bildschirm)
-  \item Interaktionen können auch über die Kommandozeile ausgeführt werden
 \end{itemize}
 \subsection{Qualitätsmerkmale}
 \subsubsection{Funktionalität}
