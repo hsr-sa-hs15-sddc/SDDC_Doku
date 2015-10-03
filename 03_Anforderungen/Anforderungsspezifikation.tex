@@ -80,19 +80,68 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 \subsection{API}
 
 
-\subsection{Dashboard}
+\subsection{Customer-Dashboard}
+\subsubsection{Homescreen}
+Im Homescreen (sobald der Customer auf das Dashboard zugreift) werden alle zu 
+Verfügung stehenden Services angezeigt.
+Hier werden die Services Offerings genannt um eine Unterscheidung zwischen 
+Abonnierten Services (Services) und zur Verfügung stehenden Services (Offerings) 
+machen zu können.
+
+\includegraphics[width=\textwidth]{homescreen_customer}
+
+\subsubsection{Services Übersicht}
+In der Services Übersicht werden dem Customer alle abonnierten Services 
+angezeigt und können hier auch gekündigt werden.
+
+\includegraphics[width=\textwidth]{services_overview}
+
+
+\subsubsection{Service abonnieren}
+Sobald ein Service auf dem Homescreen ausgewählt wird muss noch der zuständige 
+Provider gewählt werden (häng auch wieder davon ab von welchem Provider bisher Logindaten hinterlegt 
+wurden).
+Da momentan noch kein Hybrid Betrieb vorgesehen ist muss ein Account gewählt 
+werden unter welchem der Service verrechnet wird.
+
+\includegraphics[width=\textwidth]{service_settings}
+
+\subsubsection{Cloud Credentials}
+Da für jeden Provider wieder Logindaten benötigt werden müssen diese an einer 
+zentralen Stelle gespeichert werden (anhand von denen kann sich auch das Service Angebot 
+ändern).
+
+\includegraphics[width=\textwidth]{service_accounts}
+
+\subsection{Admin-Dashboard}
+Zusätzlich zum Customer-Dashboard soll ein Admin-Dashboard zur Verfügung stellen 
+in welchem der Admin Services und Servicemodule erstellen kann.
+
+\subsubsection{Service}
+Ein Service hat einen bestimmten Namen und jedem Service sind eine gewisse 
+Anzahl Servicemodule zugeteilt. um den Service abbilden zu können.
+Hier kann der Admin den Service ändern und je nach Anforderung den Service 
+anpassen.
+
+\includegraphics[width=\textwidth]{homescreen_admin}
+
+\subsubsection{Servicemodul}
+Jedes Servicemodul besitzt einen Namen und wird einem Provider zugeschrieben, 
+dabei kann jedes Servicemodule den Typ Compute,Network oder Storage haben.
+
+\includegraphics[width=\textwidth]{servicemodules_admin}
 
 \section{Use Cases}
 \subsection{Use Case Diagramm}
 \includegraphics[width=\textwidth]{UseCase-Diagramm}
 \subsection{Aktoren \& Stakeholders}
-\subsubsection{User}
-Als User möchte ich meine abonnierten Services verwalten.
+\subsubsection{Customer}
+Als Customer möchte ich meine abonnierten Services verwalten.
 \\
 \begin{tabularx}{\linewidth}{l l X }
   \textbf{Aktor} & \textbf{Typ} & \textbf{Ziele}\\
   \hline
-  User & Primary & 
+  Customer & Primary & 
   \begin{minipage}{5in}
   \vskip 4pt
   \begin{itemize}
