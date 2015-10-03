@@ -21,7 +21,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Anforderungsspezifikation}
-\cfoot{Version: 1.04}
+\cfoot{Version: 1.05}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -62,6 +62,7 @@ Adrian\\
 \textbf{03.10.15} & 1.03 & Anforderungen API & Fabian Binna\\
 \textbf{03.10.15} & 1.04 & Anforderungen Dashboards + Mockups eingefügt & Silvan 
 Adrian\\
+\textbf{03.10.15} & 1.05 & Use Cases fully dressed & Silvan Adrian\\
 
 \end{tabularx}
 
@@ -81,7 +82,15 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 
 \section{Anforderungen}
 \subsection{API}
-Die API definiert einen Workflow der einen Service auf einer Cloud erstellt. Es ist offen, ob dieser Service über mehrere Cloud Anbieter hinaus geht. Der Service wird durch ein Konfigurationsfile (z.B. json) definiert. Zusätzlich können Scriptfiles referenziert werden, die die Software auf den Instanzen installieren. Ein Service kann auch wieder gelöscht werden. Es ist nicht die Aufgabe der API existierende Services zu identifizieren. Die API muss Modular sein, das heisst es sollte möglich sein andere oder eigene Programme für die Cloud Kommunikation zu verwenden. Innerhalb der API werden Compute, Storage, Network usw. als ServiceModule bezeichnet. Diese Abstraktion ermöglicht das wiederverwerten und erweitern der API.
+Die API definiert einen Workflow der einen Service auf einer Cloud erstellt. Es ist offen, ob 
+dieser Service über mehrere Cloud Anbieter hinaus geht. Der Service wird durch 
+ein Konfigurationsfile (z.B. json) definiert. Zusätzlich können Scriptfiles referenziert werden, 
+die die Software auf den Instanzen installieren. Ein Service kann auch wieder gelöscht werden.
+ Es ist nicht die Aufgabe der API existierende Services zu identifizieren. 
+ Die API muss Modular sein, das heisst es sollte möglich sein andere oder eigene 
+ Programme für die Cloud Kommunikation zu verwenden. Innerhalb der API 
+ werden Compute, Storage, Network usw. als ServiceModule bezeichnet. 
+ Diese Abstraktion ermöglicht das wiederverwenden und erweitern der API.
 \newpage
 \subsection{Customer-Dashboard}
 \subsubsection{Homescreen}
@@ -184,101 +193,281 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
  \hline
 \end{tabularx}
 
-
+\newpage
 \subsection{Beschreibungen fully dressed}
-\subsubsection{Service abonnieren}
+%Serve abonnieren begin
+\subsubsection{UC01: Service abonnieren}
+\belowtabulinesep = 1mm
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
 	\bfseries Steakholders und Interessen & Customer: Möchte einen Service abonnieren  \\\hline 
-	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet  \\\hline 
-	\bfseries Nachbedingungen & Das Customer-Dashboard wurde geschlossen  \\\hline 
+	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet, ist bei der API authentifiziert und 
+	hat einen Cloud Account hinzugefügt. \\\hline 
+	\bfseries Nachbedingungen & Die Service Infos wurden gespeichert und der Workflow wurde angestossen  
+	\\\hline 
 	\bfseries Standartablauf & 
 		\begin{enumerate}
 			\item Der Customer gibt die Webadresse für das Dashboard ein
-			
+			\item Wiederholen bis kein Service mehr abonniert werden soll
+			\begin{enumerate}
+			    \item Der Customer wechselt in die \textbf{Offerings Übersicht}
+			    \item Der Customer wählt einen der vorhanden \textbf{Services} aus
+			    \item Der Customer wählt einen vorhanden \textbf{Account} auf welchem er den \textbf{Service}
+			abonnieren will
+			    \item Der Customer drückt den Button \textbf{subscribe Service}
+			    \item Der Customer wird in die \textbf{Services Übersicht} weitergeleitet
+			\end{enumerate}
+		\item Der Customer schliesst das Customer-Dashboard
 		\end{enumerate}
       \\\hline
+      	\bfseries Alternativer Ablauf & 
+		\begin{enumerate}
+		  
+		\item
+		  \begin{enumerate}
+		    \item Der Customer entscheidet sich um und schliesst das 
+		    Fenster/Tab
+		    
+		  \end{enumerate}
+		  
+		  \item 
+                 \begin{enumerate}
+		    \item Der Customer entscheidet sich um
+		    \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		    \end{enumerate}
+		    \item  Der Customer entscheidet sich um
+		     \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		      \item geht zurück in die \textbf{Offerings Übersicht}
+		    \end{enumerate}
+		    
+		       \item  Der Customer entscheidet sich um
+		     \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		      \item geht zurück in die \textbf{Offerings Übersicht}
+		      \item wählt einen anderen Account
+		    \end{enumerate}
+		    
+		    
+		     \item  Der Customer entscheidet sich um
+		     \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		      \item geht zurück in die \textbf{Offerings Übersicht}
+		      \item wählt einen anderen Account
+		    \end{enumerate}
+		    
+		  \end{enumerate}
+			
+		\end{enumerate}
+	 \\\hline
 	\bfseries Spezielle Anforderungen & siehe nichtfunktionale Anforderungen  \\\hline 
 	\bfseries Technologie- und Datenvarianten & Keine  \\\hline 
 	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
 	\bfseries Offene Fragen & Keine  \\\hline  
 \end{longtabu}
-
-\subsubsection{Service kündigen}
+%Serve abonnieren end
+\newpage
+%Service kündigen begin
+\subsubsection{UC02: Service kündigen}
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
 	\bfseries Steakholders und Interessen & Customer: Möchte einen Service kündigen  \\\hline 
-	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet  \\\hline 
-	\bfseries Nachbedingungen & Das Customer-Dashboard wurde geschlossen  \\\hline 
+	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet, ist bei der API authentifiziert und 
+	hat einen Service abonniert  \\\hline 
+	\bfseries Nachbedingungen & Die Service Infos wurden gelöscht und der Workflow wurde angestossen   \\\hline 
 	\bfseries Standartablauf & 
 		\begin{enumerate}
 			\item Der Customer gibt die Webadresse für das Dashboard ein
+			\item Wiederholen bis kein Service mehr gekündigt werden soll
+			\begin{enumerate}
+			    \item Der Customer wechselt in die \textbf{Services Übersicht}
+			    \item Der Customer wählt einen der vorhanden \textbf{Services} aus
+			    \item Der Customer drückt auf den link \textbf{terminate}
+			    \item Der Customer wird in die \textbf{Services Übersicht} weitergeleitet
+			\end{enumerate}
+		\item Der Customer schliesst das Customer-Dashboard
+		\end{enumerate}
+      \\\hline
+      	\bfseries Alternativer Ablauf & 
+		\begin{enumerate}
+		  
+		\item
+		  \begin{enumerate}
+		    \item Der Customer entscheidet sich um und schliesst das 
+		    Fenster/Tab
+		  \end{enumerate}
+		  \item 
+                 \begin{enumerate}
+		    \item Der Customer entscheidet sich um
+		    \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		    \end{enumerate}
+		    \item  Der Customer entscheidet sich um
+		     \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		      \item wählt einen anderen Service
+		    \end{enumerate}
+		    
+		       \item  Der Customer entscheidet sich um
+		     \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		      \item wählt einen anderen Service
+		    \end{enumerate}
+		    
+		  \end{enumerate}
 			
 		\end{enumerate}
+	 \\\hline
+
       \\\hline
 	\bfseries Spezielle Anforderungen & siehe nichtfunktionale Anforderungen  \\\hline 
 	\bfseries Technologie- und Datenvarianten & Keine  \\\hline 
 	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
 	\bfseries Offene Fragen & Keine  \\\hline  
 \end{longtabu}
-
-\subsubsection{Cloud Logindaten verwalten}
+%Service kündigen end
+\newpage
+%Cloud Logindaten verwalten begin
+\subsubsection{UC03: Cloud Logindaten verwalten}
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
 	\bfseries Steakholders und Interessen & Customer: Möchte ich Cloud Logindaten verwalten  \\\hline 
 	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet  \\\hline 
-	\bfseries Nachbedingungen & Das Customer-Dashboard wurde geschlossen  \\\hline 
+	\bfseries Nachbedingungen & Die Account Infos wurden gespeichert  \\\hline 
 	\bfseries Standartablauf & 
 		\begin{enumerate}
 			\item Der Customer gibt die Webadresse für das Dashboard ein
-			
+			\item Der Customer wechselt in die \textbf{Account/Cloud Credentials Übersicht}
+			\item Solange wiederholen bis kein Account mehr hinzugefügt werden muss
+			  \begin{enumerate}
+			    \item Customer drückt Button \textbf{Add Credentials}
+			    \item Customer füllt gefragt Felder aus
+			    \item Customer bestätigt Eingaben mit Klick auf \textbf{Save}
+			  \end{enumerate}
+			\item Der Customer schliesst das Customer-Dashboard
 		\end{enumerate}
+      \\\hline
+      \bfseries Alternativer Ablauf & 
+      \begin{enumerate}
+          \setcounter{enumi}{2}
+            \item 
+            \begin{enumerate}
+              \item Wiederholen bis kein Account mehr geändert werden muss
+                \begin{enumerate}
+                  \item Account auswählen und auf \textbf{change} Link klicken
+                  \item Felder anpassen
+                  \item Änderungen bestätigen mit Klick auf Button \textbf{Save}
+                \end{enumerate}
+                \item Wiederholen bis kein Account mehr gelöscht werden muss
+                \begin{enumerate}
+                  \item Account auswählen und auf \textbf{delete} Link klicken
+                \end{enumerate}
+            \end{enumerate}
+            
+      \end{enumerate}
+      
       \\\hline
 	\bfseries Spezielle Anforderungen & siehe nichtfunktionale Anforderungen  \\\hline 
 	\bfseries Technologie- und Datenvarianten & Keine  \\\hline 
 	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
 	\bfseries Offene Fragen & Keine  \\\hline  
 \end{longtabu}
-
-
-\subsubsection{Services verwalten}
+%Cloud Logindaten verwalten end
+%Services verwalten begin
+\subsubsection{UC04: Services verwalten}
 
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
 	\bfseries Steakholders und Interessen & Admin: Möchte einen Service verwalten  \\\hline 
-	\bfseries Vorbedingungen & Das Admin-Dashboard wurde geöffnet  \\\hline 
-	\bfseries Nachbedingungen & Das Admin-Dashboard wurde geschlossen  \\\hline 
+	\bfseries Vorbedingungen & Das Admin-Dashboard wurde geöffnet und Admin eingeloggt, 
+	falls Service gelöscht werden soll darf kein Customer mehr den Service abonniert haben\\\hline 
+	\bfseries Nachbedingungen & Das Admin-Dashboard wurde geschlossen und Änderungen 
+	wurden gespeichert  \\\hline 
 	\bfseries Standartablauf & 
 		\begin{enumerate}
 			\item Der Admin gibt die Webadresse für das Admin-Dashboard ein
-			
+			\item Wiederholen bis kein neuer Service hinzugefügt werden muss
+			\begin{enumerate}
+			  \item Der Admin wechselt in die \textbf{Services Übersicht}
+			  \item Der Admin drückt auf den button \textbf{create Service}
+			  \item Der Admin füllt die benötigten Daten ein \textbf{(Name, welche Servicemodule)}
+			  \item der Admin bestätigt mit Klick auf Button \textbf{Save}
+			\end{enumerate}
 		\end{enumerate}
+      \\\hline
+      \bfseries Alternativer Ablauf & 
+      \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item 
+        \begin{enumerate}
+          \item Wiederholen bis kein Service mehr geändert werden muss
+            \begin{enumerate}
+              \item Service auswählen und auf Link \textbf{change} klicken
+              \item Daten ändern
+              \item Durch Klick auf Button \textbf{Save} bestätigen
+            \end{enumerate}
+            \item Wiederholen bis kein Service mehr gelöscht werden muss
+            \begin{enumerate}
+              \item Service auswählen und Link \textbf{löschen} auswählen
+            \end{enumerate}
+        \end{enumerate}
+      \end{enumerate}
       \\\hline
 	\bfseries Spezielle Anforderungen & siehe nichtfunktionale Anforderungen  \\\hline 
 	\bfseries Technologie- und Datenvarianten & Keine  \\\hline 
 	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
 	\bfseries Offene Fragen & Keine  \\\hline  
 \end{longtabu}
-
-\subsubsection{Servicemodule verwalten}
-
+%Services verwalten end
+\newpage
+%Servicemodule verwalten begin
+\subsubsection{UC05: Servicemodule verwalten}
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
 	\bfseries Steakholders und Interessen & Admin: Möchte ein Servicemodul verwalten  \\\hline 
-	\bfseries Vorbedingungen & Das Admin-Dashboard wurde geöffnet  \\\hline 
-	\bfseries Nachbedingungen & Das Admin-Dashboard wurde geschlossen  \\\hline 
+	\bfseries Vorbedingungen & Das Admin-Dashboard wurde geöffnet und Admin eingeloggt, 
+	falls Servicemodul gelöscht werden soll darf kein Service mehr das Servicemodul verwenden. \\\hline 
+	\bfseries Nachbedingungen & Das Admin-Dashboard wurde geschlossen und 
+	Änderungen wurden gespeichert \\\hline 
 	\bfseries Standartablauf & 
-		\begin{enumerate}
-			\item Der Customer gibt die Webadresse für das Dashboard ein
-			
+	\begin{enumerate}
+			\item Der Admin gibt die Webadresse für das Admin-Dashboard ein
+			\item Wiederholen bis kein neues Servicemodul hinzugefügt werden muss
+			\begin{enumerate}
+			  \item Der Admin wechselt in die \textbf{Servicemodules Übersicht}
+			  \item Der Admin drückt auf den button \textbf{create Servicemodule}
+			  \item Der Admin füllt die benötigten Daten ein \textbf{(Name, Provider,Typ)}
+			  \item der Admin bestätigt mit Klick auf Button \textbf{Save}
+			\end{enumerate}
 		\end{enumerate}
       \\\hline
+      \bfseries Alternativer Ablauf & 
+      \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item 
+        \begin{enumerate}
+          \item Wiederholen bis kein Servicemodul mehr geändert werden muss
+            \begin{enumerate}
+              \item Servicemodul auswählen und auf Link \textbf{change} klicken
+              \item Daten ändern
+              \item Durch Klick auf Button \textbf{Save} bestätigen
+            \end{enumerate}
+            \item Wiederholen bis kein Servicemodul mehr gelöscht werden muss
+            \begin{enumerate}
+              \item Service auswählen und Link \textbf{löschen} auswählen
+            \end{enumerate}
+        \end{enumerate}
+      \end{enumerate}
+      \\\hline
+
 	\bfseries Spezielle Anforderungen & siehe nichtfunktionale Anforderungen  \\\hline 
 	\bfseries Technologie- und Datenvarianten & Keine  \\\hline 
 	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
 	\bfseries Offene Fragen & Keine  \\\hline  
 \end{longtabu}
-
+%Servicemodule verwalten end
+\newpage
 \section{User Stories}
 \subsection{Rollen}
 \subsubsection{User}
