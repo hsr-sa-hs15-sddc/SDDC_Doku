@@ -493,9 +493,9 @@ neue Funktionen/Verbesserungen.
 \subsection{Customer}
 \subsubsection{Customer greift auf Customer-Dashboard zu}
 \begin{tabularx}{\linewidth}{l X}
-  \textbf{Prio} & Hoch\\
+  \textbf{Priorität} & Niedrig\\
   \hline
-  \textbf{Story Points} & 3\\
+  \textbf{Story Points} & 1\\
   \hline
   \textbf{Story}& Als Customer möchte ich auf das Customer-Dashboard zugreifen können\\
   \hline
@@ -505,13 +505,130 @@ neue Funktionen/Verbesserungen.
   kriegt das Dashboard angezeigt\\
   \hline
    \end{tabularx}
+   
+ \subsubsection{Customer geht in die Offerings Übersicht}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Niedrig\\
+  \hline
+  \textbf{Story Points} & 2\\
+  \hline
+  \textbf{Story}& Als Customer möchte ich die Offerings in einer Übersicht ansehen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Der Customer kann im Dashboard in die Offerings Übersicht wechseln.\\
+  \hline
+   \end{tabularx}
+   
+ \subsubsection{Customer geht in die Service Übersicht}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Niedrig\\
+  \hline
+  \textbf{Story Points} & 2\\
+  \hline
+  \textbf{Story}& Als Customer möchte ich meine abonnierten Services in einer Übersicht angezeigt bekommen\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Der Customer kann seine abonnierten Services in einer Übersicht anzeigen\\
+  \hline
+   \end{tabularx}
+   
+ \subsubsection{Customer fügt Cloud Login Daten hinzu}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Mittel\\
+  \hline
+  \textbf{Story Points} & 3\\
+  \hline
+  \textbf{Story}& Als Customer möchte ich meine Cloud Login Daten meinem Account hinterlegen\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Der Customer kann seine Login Daten hinzufügen\\
+  \hline
+  \textbf{A2} & In der Offerings Übersicht werden die neuen möglichen Services 
+  angezeigt\\
+  \hline
+    \textbf{A3} & Die neuen Login Daten werden gespeichert\\
+  \hline
+   \end{tabularx}
+ \subsubsection{Customer ändert Cloud Login Daten}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Mittel\\
+  \hline
+  \textbf{Story Points} & 3\\
+  \hline
+  \textbf{Story}& Als Customer möchte ich meine hinterlegten Cloud Login Daten ändern können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Der Customer kann seine Login Daten ändern\\
+  \hline
+    \textbf{A2} & Die Änderungen werden gespeichert\\
+  \hline
+   \end{tabularx}
+ \subsubsection{Customer löscht Cloud Login Daten}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Mittel\\
+  \hline
+  \textbf{Story Points} & 4\\
+  \hline
+  \textbf{Story}& Als Customer möchte ich meine Cloud Login Daten aus meinem Account entfernen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Der Customer kann seine Login Daten löschen\\
+  \hline
+  \textbf{A2} & Account kann nicht gelöscht werden, falls noch abonnierte Services auf dem Account bestehen\\
+  \hline
+    \textbf{A3} & Die Login Daten werden entfernt\\
+  \hline
+   \end{tabularx}
+ \subsubsection{Customer abonniert Service}
+\begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 6\\
+  \hline
+  \textbf{Story}& Als Customer möchte ich einen Service abonnieren können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Der Customer kann einen Service abonnieren\\
+  \hline
+  \textbf{A2} & Service wird in die Service Übersicht aufgenommen\\
+  \hline
+    \textbf{A3} & Storage,Compute und Network wurden, wie im Service beschrieben erstellt\\
+  \hline
+      \textbf{A4} & Neuere Version des Services kann nicht abonniert werden wenn alte Version noch abonniert ist\\
+  \hline
+   \end{tabularx}
+ \subsubsection{Customer kündigt Service}
+ \begin{tabularx}{\linewidth}{l X}
+     \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 6\\
+  \hline
+  \textbf{Story}& Als Customer möchte ich einen Service kündigen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+  \textbf{A1} & Der Customer kann einen Service kündigen\\
+  \hline
+  \textbf{A2} & Service wird aus der Service Übersicht entfernt\\
+  \hline
+    \textbf{A3} & Storage,Compute und Network werden, wie im Service beschrieben gelöscht\\
+  \hline
+      \textbf{A4} & Service wird wieder in der Offerings Übersicht angezeigt in seiner neusten Version\\
+  \hline
+   \end{tabularx}
   
  \subsection{Admin}
  \subsubsection{Admin greift auf Dashboard zu}
 \begin{tabularx}{\linewidth}{l X}
-  \textbf{Prio} & Hoch\\
+  \textbf{Priorität} & Hoch\\
   \hline
-  \textbf{Story Points} & 3\\
+  \textbf{Story Points} & 1\\
   \hline
   \textbf{Story}& Als Admin möchte ich auf das Admin-Dashboard zugreifen können\\
   \hline
@@ -527,9 +644,9 @@ neue Funktionen/Verbesserungen.
  
   \subsubsection{Admin erstellt Servicemodul}
 \begin{tabularx}{\linewidth}{l X}
-  \textbf{Prio} & Hoch\\
+  \textbf{Priorität} & Hoch\\
   \hline
-  \textbf{Story Points} & 3\\
+  \textbf{Story Points} & 4\\
   \hline
   \textbf{Story}& Als Admin möchte ich Servicemodule erstellen können\\
   \hline
@@ -543,21 +660,83 @@ neue Funktionen/Verbesserungen.
  
    \subsubsection{Admin ändert Servicemodul}
 \begin{tabularx}{\linewidth}{l X}
-  \textbf{Prio} & Hoch\\
+  \textbf{Priorität} & Hoch\\
   \hline
-  \textbf{Story Points} & 3\\
+  \textbf{Story Points} & 4\\
   \hline
   \textbf{Story}& Als Admin möchte ich Servicemodule ändern können\\
   \hline
     \textbf{Akzeptanzkriterien} & \\
     \hline
-  \textbf{A1} & Als Admin krieg ich die Übersicht der verfügbaren Servicemodule\\
+      \textbf{A1} & Das Servicemodule kann nur geändert werden, falls Admin eingeloggt ist.\\
   \hline
-  \textbf{A2} & Als Admin kann ich Name, Provider anpassen und speichern\\
+  \textbf{A2} & Als Admin krieg ich die Übersicht der verfügbaren Servicemodule\\
   \hline
-    \textbf{A3} & Als Admin kann ich die Änderungen einsehen\\
+  \textbf{A3} & Als Admin kann ich Name, Provider anpassen und speichern\\
+  \hline
+    \textbf{A4} & Versionsnummer des Servicemoduls ändert sich\\
+  \hline
+    \textbf{A5} & Änderungen werden gespeichert\\
   \hline
  \end{tabularx}
+ 
+ 
+ \subsubsection{Admin löscht Servicemodul}
+ 
+ \begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 4\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich Servicemodule löschen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+      \textbf{A1} & Das Servicemodule kann nur gelöscht werden, falls Admin eingeloggt ist.\\
+  \hline
+  \textbf{A2} & Als Admin krieg ich die Übersicht der verfügbaren Servicemodule\\
+  \hline
+  \textbf{A3} & Servicemodule kann gelöscht werden, falls kein Service das Modul mehr nutzt\\
+  \hline
+    \textbf{A4} & Servicemodule ist gelöscht\\
+  \hline
+ \end{tabularx}
+ 
+ 
+ \subsubsection{Admin erstellt Service}
+ \begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 6\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich Services erstellen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+      \textbf{A1} & Der Service kann nur erstellt werden, falls Admin eingeloggt ist.\\
+  \hline
+  \textbf{A2} & Als Admin krieg ich die Übersicht der verfügbaren Services\\
+  \hline
+    \textbf{A3} & Dem Service können Servicemodule hinzugefügt werden\\
+  \hline
+  \textbf{A4} & Service kann erstellt werden\\
+  \hline
+    \textbf{A5} & Der Service ist erstellt\\
+  \hline
+ \end{tabularx}
+ 
+ \subsubsection{Admin ändert Service}
+
+
+ \subsubsection{Admin löscht Service}
+ 
+ \subsubsection{Admin Login ins Admin Dashboard}
+
+ \subsubsection{Admin geht in die Service Übersicht}
+
+ \subsubsection{Admin geht in die Servicemodul Übersicht}
+
+ \subsubsection{Admin Konfigurationsdatei im Servicemodul hinterlegen}
 
 
 \section{Nichtfunktionale Anforderungen}
