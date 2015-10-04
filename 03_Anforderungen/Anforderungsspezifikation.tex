@@ -21,7 +21,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Anforderungsspezifikation}
-\cfoot{Version: 1.05}
+\cfoot{Version: 1.06}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -63,7 +63,7 @@ Adrian\\
 \textbf{03.10.15} & 1.04 & Anforderungen Dashboards + Mockups eingefügt & Silvan 
 Adrian\\
 \textbf{03.10.15} & 1.05 & Use Cases fully dressed & Silvan Adrian\\
-
+\textbf{04.10.15} & 1.06 & User Stories + NFA's verbessert & Silvan Adrian\\
 \end{tabularx}
 
 \newpage
@@ -726,20 +726,118 @@ neue Funktionen/Verbesserungen.
  \end{tabularx}
  
  \subsubsection{Admin ändert Service}
-
+ \begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 6\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich Services ändern können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+      \textbf{A1} & Der Service kann nur geändert werden, falls Admin eingeloggt ist.\\
+  \hline
+  \textbf{A2} & Als Admin krieg ich die Übersicht der verfügbaren Services\\
+  \hline
+    \textbf{A3} & Dem Service können Servicemodule hinzugefügt werden\\
+  \hline
+  \textbf{A4} & Service kann geändert werden\\
+  \hline
+    \textbf{A5} & Der Service ist geändert\\
+  \hline
+  \textbf{A6} & Der Service wird als neue Version gespeichert\\
+  \hline
+ \end{tabularx}
 
  \subsubsection{Admin löscht Service}
  
+  \begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 6\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich Services löschen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+      \textbf{A1} & Der Service kann nur gelöscht werden, falls Admin eingeloggt ist.\\
+  \hline
+  \textbf{A2} & Als Admin krieg ich die Übersicht der verfügbaren Services\\
+  \hline
+  \textbf{A4} & Service kann gelöscht werden, falls niemand mehr den Service abonniert hat\\
+  \hline
+    \textbf{A5} & Der Service ist gelöscht\\
+  \hline
+ \end{tabularx}
+ 
  \subsubsection{Admin Login ins Admin Dashboard}
+   \begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 2\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich mich ins Admin-Dashboard einloggen können\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+      \textbf{A1} & Der Admin kann sich einloggen\\
+  \hline
+ \end{tabularx}
 
  \subsubsection{Admin geht in die Service Übersicht}
+ 
+    \begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 2\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich einen Überblick über die vorhanden Services\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+      \textbf{A1} & Der Admin kann die Service Übersicht öffnen\\
+  \hline
+    \textbf{A2} & Die Service Übersicht wird nur angezeigt, falls der Admin eingeloggt ist.\\
+  \hline
+ \end{tabularx}
 
  \subsubsection{Admin geht in die Servicemodul Übersicht}
+ 
+     \begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 2\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich einen Überblick über die vorhanden Servicemodule\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+      \textbf{A1} & Der Admin kann die Servicemodule Übersicht öffnen\\
+  \hline
+    \textbf{A2} & Die Servicemodule Übersicht wird nur angezeigt, falls der Admin eingeloggt ist.\\
+  \hline
+ \end{tabularx}
+
 
  \subsubsection{Admin Konfigurationsdatei im Servicemodul hinterlegen}
+     \begin{tabularx}{\linewidth}{l X}
+  \textbf{Priorität} & Hoch\\
+  \hline
+  \textbf{Story Points} & 2\\
+  \hline
+  \textbf{Story}& Als Admin möchte ich dem Servicemodul eine Konfigurationsdatei hinterlegen\\
+  \hline
+    \textbf{Akzeptanzkriterien} & \\
+    \hline
+      \textbf{A1} & Der Admin kann dem Servicemodul eine Konfigurationsdatei hinterlegen\\
+  \hline
+    \textbf{A2} & Die Konfigurationsdatei kann nur hinterlegt werden, falls der Admin eingeloggt ist.\\
+  \hline
+ \end{tabularx}
 
+\newpage
 
-\section{Nichtfunktionale Anforderungen}
+\section{Nicht-funktionale Anforderungen}
 \subsection{Menge}
 \begin{itemize}
   \item Die Software unterstützt mehr als 30 Cloud Anbieter (libcloud)
@@ -761,16 +859,17 @@ siehe Abschnitt API und Dashboard
   abgeschlossen werden oder falls Unterbruch/Fehler rückgängig gemacht 
   werden.
   \item Die Software soll verteilt betrieben werden und eine möglichst hohe 
-  Verfügbarkeit bieten
+  Verfügbarkeit/Zuverlässigkeit bieten
 \end{itemize}
 \subsubsection{Benutzerbarkeit}
 \begin{itemize}
-  \item Die Software kann über das vorgesehene Admin-Dashboard benutzt werden
-  \item Die API kann auch über die Kommandozeile angesprochen werden
+  \item Konfigurationen können über das vorgesehene Admin-Dashboard benutzt werden
+  \item Zum verwenden der Software besteht noch ein einfaches 
+  User-Dashboard
 \end{itemize}
 \subsubsection{Effizienz}
 \begin{itemize}
-  \item 
+  \item Die Software Soll mehrere Aufträge von Customern gleichzeitig abarbeiten können
 \end{itemize}
 \subsubsection{Änderbarkeit}
 Die Software soll modular aufgebaut werden, damit Erweiterungen in Zukunft 
