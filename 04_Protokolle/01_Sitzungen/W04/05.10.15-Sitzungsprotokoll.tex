@@ -1,0 +1,106 @@
+\def\minfileversion{V1.8d}     %^^Aof minutes.sty
+\def\minfiledate{2009/12/04}   %^^Aof minutes.sty
+%%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\documentclass{scrreprt}
+%%\documentclass{article}
+%%\documentclass{scrreprt}
+%%\documentclass{scrarctl}
+\usepackage[german]{babel}
+\usepackage{minutes}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\begin{Protokoll}{Weekly Meeting 5. Oktober}
+\moderation{Beat Stettler}
+\protokollant{Silvan Adrian, Fabian Binna}
+\teilnehmer{Silvan Adrian, Fabian Binna  Urs Baumann}
+\fehlendEntschuldigt{Beat Stettler,}
+\sitzungsdatum{5.\ Oktober 2015}
+\sitzungsbeginn{14:30}
+\sitzungsende{15:45}
+\sitzungsort{Raum 2.104 }
+%\verteiler{Vereinsmitglieder}
+%\fehlend[entschuldigt]{abwesend}
+%%\fehlendEntschuldigt{}
+%%\fehlendUnentschuldigt{}
+\protokollKopf
+
+\topic{Anforderungen}%<-- hier Tagesordnungspunkt einfuegen
+\subtopic{Cloud Anbieter accounts}
+\begin{itemize}
+  \item Einfach mit Test Accounts auskommen (da API eher Firmenintern benötigt wird)
+  \item Zugriff auf eine VMware vSphere soll uns noch ermöglicht werden zum 
+  Testen
+  \item DevStack für OpenStack VM mit allem nötigen aufgesetzt
+\end{itemize}
+
+\subtopic{Storage Anbieter}
+\begin{itemize}
+  \item Viper Storage
+  \item NetApp
+  \item etc.
+  \item Direkt einbinden wenn möglich über OpenStack oder CloudStack sonst 
+  libcloud erweitern
+\end{itemize}
+
+\subtopic{Network API}
+\begin{itemize}
+  \item OpenDaylight
+  \item Wichtigster Nenner finden (OpenDaylight) und diesen entweder über 
+  OpenStack oder libcloud erweitern
+\end{itemize}
+
+\subtopic{VMware}
+\begin{itemize}
+  \item bessere Unterstützung von VMware vSphare
+  \item Ebenfalls über OpenStack Treiber falls möglich sonst libcloud erweitern
+\end{itemize}
+
+\subtopic{Templates}
+\begin{itemize}
+  \item Templates sollen auf Anbieter Seite gespeichert werden (kann je nach 
+  Anbieter zu einem Problem werden)
+  \item Für Anbieter wo man keine eigenen Templates hinterlegen kann je nachdem 
+  auf Scriptfiles/CloudInit setzen
+\end{itemize}
+
+\subtopic{libcloud}
+\begin{itemize}
+  \item Wenn möglich Libcloud erweitern (mit den fehlenden Storage und Network Drivern)
+\end{itemize}
+
+\subtopic{CloudStack/OpenStack}
+\begin{itemize}
+  \item Treiber vonOpenStack oder CloudStack verwenden
+  \item Merge aus libcloud und OpenStack/CloudStack
+\end{itemize}
+
+\topic{Termine und Aufgaben}
+\subtopic{Termine}
+\termin{2015/10/12}[14:30-15:15]{Projektmeeting im Bau 2.104}
+
+\topic{Aufgaben}
+\aufgabe*{Anforderungen verbessern}
+\aufgabe*{Prototyp erweitern}
+\aufgabe*{OpenStack Heat einarbeiten}
+\aufgabe*{OpenStack Treiber suchen und testen ob gemäss Vorgaben möglich}
+\aufgabe*{einarbeiten Django + Celery}
+\aufgabe*{Libcloud im Detail analysieren}
+\end{Protokoll}
+\end{document}
+\endinput
