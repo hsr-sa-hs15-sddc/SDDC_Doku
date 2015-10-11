@@ -1,0 +1,89 @@
+\documentclass[11pt]{scrartcl}
+
+\title{REST API}
+\author{Silvan Adrian \\ Fabian Binna}
+\date{\today{}}
+
+\usepackage[ngerman]{babel}
+\usepackage[automark]{scrpage2}
+\usepackage[colorlinks = true,
+linkcolor = black]{hyperref}
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
+\pagestyle{scrheadings}
+
+\clearscrheadfoot
+\ihead{\includegraphics[scale=0.3]{SDDC}}
+\ohead{Projekt: SDDC}
+\ifoot{REST API}
+\cfoot{Version: 1.00}
+\ofoot{Datum: \today{}}
+\setheadsepline{0.5pt}
+\setfootsepline{0.5pt}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\def\arraystretch{1.5}
+\begin{titlepage}
+\begin{center}
+\vspace{10em}
+\includegraphics[scale=2]{SDDC}
+\vspace{10em}
+\end{center}
+\begin{center}
+\huge {REST API}
+\end{center}
+\begin{center}
+\vspace{10em}
+\LARGE {Silvan Adrian} \\
+\LARGE {Fabian Binna}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\section{Änderungshistorie}
+\begin{tabularx}{\linewidth}{l l X l}
+\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
+\hline
+\textbf{11.10.15} & 1.00 & Erstellung des Dokuments & Fabian Binna \\
+
+\end{tabularx}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{CRUD Service}
+
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /services\\
+\textbf{Archetype} & Collection\\
+\textbf{Methods} & GET\\
+\textbf{JSON Format Response} & -\\
+\end{tabularx}
+\\
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /services/{id}\\
+\textbf{Archetype} & Service\\
+\textbf{Methods} & GET, PUT\\
+\textbf{JSON Format Response} & -\\
+\end{tabularx}
+
+\end{document}
+
+
+
+
+
+
+
+
