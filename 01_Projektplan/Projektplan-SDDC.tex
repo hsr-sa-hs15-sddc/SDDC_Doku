@@ -25,7 +25,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Projektplan: SDDC}
-\cfoot{Version: 1.09}
+\cfoot{Version: 1.10}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -72,6 +72,8 @@ Adrian\\
 \textbf{03.10.15} & 1.08 & Testing angepasst + IDE definiert & Fabian Binna\\
 \textbf{04.10.15} & 1.09 & Beschreibungen von Sprintplanung verbessert & Silvan 
 Adrian\\
+\textbf{14.10.15} & 1.10 &  Verbesserungen Projektplanung + Features & Silvan 
+Adrian\\
 \end{tabularx}
 
 \newpage
@@ -101,20 +103,26 @@ auf den neusten Stand gebracht werden können.
 \subsection{Primäre Features}
 \begin{itemize}
   \item Generische API
-  \item Unterstützung von Private Cloud Anbietern
-  \item Unterstützung von Docker
-  \item Unterstützung von ausgewählten Public Cloud Anbietern
+  \item Workflow zum abonnieren/kündigen
+  \item Unterstützung von mindestens 1 Compute Anbieter
+  \item Unterstützung von mindestens 1 Storage Anbieter
+  \item Unterstützung von mindestens 1 Network Anbieter
+  \item Admin Dashboard um Services verwalten zu können
+  \item Spartanisches User-Dashboard
 \end{itemize}
 \subsection{Erweiterte Features}
 \begin{itemize}
-  \item Spartanisches User-Dashboard
-  \item Unterstützung für mehr Public Cloud Anbieter
-  \item Admin-Dashboard um Funktionen erweitern und verbessern
+  \item Admin-Dashboard um Funktionen erweitern
+  \item Unterstützung für mehr Compute Anbieter
+  \item Unterstützung für mehr Storage Anbieter
+  \item Unterstützung für mehr Network Anbieter
 \end{itemize}
 \subsection{Lieferumfang}
 \begin{itemize}
-  \item Source-Code (Dashboard/API)
-  \item Dokumentation (Projekt und Software)
+  \item Source-Code
+  \item Projektdokumentation
+  \item Generische API Dokumentation
+  \item Restful API Dokumentation
 \end{itemize}
 
 \subsection{Annahmen und Einschränkungen}
@@ -124,7 +132,7 @@ Das User-Dashboard würde lediglich zum Testen der API verwendet.
 Die generische API soll dabei so viele Anbieter wie möglich abdecken.
 \section{Projektorganisation}
 Wir setzen beim Project auf Scrum, wodurch lediglich die Projektrollen Product 
-Owner, Entwickler und Scrum-Master vorhanden sind.
+Owner, Entwickler und Scrum-Master zur Verfügung stehen.
 \subsection{Organisationsstruktur}
 \begin{tikzpicture}[auto, node distance = 0.4cm, thick,
   every node/.style = {rectangle, font = \sffamily, white,
@@ -161,33 +169,37 @@ Urs Baumann (\href{mailto:Urs.Baumann@ins.hsr.ch}{Urs.Baumann@ins.hsr.ch})
 \section{Managment Abläufe}
 
 \subsection{Kostenvoranschlag}
-Gemäss Vorgaben wird mit 480 Stunden gesamt gerechnet + die einberechneten 
-Risiken von 41 Stunden.
+Gemäss Vorgaben wird mit 480 Stunden gesamt gerechnet.
 \newline
-\textbf{Gesamtaufwand:} 521 Stunden\\
-\textbf{Risikoaufwand:} 41 Stunden\\
-\textbf{Aufwand pro Woche:} ca.:  37 Stunden\\
-\textbf{Aufwand pro Woche pro Teammitglied:} ca.: \uline{19 Stunden}
+\textbf{Gesamtaufwand:} 480 Stunden\\
+\textbf{Aufwand pro Woche:} ca.:  34 Stunden\\
+\textbf{Aufwand pro Woche pro Teammitglied:} ca.: \uline{17 Stunden}
 
-\subsection{Sprints}
+\subsection{Planung}
 \begin{tabularx}{\textwidth}{l X l l}
-\textbf{Sprint} & \textbf{Beschreibung} & \textbf{Beginn} &  \textbf{Ende} \\
+\textbf{Name} & \textbf{Beschreibung} & \textbf{Beginn} &  \textbf{Ende} \\
 \hline
-\textbf{Sprint 1} & Grundgerüst API + Workflow abonnieren/kündigen), API ansprechbar 
-und vorgefertigte Services können 
-abonniert werden  & 12.10.15 & 26.10.15 \\
+\textbf{Analyse/Anforderung/Design} & Analyse der vorhandenen API's + Anforderungen 
+erstellen + Design Grundlagen erstellen & 14.09.15 & 19.10.15\\
+\hline
+\textbf{Sprint 1} & Grundgerüst generische API, um Storage, Compute und Network 
+abonnieren/kündigen zu können
++ Workflow abonnieren/löschen  & 19.10.15 & 02.11.15 \\
 \hline
 \textbf{Sprint 2} & Restful Interface für die API, um Services über HTTP 
 abonnieren zu können
-& 26.10.15 & 09.11.15 \\
+& 02.11.15 & 16.11.15 \\
 \hline
-\textbf{Sprint 3} & Authentifizierung bei API für Client Applikation + Benutzer Authentifizierung 
-für jeweiligen Cloud Anbieter & 09.11.15 & 23.11.15 \\
+\textbf{Sprint 3} & Admin Dashboard, um Services/Servicemodule verwalten 
+und ihnen ein Konfigurationsdatei hinterlegen zu können & 16.11.15 & 30.11.15 \\
 \hline
-\textbf{Sprint 4} & Admin-Dashboard + User-Dashboard (sehr spartanisch)  erstellen/verbessern 
-und letzter Release der Software
-& 23.11.15 & 7.12.15 \\
+\textbf{Sprint 4} & User-Dashboard (sehr spartanisch)  um Services 
+abonnieren/kündigen zu können
++ letzter Release der Software
+& 30.11.15 & 11.12.15 \\
 \hline
+\textbf{Abschluss} & Studiengang Arbeit zur Abgabe vorbereiten + Präsentation 
+vorbereiten & 11.12.15 & 18.12.15\\
 \end{tabularx}
 
 \subsection{Besprechungen}
@@ -201,12 +213,12 @@ released.
 Risiken werden im Dokument Initiales\_Risikomanagement.pdf beschrieben
 \subsection{Umgang mit Risiken}
 Für die Risiken werden Reserven eingeplant. Die Reserven werden direkt in die einzelnen Tickets 
-eingerechnet. Falls Risiken eintreffen werden diese sofort an einem der Daily-Meetings kommuniziert 
+einberechnet. Falls Risiken eintreffen werden diese sofort an einem der Daily-Meetings kommuniziert 
 und mögliche Lösungen evaluiert.
 \section{Arbeitspakete}
 
 Die Arbeitspakete werden in Open Project erstellt und gepflegt.
-Lesender Zugriff ist anonym möglich, schreibender nur eingeloggt (Projekt ist öffentlich). 
+Lesender Zugriff ist anonym möglich, schreibender nur als Benutzer. 
 \\
 Link zur Open Project Instanz : \href{http://sddc.silvn.com}{http://sddc.silvn.com}
 
@@ -217,9 +229,9 @@ Link zur Open Project Instanz : \href{http://sddc.silvn.com}{http://sddc.silvn.c
 \begin{tabularx}{\textwidth}{X X X X}
 \textbf{Name} & \textbf{Hardware} & \textbf{Betriebssystem} & \textbf{IDE} \\
 \hline
-Silvan Adrian & MacBook Pro & OSX 10.10.5 &  pyCharm CE 4.5 \\
+Silvan Adrian & MacBook Pro & OSX 10.10.5 &  Eclipse Mars \\
 \hline
-Fabian Binna & Lenovo T430s & Windows 10 &  pyCharm CE 4.5\\
+Fabian Binna & Lenovo T430s & Windows 10 &  Eclipse Mars\\
 \hline
 \end{tabularx}
 
@@ -229,25 +241,23 @@ Fabian Binna & Lenovo T430s & Windows 10 &  pyCharm CE 4.5\\
     \item \textbf{Versionsmanagement:} GIT
     \item \textbf{Notifications:} Slack
     \item \textbf{Wireframing:} Pencil
-    \item \textbf{Code Coverage:} Coverage.py
+    \item \textbf{Code Coverage:} Cobetura
 \end{itemize}
 
 \subsection{Kommunikationsmittel}
 \begin{itemize}
     \item E-Mail
     \item Skype
-    \item Open Project (Kommentare)
-    \item GitHub (Issues,Kommentare)
+    \item Open Project
+    \item GitHub
     \item Whatsapp
     \item Slack
 \end{itemize}
 
 \section{Qualitätsmassnahmen}
 \subsection{Dokumentation}
-Die Dokumentation befindet sich auf einem privaten GitHub Repository.
-Die Texte werden in LaTex geschrieben. Die Dokumente werden versioniert.\\
-\\
-\url{https://github.com/silvanadrian/SDDC_Doku.git}
+Die Dokumentation befindet sich auf einem privaten GitHub Repository (SDDC\_Doku).
+Die Texte werden in LaTex geschrieben, aber auch als PDF auf das Repository gestellt.\\
 
 \subsection{Projektmanagement}
 Für das Projektmanagement wird OpenProject verwendet.\\
@@ -258,7 +268,7 @@ Für das Projektmanagement wird OpenProject verwendet.\\
 \subsection{Entwicklung}
 
 \subsubsection{IDE}
-PyCharm\\
+Eclipse Mars\\
 
 \subsubsection{Unit Testing / Test-Driven Development}
 Die Unit Tests kommen in einen separaten Ordner "Test".
@@ -300,7 +310,7 @@ works on my machine'' abzudecken.\\
 
 Produkte:
 \begin{itemize}
-\item PyCharm Unit Tester
+\item JUnit Tester
 \item Travis
 \end{itemize}
 
@@ -310,7 +320,7 @@ Die Tests werden an verschiedenen Schichten angesetzt (Presentation und Business
 
 Produkte:
 \begin{itemize}
-\item PyCharm Unit Tester
+\item JUnit Tester
 \item Log-Daten
 \end{itemize}
 
