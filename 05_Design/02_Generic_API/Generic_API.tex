@@ -1,0 +1,295 @@
+\documentclass[11pt]{scrartcl}
+
+\title{Template}
+\author{Silvan Adrian \\ Fabian Binna}
+\date{\today{}}
+
+\usepackage[ngerman]{babel}
+\usepackage[automark]{scrpage2}
+\usepackage[colorlinks = true,
+linkcolor = black]{hyperref}
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
+\pagestyle{scrheadings}
+
+\clearscrheadfoot
+\ihead{\includegraphics[scale=0.3]{SDDC}}
+\ohead{Projekt: SDDC}
+\ifoot{Template}
+\cfoot{Version: 1.02}
+\ofoot{Datum: \today{}}
+\setheadsepline{0.5pt}
+\setfootsepline{0.5pt}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\def\arraystretch{1.5}
+\begin{titlepage}
+\begin{center}
+\vspace{10em}
+\includegraphics[scale=2]{SDDC}
+\vspace{10em}
+\end{center}
+\begin{center}
+\huge {Generische API}
+\end{center}
+\begin{center}
+\vspace{10em}
+\LARGE {Silvan Adrian} \\
+\LARGE {Fabian Binna}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\section{Änderungshistorie}
+\begin{tabularx}{\linewidth}{l l X l}
+\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
+\hline
+\textbf{17.10.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
+\textbf{17.10.15} & 1.01 & Operationen Übersicht & Silvan Adrian \\
+\textbf{17.10.15} & 1.02 & Contracts für die wichtigsten Operationen & Silvan Adrian \\
+\end{tabularx}
+
+\newpage
+\tableofcontents
+\newpage
+\section{Einführung}\subsection{Zweck}
+Dieses Dokument beschreibt die generische API
+\subsection{Gültigkeit}
+Dieses Dokument ist währen des ganzen Projekts gültig und wird laufend erweitert
+\subsection{Übersicht}
+Dieses Dokument soll eine Übersicht über die Funktionen der generischen API 
+bieten.
+
+\section{Operationen}
+\subsection{Allgemein}
+\begin{itemize}
+  \item connect(uri: String, ReadOnly: Boolean)
+  \item disconnect() 
+\end{itemize}
+\subsubsection{Contracts}
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & connect(uri : String, ReadOnly: Boolean) \\
+	\hline
+	\textbf{Cross References} & UC01 \\
+	\hline
+	\textbf{Preconditions} & Eine URI wurde mitgegeben und ReadOnly True oder False gesetzt \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Client ist mit dem Hypervisor verbunden
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+\\ \\
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & disconnect() \\
+	\hline
+	\textbf{Cross References} & UC01 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Verbindung zum Hypervisor wurde geschlossen
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+
+\newpage
+%Compute
+\subsection{Compute}
+\begin{itemize}
+  \item createCompute(Config: String)
+  \item deleteCompute(comp: Compute)
+   \item getCompute(name: String)
+\end{itemize}
+\subsubsection{Contracts}
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & createCompute(Config: String) \\
+	\hline
+	\textbf{Cross References} & UC01 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Compute Instanz wurde erstellt
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+\\ \\
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & deleteCompute(comp: Compute) \\
+	\hline
+	\textbf{Cross References} & UC01 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Compute Instanz wurde gelöscht
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+\\ \\ 
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & getCompute(name: String) \\
+	\hline
+	\textbf{Cross References} & UC01 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Hypervisor gibt ComputeObjekt zurück
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+
+\newpage
+%Storage
+\subsection{Storage}
+\begin{itemize}
+  \item createStorage(Config: String)
+  \item deleteStorage(storage: Storage)
+   \item getStorage(name: String)
+\end{itemize}
+\subsubsection{Contracts}
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & createStorage(Config: String) \\
+	\hline
+	\textbf{Cross References} & UC01 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Storage wurde erstellt
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+\\ \\
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & deleteStorage(storage: Storage) \\
+	\hline
+	\textbf{Cross References} & UC02 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Storage wurde gelöscht
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+\\ \\
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & getStorage(name: String) \\
+	\hline
+	\textbf{Cross References} & UC02 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Hypervisor gibt Storage Objekt zurück
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+
+\newpage
+%Network
+\subsection{Network}
+\begin{itemize}
+  \item createNetwork(Config: String)
+  \item deleteNetwork(network: Network)
+  \item getNetwork(name: String)
+\end{itemize}
+\subsubsection{Contracts}
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & createNetwork(Config: String) \\
+	\hline
+	\textbf{Cross References} & UC01 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Netzwerk wurde erstellt
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+\\ \\
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & deleteNetwork(network: Network) \\
+	\hline
+	\textbf{Cross References} & UC02 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Netwerk wurde gelöscht
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+\\ \\
+\begin{tabularx}{\linewidth}{l X}
+	\textbf{Operation} & getNetwork(name: String) \\
+	\hline
+	\textbf{Cross References} & UC02 \\
+	\hline
+	\textbf{Preconditions} & Client ist mit Hypervisor verbunden \\
+	\hline
+	\textbf{Postconditions} & 
+	\begin{minipage}{4.8in}
+		\vskip 4pt
+		\begin{itemize}
+			\item Hypervisor gibt Network Objekt zurück
+		\end{itemize}
+		\vskip 4pt
+	\end{minipage}  \\
+\end{tabularx}
+
+
+\end{document}
