@@ -1,0 +1,84 @@
+\def\minfileversion{V1.8d}     %^^Aof minutes.sty
+\def\minfiledate{2009/12/04}   %^^Aof minutes.sty
+%%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\documentclass{scrreprt}
+%%\documentclass{article}
+%%\documentclass{scrreprt}
+%%\documentclass{scrarctl}
+\usepackage[german]{babel}
+\usepackage{minutes}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\begin{Protokoll}{Weekly Meeting 15. Oktober}
+\moderation{Beat Stettler}
+\protokollant{Silvan Adrian, Fabian Binna}
+\teilnehmer{Silvan Adrian, Fabian Binna,  Urs Baumann,Beat Stettler}
+\sitzungsdatum{15.\ Oktober 2015}
+\sitzungsbeginn{08:45}
+\sitzungsende{09:30}
+\sitzungsort{Raum C2.101 }
+%\verteiler{Vereinsmitglieder}
+%\fehlend[entschuldigt]{abwesend}
+%%\fehlendEntschuldigt{}
+%%\fehlendUnentschuldigt{}
+\protokollKopf
+
+\topic{Konzept und weiteres Vorgehen}%<-- hier Tagesordnungspunkt einfuegen
+\subtopic{Konzept}
+\begin{itemize}
+  \item Umsetzung in Java
+  \item Libary libvirt verwenden und je nachdem noch jclouds für Public Cloud 
+  Anbieter
+\end{itemize}
+
+\subtopic{Netwerk}
+\begin{itemize}
+  \item Floodlight
+  \item Besser Floodlight oder anderer Controller, da es direkt auf OpenFlow Ebene zu schwierig wird
+  \item HP Netwerk Controller, welcher auf OpenFlow aufbaut ist an der HSR 
+  vorhanden
+  \item Sonst mit Mininet testen (erlaubt Erstellung von virtuellen Netzwerken) 
+\end{itemize}
+
+\subtopic{Grundgerüst}
+\begin{itemize}
+  \item Alles möglichst einfach halten
+  \item Logindaten für Hypervisor über Konfigurationsfile übergeben
+\end{itemize}
+
+\subtopic{Konfigurationsfile}
+\begin{itemize}
+  \item wenn möglich ähnlich aufbauen wie Warm (für OpenStack), wo Datei 
+  Workflow vorgibt
+\end{itemize}
+
+\topic{Termine und Aufgaben}
+\subtopic{Termine}
+\termin{2015/10/22}[08:20-09:00]{Projektmeeting im Bau C2.101}
+
+\topic{Aufgaben}
+\aufgabe*{Anforderungen verbessern}
+\aufgabe*{Projektplan verbessern}
+\aufgabe*{libvirt Prototyp erstellen}
+\aufgabe*{Design Dokumente erstellen}
+\aufgabe*{Planung 1.Sprint}
+\aufgabe*{KVM Umgebung aufsetzen}
+\end{Protokoll}
+\end{document}
+\endinput
