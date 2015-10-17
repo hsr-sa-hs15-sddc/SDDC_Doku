@@ -21,7 +21,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Anforderungsspezifikation}
-\cfoot{Version: 1.06}
+\cfoot{Version: 1.07}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -64,6 +64,7 @@ Adrian\\
 Adrian\\
 \textbf{03.10.15} & 1.05 & Use Cases fully dressed & Silvan Adrian\\
 \textbf{04.10.15} & 1.06 & User Stories + NFA's verbessert & Silvan Adrian\\
+\textbf{17.10.15} & 1.07 & Verbesserungen & Silvan Adrian\\
 \end{tabularx}
 
 \newpage
@@ -84,8 +85,8 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 \subsection{API}
 Die API definiert einen Workflow der einen Service auf einer Cloud erstellt. Es ist offen, ob 
 dieser Service über mehrere Cloud Anbieter hinaus geht. Der Service wird durch 
-ein Konfigurationsfile (z.B. json) definiert. Zusätzlich können Scriptfiles referenziert werden, 
-die die Software auf den Instanzen installieren. Ein Service kann auch wieder gelöscht werden.
+ein Konfigurationsfile definiert. Die Software auf den Instanzen wird durch Images installiert.
+ Ein Service kann auch wieder gelöscht werden.
  Es ist nicht die Aufgabe der API existierende Services zu identifizieren. 
  Die API muss Modular sein, das heisst es sollte möglich sein andere oder eigene 
  Programme für die Cloud Kommunikation zu verwenden. Innerhalb der API 
@@ -94,39 +95,30 @@ die die Software auf den Instanzen installieren. Ein Service kann auch wieder ge
 \newpage
 \subsection{Customer-Dashboard}
 \subsubsection{Homescreen}
-Im Homescreen (sobald der Customer auf das Dashboard zugreift) werden alle zu 
+Im Homescreen werden alle zu 
 Verfügung stehenden Services angezeigt.
 Hier werden die Services Offerings genannt um eine Unterscheidung zwischen 
 Abonnierten Services (Services) und zur Verfügung stehenden Services (Offerings) 
 machen zu können.
-
+\newline
 \includegraphics[width=\textwidth]{homescreen_customer}
 
 \subsubsection{Services Übersicht}
 In der Services Übersicht werden dem Customer alle abonnierten Services 
 angezeigt und können hier auch gekündigt werden.
-
+\newline
 \includegraphics[width=\textwidth]{services_overview}
 
 
 \subsubsection{Service abonnieren}
-Sobald ein Service auf dem Homescreen ausgewählt wird muss noch der zuständige 
-Provider gewählt werden (häng auch wieder davon ab von welchem Provider bisher Login Daten hinterlegt 
-wurden).
-Da momentan noch kein Hybrid Betrieb vorgesehen ist muss ein Account gewählt 
-werden unter welchem der Service verrechnet wird.
-\begin{figure}[h]
-  \includegraphics[width=\textwidth]{service_settings}
-\end{figure}
+Sobald ein Service auf dem Homescreen ausgewählt wird und auf den ``subscribe'' 
+Button geklickt wird, wird dieser abonniert und wird in der Services Übersicht 
+angezeigt.
+\newline
+\includegraphics[width=\textwidth]{service_settings}
+
 
 \newpage
-\subsubsection{Cloud Credentials}
-Da für jeden Provider wieder Login Daten benötigt werden müssen diese an einer 
-zentralen Stelle gespeichert werden (anhand von denen kann sich auch das Service Angebot 
-ändern).
-\begin{figure}[h]
-\includegraphics[width=\textwidth]{service_accounts}
-\end{figure}
 \subsection{Admin-Dashboard}
 Zusätzlich zum Customer-Dashboard soll ein Admin-Dashboard zur Verfügung stellen 
 in welchem der Admin Services und Servicemodule erstellen kann.
@@ -136,18 +128,18 @@ Ein Service hat einen bestimmten Namen und jedem Service sind eine gewisse
 Anzahl Servicemodule zugeteilt. um den Service abbilden zu können.
 Hier kann der Admin den Service ändern und je nach Anforderung den Service 
 anpassen.
-
+\newline
 \includegraphics[width=\textwidth]{homescreen_admin}
 
 \subsubsection{Servicemodul}
 Jedes Servicemodul besitzt einen Namen und wird einem Provider zugeschrieben, 
 dabei kann jedes Servicemodule den Typ Compute,Network oder Storage haben.
-
+\newline
 \includegraphics[width=\textwidth]{servicemodules_admin}
 
 \section{Use Cases}
 \subsection{Use Case Diagramm}
-\includegraphics[width=\textwidth]{UseCase-Diagramm}
+\includegraphics[width=0.84\textwidth]{UseCase-Diagramm}
 \subsection{Aktoren \& Stakeholders}
 \subsubsection{Customer}
 Als Customer möchte ich meine abonnierten Services verwalten.
@@ -161,9 +153,6 @@ Als Customer möchte ich meine abonnierten Services verwalten.
   \begin{itemize}
     \item Service abonnieren
     \item Service kündigen
-    \item Cloud Login Daten hinzufügen
-    \item Cloud Login Daten anpassen
-    \item Cloud Login Daten löschen
   \end{itemize}
   \vskip 4pt
  \end{minipage}\\
@@ -201,19 +190,15 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
 	\bfseries Steakholders und Interessen & Customer: Möchte einen Service abonnieren  \\\hline 
-	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet, ist bei der API authentifiziert und 
-	hat einen Cloud Account hinzugefügt. \\\hline 
+	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet. \\\hline 
 	\bfseries Nachbedingungen & Die Service Infos wurden gespeichert und der Workflow wurde angestossen  
 	\\\hline 
 	\bfseries Standartablauf & 
 		\begin{enumerate}
-			\item Der Customer gibt die Webadresse für das Dashboard ein
 			\item Wiederholen bis kein Service mehr abonniert werden soll
 			\begin{enumerate}
 			    \item Der Customer wechselt in die \textbf{Offerings Übersicht}
 			    \item Der Customer wählt einen der vorhanden \textbf{Services} aus
-			    \item Der Customer wählt einen vorhanden \textbf{Account} auf welchem er den \textbf{Service}
-			abonnieren will
 			    \item Der Customer drückt den Button \textbf{subscribe Service}
 			    \item Der Customer wird in die \textbf{Services Übersicht} weitergeleitet
 			\end{enumerate}
@@ -223,12 +208,6 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
       	\bfseries Alternativer Ablauf & 
 		\begin{enumerate}
 		  
-		\item
-		  \begin{enumerate}
-		    \item Der Customer entscheidet sich um und schliesst das 
-		    Fenster/Tab
-		    
-		  \end{enumerate}
 		  
 		  \item 
                  \begin{enumerate}
@@ -246,7 +225,6 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 		     \begin{enumerate}
 		      \item Schliesst das Fenster/Tab
 		      \item geht zurück in die \textbf{Offerings Übersicht}
-		      \item wählt einen anderen Account
 		    \end{enumerate}
 		    
 		    
@@ -254,7 +232,6 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 		     \begin{enumerate}
 		      \item Schliesst das Fenster/Tab
 		      \item geht zurück in die \textbf{Offerings Übersicht}
-		      \item wählt einen anderen Account
 		    \end{enumerate}
 		    
 		  \end{enumerate}
@@ -273,12 +250,10 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
 	\bfseries Steakholders und Interessen & Customer: Möchte einen Service kündigen  \\\hline 
-	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet, ist bei der API authentifiziert und 
-	hat einen Service abonniert  \\\hline 
+	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet.  \\\hline 
 	\bfseries Nachbedingungen & Die Service Infos wurden gelöscht und der Workflow wurde angestossen   \\\hline 
 	\bfseries Standartablauf & 
 		\begin{enumerate}
-			\item Der Customer gibt die Webadresse für das Dashboard ein
 			\item Wiederholen bis kein Service mehr gekündigt werden soll
 			\begin{enumerate}
 			    \item Der Customer wechselt in die \textbf{Services Übersicht}
@@ -292,11 +267,6 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
       	\bfseries Alternativer Ablauf & 
 		\begin{enumerate}
 		  
-		\item
-		  \begin{enumerate}
-		    \item Der Customer entscheidet sich um und schliesst das 
-		    Fenster/Tab
-		  \end{enumerate}
 		  \item 
                  \begin{enumerate}
 		    \item Der Customer entscheidet sich um
@@ -328,54 +298,9 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 \end{longtabu}
 %Service kündigen end
 \newpage
-%Cloud Login Daten verwalten begin
-\subsubsection{UC03: Cloud Login Daten verwalten}
-\begin{longtabu} to \textwidth {X[1,l] X[2,l]}
-	\bfseries Primäraktor & Customer  \\\hline 
-	\bfseries Steakholders und Interessen & Customer: Möchte ich Cloud Login Daten verwalten  \\\hline 
-	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet  \\\hline 
-	\bfseries Nachbedingungen & Die Account Infos wurden gespeichert  \\\hline 
-	\bfseries Standartablauf & 
-		\begin{enumerate}
-			\item Der Customer gibt die Webadresse für das Dashboard ein
-			\item Der Customer wechselt in die \textbf{Account/Cloud Credentials Übersicht}
-			\item Solange wiederholen bis kein Account mehr hinzugefügt werden muss
-			  \begin{enumerate}
-			    \item Customer drückt Button \textbf{Add Credentials}
-			    \item Customer füllt gefragt Felder aus
-			    \item Customer bestätigt Eingaben mit Klick auf \textbf{Save}
-			  \end{enumerate}
-			\item Der Customer schliesst das Customer-Dashboard
-		\end{enumerate}
-      \\\hline
-      \bfseries Alternativer Ablauf & 
-      \begin{enumerate}
-          \setcounter{enumi}{2}
-            \item 
-            \begin{enumerate}
-              \item Wiederholen bis kein Account mehr geändert werden muss
-                \begin{enumerate}
-                  \item Account auswählen und auf \textbf{change} Link klicken
-                  \item Felder anpassen
-                  \item Änderungen bestätigen mit Klick auf Button \textbf{Save}
-                \end{enumerate}
-                \item Wiederholen bis kein Account mehr gelöscht werden muss
-                \begin{enumerate}
-                  \item Account auswählen und auf \textbf{delete} Link klicken
-                \end{enumerate}
-            \end{enumerate}
-            
-      \end{enumerate}
-      
-      \\\hline
-	\bfseries Spezielle Anforderungen & siehe nichtfunktionale Anforderungen  \\\hline 
-	\bfseries Technologie- und Datenvarianten & Keine  \\\hline 
-	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
-	\bfseries Offene Fragen & Keine  \\\hline  
-\end{longtabu}
-%Cloud Login Daten verwalten end
+
 %Services verwalten begin
-\subsubsection{UC04: Services verwalten}
+\subsubsection{UC04: Service verwalten}
 
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
@@ -422,7 +347,7 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 %Services verwalten end
 \newpage
 %Servicemodule verwalten begin
-\subsubsection{UC05: Servicemodule verwalten}
+\subsubsection{UC05: Servicemodul verwalten}
 \begin{longtabu} to \textwidth {X[1,l] X[2,l]}
 	\bfseries Primäraktor & Customer  \\\hline 
 	\bfseries Steakholders und Interessen & Admin: Möchte ein Servicemodul verwalten  \\\hline 
@@ -475,7 +400,6 @@ Als Admin möchte ich Services und Servicemodule verwalten können.
 \begin{itemize}
   \item Service abonnieren
   \item Service kündigen
-  \item Cloud Login Daten verwalten
 \end{itemize}
 \subsection{Admin}
 \begin{itemize}
@@ -534,56 +458,7 @@ neue Funktionen/Verbesserungen.
   \hline
    \end{tabularx}
    
- \subsubsection{Customer fügt Cloud Login Daten hinzu}
-\begin{tabularx}{\linewidth}{l X}
-  \textbf{Priorität} & Mittel\\
-  \hline
-  \textbf{Story Points} & 3\\
-  \hline
-  \textbf{Story}& Als Customer möchte ich meine Cloud Login Daten meinem Account hinterlegen\\
-  \hline
-    \textbf{Akzeptanzkriterien} & \\
-    \hline
-  \textbf{A1} & Der Customer kann seine Login Daten hinzufügen\\
-  \hline
-  \textbf{A2} & In der Offerings Übersicht werden die neuen möglichen Services 
-  angezeigt\\
-  \hline
-    \textbf{A3} & Die neuen Login Daten werden gespeichert\\
-  \hline
-   \end{tabularx}
- \subsubsection{Customer ändert Cloud Login Daten}
-\begin{tabularx}{\linewidth}{l X}
-  \textbf{Priorität} & Mittel\\
-  \hline
-  \textbf{Story Points} & 3\\
-  \hline
-  \textbf{Story}& Als Customer möchte ich meine hinterlegten Cloud Login Daten ändern können\\
-  \hline
-    \textbf{Akzeptanzkriterien} & \\
-    \hline
-  \textbf{A1} & Der Customer kann seine Login Daten ändern\\
-  \hline
-    \textbf{A2} & Die Änderungen werden gespeichert\\
-  \hline
-   \end{tabularx}
- \subsubsection{Customer löscht Cloud Login Daten}
-\begin{tabularx}{\linewidth}{l X}
-  \textbf{Priorität} & Mittel\\
-  \hline
-  \textbf{Story Points} & 4\\
-  \hline
-  \textbf{Story}& Als Customer möchte ich meine Cloud Login Daten aus meinem Account entfernen können\\
-  \hline
-    \textbf{Akzeptanzkriterien} & \\
-    \hline
-  \textbf{A1} & Der Customer kann seine Login Daten löschen\\
-  \hline
-  \textbf{A2} & Account kann nicht gelöscht werden, falls noch abonnierte Services auf dem Account bestehen\\
-  \hline
-    \textbf{A3} & Die Login Daten werden entfernt\\
-  \hline
-   \end{tabularx}
+
  \subsubsection{Customer abonniert Service}
 \begin{tabularx}{\linewidth}{l X}
   \textbf{Priorität} & Hoch\\
@@ -840,8 +715,11 @@ neue Funktionen/Verbesserungen.
 \section{Nicht-funktionale Anforderungen}
 \subsection{Menge}
 \begin{itemize}
-  \item Die Software unterstützt mehr als 30 Cloud Anbieter (libcloud)
-  \item Bei jedem Cloud Anbieter bestehen eine gewisse Anzahl Services (von Anbieter zu Anbieter verschieden)
+  \item Die Software unterstützt mindestens 1 Storage Anbieter
+  \item Die Software unterstützt mindestens 1 Compute Anbieter
+  \item Die Software unterstützt mindestens 1 Network Anbieter
+  \item Es soll für Compute, Storage, Network mindestens je 1 Servicemodul erstelt 
+  werden
 \end{itemize}
 
 \subsection{Schnittstellen}
@@ -863,7 +741,7 @@ siehe Abschnitt API und Dashboard
 \end{itemize}
 \subsubsection{Benutzerbarkeit}
 \begin{itemize}
-  \item Konfigurationen können über das vorgesehene Admin-Dashboard benutzt werden
+  \item Konfigurationen können über das vorgesehene Admin-Dashboard geändert werden
   \item Zum verwenden der Software besteht noch ein einfaches 
   User-Dashboard
 \end{itemize}
@@ -875,7 +753,6 @@ siehe Abschnitt API und Dashboard
 Die Software soll modular aufgebaut werden, damit Erweiterungen in Zukunft 
 problemlos möglich sind.
 \subsubsection{Übertragbarkeit}
-Das Projekt wird in Python geschrieben ist somit also auf Python mindestens in der Version 2.5 angewiesen, 
-kann allerdings durch den Einsatz eines Docker Containers einfach Übertragbar 
-gemacht werden.
+Das Projekt wird in Java geschrieben und ist somit also auf Java mindestens in der Version 
+1.8 angewiesen.
 \end{document}
