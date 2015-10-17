@@ -55,6 +55,7 @@ linkcolor = black]{hyperref}
 \textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
 \hline
 \textbf{11.10.15} & 1.00 & Erstellung des Dokuments & Fabian Binna \\
+\textbf{17.10.2015} & 1.01 & Service + OrderedService & Fabian Binna\\
 
 \end{tabularx}
 
@@ -62,20 +63,44 @@ linkcolor = black]{hyperref}
 \tableofcontents
 \newpage
 
-\section{CRUD Service}
+\section{Einführung}
+\subsection{Zweck}
+Dieses Dokument beschreibt die REST API
+\subsection{Gültigkeit}
+Dieses Dokument ist währen des ganzen Projekts gültig und wird laufend erweitert
 
+\newpage
+
+\section{CRUD Service}
+\subsection{Services}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /services\\
-\textbf{Archetype} & Collection\\
 \textbf{Methods} & GET\\
-\textbf{JSON Format Response} & -\\
+\textbf{JSON Format Response} & [{" id":<ServiceID>,"name":<ServiceName>}]\\
 \end{tabularx}
-\\
+
+\subsection{Service}
+
+
 \begin{tabularx}{\linewidth}{l l}
-\textbf{URI Path} & /services/{id}\\
-\textbf{Archetype} & Service\\
-\textbf{Methods} & GET, PUT\\
-\textbf{JSON Format Response} & -\\
+\textbf{URI Path} & /services/\{id\}\\
+\textbf{Methods} & GET, PUT, DELETE\\
+\textbf{JSON Format Response} & JSON Service Config File\\
+\end{tabularx}
+
+\section{CRUD OrderedService}
+\subsection{OrderedServices}
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /OrderedServices\\
+\textbf{Methods} & GET\\
+\textbf{JSON Format Response} & [{" id":<ServiceID>,"name":<ServiceName>}]\\
+\end{tabularx}
+
+\subsection{OrderedService}
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /OrderedServices/\{id\}\\
+\textbf{Methods} & GET, PUT, DELETE\\
+\textbf{JSON Format Response} & JSON Service Config File\\
 \end{tabularx}
 
 \end{document}
