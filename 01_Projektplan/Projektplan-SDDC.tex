@@ -17,6 +17,7 @@ linkcolor = black]{hyperref}
 \usepackage{tikz}
 \usetikzlibrary{positioning,shadings}
 \usetikzlibrary{arrows}
+\usepackage{pbox}
 \pagestyle{scrheadings}
 
 \definecolor{logocolor}{RGB}{6,103,236}
@@ -25,7 +26,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Projektplan: SDDC}
-\cfoot{Version: 1.10}
+\cfoot{Version: 1.11}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -74,6 +75,8 @@ Adrian\\
 Adrian\\
 \textbf{14.10.15} & 1.10 &  Verbesserungen Projektplanung + Features & Silvan 
 Adrian\\
+\textbf{19.10.15} & 1.11 &  Verbesserungen Projektplanung + Testing & Silvan 
+Adrian\\
 \end{tabularx}
 
 \newpage
@@ -97,7 +100,8 @@ hinterlegt werden, welche mehrere Servicemodule beinhalten
 Die API soll dabei möglichst modular aufgebaut sein, damit Neuerungen einfach 
 auf den neusten Stand gebracht werden können.
 \subsection{Zweck und Ziel}
- Gelerntes aus verschiedenen Modulen anwenden, sich mit der gestellten Aufgabenstellung auseinandersetzen 
+ Gelerntes aus verschiedenen Modulen anwenden, sich mit der gestellten 
+ Aufgabenstellung auseinandersetzen 
  und diese umsetzen.
 
 \subsection{Primäre Features}
@@ -126,8 +130,9 @@ auf den neusten Stand gebracht werden können.
 \end{itemize}
 
 \subsection{Annahmen und Einschränkungen}
-Die Applikation setzte sich aus einem Admin-Dashboard und einer generischen API 
-zusammen, beides sollte dabei verteilt betrieben werden können.
+Die Applikation setzte sich aus einem Admin-Dashboard und einer generischen 
+API/Restful API
+zusammen, die sollten dabei verteilt betrieben werden können.
 Das User-Dashboard würde lediglich zum Testen der API verwendet.
 Die generische API soll dabei so viele Anbieter wie möglich abdecken.
 \section{Projektorganisation}
@@ -179,7 +184,13 @@ Gemäss Vorgaben wird mit 480 Stunden gesamt gerechnet.
 \begin{tabularx}{\textwidth}{l X l l}
 \textbf{Name} & \textbf{Beschreibung} & \textbf{Beginn} &  \textbf{Ende} \\
 \hline
-\textbf{Analyse/Anforderung/Design} & Analyse der vorhandenen API's + Anforderungen 
+\pbox{3cm}{
+\textbf{Analyse}
+\\
+\textbf{Anforderung}
+\\
+\textbf{Design} 
+}& Analyse der vorhandenen API's + Anforderungen 
 erstellen + Design Grundlagen erstellen & 14.09.15 & 19.10.15\\
 \hline
 \textbf{Sprint 1} & Grundgerüst generische API, um Storage, Compute und Network 
@@ -241,7 +252,7 @@ Fabian Binna & Lenovo T430s & Windows 10 &  Eclipse Mars\\
     \item \textbf{Versionsmanagement:} GIT
     \item \textbf{Notifications:} Slack
     \item \textbf{Wireframing:} Pencil
-    \item \textbf{Code Coverage:} Cobetura
+    \item \textbf{Test Coverage:} Cobertura
 \end{itemize}
 
 \subsection{Kommunikationsmittel}
@@ -257,7 +268,7 @@ Fabian Binna & Lenovo T430s & Windows 10 &  Eclipse Mars\\
 \section{Qualitätsmassnahmen}
 \subsection{Dokumentation}
 Die Dokumentation befindet sich auf einem privaten GitHub Repository (SDDC\_Doku).
-Die Texte werden in LaTex geschrieben, aber auch als PDF auf das Repository gestellt.\\
+Die Texte werden in \LaTeX geschrieben, aber auch als PDF auf das Repository gestellt.\\
 
 \subsection{Projektmanagement}
 Für das Projektmanagement wird OpenProject verwendet.\\
@@ -283,7 +294,9 @@ Nach jedem Sprint oder bei Abschluss grosser Arbeitspakete wird ein Code Review 
 Die Review Protokolle werden auf dem GitHub Repository SDDC-Doku abgelegt.
 
 \subsubsection{Logging}
-Für das Logging wird das Python Modul logging verwendet. Der Vorteil von logging ist, dass auch Third-Party Modules am Logging teilnehmen können. So können auch die Events der APIs abgefangen werden und in einem Zentralen Log-File gespeichert werden.\\
+Für das Logging wird die Java logging API verwendet. Der Vorteil von logging ist, dass auch 
+Third-Party Modules am Logging teilnehmen können. So können auch die Events 
+der APIs abgefangen werden und in einem Zentralen Log-File gespeichert werden.\\
 \\
 TRACE: Ausführliches Debugging\\
 DEBUG: allgemeines Debugging\\
