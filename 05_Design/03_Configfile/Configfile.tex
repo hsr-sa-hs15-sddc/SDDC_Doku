@@ -73,16 +73,22 @@ Das Configfile wird jeweils einem Servicemodul hinterlegt, bei welchen die Typen
 Compute, Network und Storage bestehen.
 Auf diesem Weg kann ein Servicemodul auch mehrmals weiterverwendet werden für 
 verschiedene Servies.
-Die Einstellungen, die im Configfile stehen können sich je nach libary ändern in 
+Die Einstellungen, die im Configfile stehen können sich je nach library ändern in 
 diesem Beispiel wird vorerst auf libvirt Bezug genommen und wird bei Bedarf 
 erweitert.
 
+
 \subsection{Allgemein}
 Da je nach Bedarf Compute, Storage oder Netzwerk zuerst erstellt werden muss 
-wird dies über eine Art Workflow behandelt, welcher entscheidet welche 
+wird dies über eine Art Workflow behandelt, welcher entscheidet welches
 Servicemodul zuerst erstellt werden soll.
 Dies geschieht indem die Reihenfolge der Servicemodule eingehalten wird und 
 eines nach dem anderen erstellt wird.
+\subsubsection{XML}
+Das Configfile wird in XML geschrieben und wird auch so an die Generische API 
+übergeben.
+Während dem Projekt soll bei Bedarf eine bessere Lösung gesucht werden z.B.: 
+durch YAML ersetzen.
 
 \subsection{Compute}
 In Compute werden Memory, vCPU, Harddisk und Netzwerk (IP) zugewiesen.
@@ -90,7 +96,7 @@ Es gibt noch einige mehr Funktionen, diese werden zu diesem Zeitpunkt aber noch
 nicht behandelt.
 
 \subsubsection{Name/uuid}
-Jeder Compute Instanz muss ein eindeutiger Name gegeben werden, diser wird zu 
+Jeder Compute Instanz muss ein eindeutiger Name gegeben werden, dieser wird zu 
 beginn direkt in das Configfile eingefügt und zu einem späteren Zeitpunkt soll 
 es möglich sein denn Namen via Customer-Dashboard festzulegen.
 Bei libvirt wird ebenfalls eine uuid benötigt, welche eine eindeutige 
@@ -109,7 +115,7 @@ Je nach Anforderung muss der Pfad zu einer Boot ISO mitgegeben werden (für die 
 Betriebssystem) 
 
 \subsubsection{Boot Disk}
-Ebenfalls muss noch eine Bootdisk übergeben werden, dies kann ein bereits 
+Ebenfalls muss noch eine Boot Disk übergeben werden, dies kann ein bereits 
 bestehender Storage Pool,Volume oder eine Datei sein.
 Die Grösse wird hier durch die ausgewählte Disk/Datei bestimmt, bei Cloud 
 Anbietern jedoch durch die Instanzgrösse.
@@ -117,7 +123,7 @@ Anbietern jedoch durch die Instanzgrösse.
 \subsubsection{Network}
 Beim Netzwerk kann eine IP oder MAC Adresse mitgegeben oder automatisch zugewiesen 
 werden.
-Weitere Netzwerk Einstellungen werden über die SDN Libary abgehandelt.
+Weitere Netzwerk Einstellungen werden über die SDN Library abgehandelt.
 Bei Cloud Anbietern wird hier ebenfalls direkt automatisch eine IP und MAC 
 Adresse zugewiesen.
 
