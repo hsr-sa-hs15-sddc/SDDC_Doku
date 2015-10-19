@@ -1,0 +1,148 @@
+\documentclass[11pt]{scrartcl}
+
+\title{Template}
+\author{Silvan Adrian \\ Fabian Binna}
+\date{\today{}}
+
+\usepackage[ngerman]{babel}
+\usepackage[automark]{scrpage2}
+\usepackage[colorlinks = true,
+linkcolor = black]{hyperref}
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
+\pagestyle{scrheadings}
+
+\clearscrheadfoot
+\ihead{\includegraphics[scale=0.3]{SDDC}}
+\ohead{Projekt: SDDC}
+\ifoot{Configfile}
+\cfoot{Version: 1.01}
+\ofoot{Datum: \today{}}
+\setheadsepline{0.5pt}
+\setfootsepline{0.5pt}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\def\arraystretch{1.5}
+\begin{titlepage}
+\begin{center}
+\vspace{10em}
+\includegraphics[scale=2]{SDDC}
+\vspace{10em}
+\end{center}
+\begin{center}
+\huge {Configfile}
+\end{center}
+\begin{center}
+\vspace{10em}
+\LARGE {Silvan Adrian} \\
+\LARGE {Fabian Binna}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\section{Änderungshistorie}
+\begin{tabularx}{\linewidth}{l l X l}
+\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
+\hline
+\textbf{17.10.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
+\textbf{19.10.15} & 1.01 & Configfile Optionen& Silvan Adrian \\
+\end{tabularx}
+
+\newpage
+\tableofcontents
+\newpage
+\section{Einführung}\subsection{Zweck}
+Dieses Dokument beschreibt das Configfile
+\subsection{Gültigkeit}
+Dieses Dokument ist währen des ganzen Projekts gültig und wird laufend erweitert
+\subsection{Übersicht}
+Dieses Dokument soll eine Übersicht über die Inhalte des Configfiles geben.
+
+\section{Configfile}
+Das Configfile wird jeweils einem Servicemodul hinterlegt, bei welchen die Typen 
+Compute, Network und Storage bestehen.
+Auf diesem Weg kann ein Servicemodul auch mehrmals weiterverwendet werden für 
+verschiedene Servies.
+Die Einstellungen, die im Configfile stehen können sich je nach libary ändern in 
+diesem Beispiel wird vorerst auf libvirt Bezug genommen und wird bei Bedarf 
+erweitert.
+
+\subsection{Allgemein}
+Da je nach Bedarf Compute, Storage oder Netzwerk zuerst erstellt werden muss 
+wird dies über eine Art Workflow behandelt, welcher entscheidet welche 
+Servicemodul zuerst erstellt werden soll.
+Dies geschieht indem die Reihenfolge der Servicemodule eingehalten wird und 
+eines nach dem anderen erstellt wird.
+
+\subsection{Compute}
+In Compute werden Memory, vCPU, Harddisk und Netzwerk (IP) zugewiesen.
+Es gibt noch einige mehr Funktionen, diese werden zu diesem Zeitpunkt aber noch 
+nicht behandelt.
+
+\subsubsection{Name/uuid}
+Jeder Compute Instanz muss ein eindeutiger Name gegeben werden, diser wird zu 
+beginn direkt in das Configfile eingefügt und zu einem späteren Zeitpunkt soll 
+es möglich sein denn Namen via Customer-Dashboard festzulegen.
+Bei libvirt wird ebenfalls eine uuid benötigt, welche eine eindeutige 
+Identifizierung erlaubt -> wodurch das auffinden und löschen einer Instanz 
+erleichtert werden soll
+
+\subsubsection{Memory}
+Memory wird entweder als fester Wert mitgegeben oder wird über die Instanzgrösse 
+beim Cloud Anbieter vorbestimmt (micro,medium,large).
+
+\subsubsection{vCPU}
+vCPU's werden entweder als Wert mitgegeben oder durch den Cloud Anbieter vorgegeben (die Instanzgrösse). 
+
+\subsubsection{Boot ISO}
+Je nach Anforderung muss der Pfad zu einer Boot ISO mitgegeben werden (für die Installation eines 
+Betriebssystem) 
+
+\subsubsection{Boot Disk}
+Ebenfalls muss noch eine Bootdisk übergeben werden, dies kann ein bereits 
+bestehender Storage Pool,Volume oder eine Datei sein.
+Die Grösse wird hier durch die ausgewählte Disk/Datei bestimmt, bei Cloud 
+Anbietern jedoch durch die Instanzgrösse.
+
+\subsubsection{Network}
+Beim Netzwerk kann eine IP oder MAC Adresse mitgegeben oder automatisch zugewiesen 
+werden.
+Weitere Netzwerk Einstellungen werden über die SDN Libary abgehandelt.
+Bei Cloud Anbietern wird hier ebenfalls direkt automatisch eine IP und MAC 
+Adresse zugewiesen.
+
+\subsection{Storage}
+\subsubsection{Name}
+Storage besitzt einen festen eindeutigen Namen über welchen der Pool angesprochen 
+werden kann.
+\subsubsection{Grösse}
+Der Storage benötigt eine gewisse Grösse um erstellt zu werden oder falls es 
+sich um eine Partition oder Datei handelt wird sie dadurch vorgegeben.
+
+\subsubsection{Typ}
+Der Storage kann sowohl lokaler als auch Netzwerk Speicher sein, hier wird 
+zwischen verschiedenen Typen unterschieden.
+Z.B.: können NFS Storages eingebunden werden oder GlusterFS bzw. Sheepdog.
+
+
+
+\subsection{Network}
+\subsubsection{OpenFlow}
+Netzwerkeinstellungen werden über OpenFlow gehandhabt, somit werden hier die 
+OpenFlow spezifische Konfigurationen unterstützt.
+Zu diesem Zeitpunkt wird dies allerdings noch nicht behandelt.
+
+
+
+
+\end{document}
