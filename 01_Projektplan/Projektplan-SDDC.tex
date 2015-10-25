@@ -77,6 +77,8 @@ Adrian\\
 Adrian\\
 \textbf{19.10.15} & 1.11 &  Verbesserungen Projektplanung + Testing & Silvan 
 Adrian\\
+\textbf{25.10.15} & 1.12 &  Metriken verbessert + Testing & Silvan 
+Adrian\\
 \end{tabularx}
 
 \newpage
@@ -90,8 +92,12 @@ Dieses Dokument beschreibt die Planung der SA SDDC.
 Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktualisiert.
 
 \subsection{Referenzen}
-\subsubsection{APIs:} \href{http://developer.openstack.org/}{http://developer.openstack.org/}
-\subsubsection{SCRUM Guide:} \href{http://www.scrumguides.org/docs/scrumguide/v1/Scrum-Guide-DE.pdf}{http://www.scrumguides.org}
+\subsubsection{APIs:} \href{http://developer.openstack.org/}{http://developer.openstack.org/} 
+\\
+\href{http://libvirt.org/}{http://libvirt.org/} \\
+\href{https://jclouds.apache.org/}{https://jclouds.apache.org/}
+\subsubsection{SCRUM Guide:} 
+\href{http://www.scrumguides.org/docs/scrumguide/v1/Scrum-Guide-DE.pdf}{http://www.scrumguides.org}
 \section{Projektübersicht}
 Es soll eine generische API erstellt oder eine bestehende API verwendet werden, um über ein 
 Dashboard direkt Services zu abonnieren, dabei können bei der API Vorlagen 
@@ -215,7 +221,7 @@ vorbereiten & 11.12.15 & 18.12.15\\
 
 \subsection{Besprechungen}
 Daily Meetings (ca. 10 - 15min) werden während der Pause oder über Skype stattfinden, um sich 
-gegenseitig über Probleme, abgeschlossene Arbeitspakete etc. zu informieren.
+gegenseitig über Probleme, abgeschlossene Arbeitspakete informieren zu können.
 Nach jedem Abschluss eines Sprints wird ein Sprintreview geplant und durchgeführt, um zu prüfen 
 ob alles gemäss Plan erledigt wurde + die aktuellste Version der Software 
 released.
@@ -225,7 +231,7 @@ Risiken werden im Dokument Initiales\_Risikomanagement.pdf beschrieben
 \subsection{Umgang mit Risiken}
 Für die Risiken werden Reserven eingeplant. Die Reserven werden direkt in die einzelnen Tickets 
 einberechnet. Falls Risiken eintreffen werden diese sofort an einem der Daily-Meetings kommuniziert 
-und mögliche Lösungen evaluiert.
+und mögliche Lösungen kurz evaluiert.
 \section{Arbeitspakete}
 
 Die Arbeitspakete werden in Open Project erstellt und gepflegt.
@@ -253,6 +259,8 @@ Fabian Binna & Lenovo T430s & Windows 10 &  Eclipse Mars\\
     \item \textbf{Notifications:} Slack
     \item \textbf{Wireframing:} Pencil
     \item \textbf{Test Coverage:} Cobertura
+    \item \textbf{Bugs Vorbeugung:} Findbugs
+    \item \textbf{Metriken:} SonarQube
 \end{itemize}
 
 \subsection{Kommunikationsmittel}
@@ -273,8 +281,12 @@ Die Texte werden in \LaTeX geschrieben, aber auch als PDF auf das Repository ges
 \subsection{Projektmanagement}
 Für das Projektmanagement wird OpenProject verwendet.\\
 \\
-\url{sddc.silvn.com}
+\url{http://sddc.silvn.com}
 
+\subsection{Metriken}
+Für Metriken wird SonarQube verwendet.\\
+\\
+\url{http://sonar.silvn.com}
 
 \subsection{Entwicklung}
 
@@ -325,11 +337,16 @@ Produkte:
 \begin{itemize}
 \item JUnit Tester
 \item Travis
+\item SonarQube Analyse
 \end{itemize}
 
 \subsection{Integrationstest}
-Bei den Integrationstests kommt eine Kombination aus automatisierten Tests, sowie eine Analyse des Ablaufs zum Einsatz.
-Die Tests werden an verschiedenen Schichten angesetzt (Presentation und Business-Layer). Die Unteren Schichten, die für den Integrationstest nicht relevant sind werden simuliert. Nachdem die automatische Tests durchgelaufen sind, werden die Log-Daten ausgewertet und mit den Sequenzdiagrammen abgeglichen. Es ist wichtig, das die Komponenten korrekt miteinander kommunizieren.\\
+Bei den Integrationstests kommt eine Kombination aus automatisierten Tests, 
+sowie eine Analyse des Ablaufs zum Einsatz.
+Die Tests werden an verschiedenen Schichten angesetzt (Presentation und Business-Layer). 
+Die Unteren Schichten, die für den Integrationstest nicht relevant sind werden simuliert. 
+Nachdem die automatische Tests durchgelaufen sind, werden die Log-Daten ausgewertet und mit den 
+Sequenzdiagrammen abgeglichen. Es ist wichtig, das die Komponenten korrekt miteinander kommunizieren.\\
 
 Produkte:
 \begin{itemize}
@@ -338,7 +355,9 @@ Produkte:
 \end{itemize}
 
 \subsection{Systemtest}
-Die Systemtests richten sich nach den Use Cases. Die Use Cases werden von einem Tester nach Protokollangaben durchgeführt und dokumentiert. Auch hier können Log-Daten eine Hilfe für die Analyse sein.
+Die Systemtests richten sich nach den User Stories und deren Akzeptanzkriterien. 
+Die Kriterien werden von einem Tester nach 
+Protokollangaben getestet und dokumentiert. Auch hier können Log-Daten eine Hilfe für die Analyse sein.
 
 Systemtests werden nach jedem Sprint durchgeführt um die geplante Funktionalität 
 zu testen und so die neuste Version der Software releasen zu können.\\
