@@ -306,9 +306,7 @@ Nach jedem Sprint oder bei Abschluss grosser Arbeitspakete wird ein Code Review 
 Die Review Protokolle werden auf dem GitHub Repository SDDC-Doku abgelegt.
 
 \subsubsection{Logging}
-Für das Logging wird die Java logging API verwendet. Der Vorteil von logging ist, dass auch 
-Third-Party Modules am Logging teilnehmen können. So können auch die Events 
-der APIs abgefangen werden und in einem Zentralen Log-File gespeichert werden.\\
+Für das Logging wird log4j verwendet.\\
 \\
 TRACE: Ausführliches Debugging\\
 DEBUG: allgemeines Debugging\\
@@ -344,7 +342,7 @@ Produkte:
 Bei den Integrationstests kommt eine Kombination aus automatisierten Tests, 
 sowie eine Analyse des Ablaufs zum Einsatz.
 Die Tests werden an verschiedenen Schichten angesetzt (Presentation und Business-Layer). 
-Die Unteren Schichten, die für den Integrationstest nicht relevant sind werden simuliert. 
+Die Unteren Schichten, die für den Integrationstest nicht relevant sind werden gemockt. 
 Nachdem die automatische Tests durchgelaufen sind, werden die Log-Daten ausgewertet und mit den 
 Sequenzdiagrammen abgeglichen. Es ist wichtig, das die Komponenten korrekt miteinander kommunizieren.\\
 
