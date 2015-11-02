@@ -1,0 +1,85 @@
+\documentclass[11pt]{scrartcl}
+
+\title{Code Review}
+\author{Silvan Adrian \\ Fabian Binna}
+\date{\today{}}
+
+\usepackage[ngerman]{babel}
+\usepackage[automark]{scrpage2}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\graphicspath{ {./images/} }
+\pagestyle{scrheadings}
+
+\clearscrheadfoot
+
+\ohead{Projekt: SDDC}
+\ifoot{Code Review}
+\cfoot{Version: 1.00}
+\ofoot{Datum: \today{}}
+\setheadsepline{0.5pt}
+\setfootsepline{0.5pt}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\def\arraystretch{1.5}
+\begin{titlepage}
+\begin{center}
+\vspace{10em}
+
+\vspace{10em}
+\end{center}
+\begin{center}
+\huge {Code Review}\\
+
+Durchgeführt am 2. November 2015\\
+Sprint 1
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Arbeitspakete}
+
+\begin{center}
+
+\begin{tabularx}{\linewidth}{l l l l}
+\textbf{ID} & \textbf{Subject} & \textbf{Assignee} & \textbf{Bewertung}\\
+\hline
+\textbf{99} & Customer Service anzeigen zum abonnieren & Team & OK \\
+\textbf{98} & Customer abonnierte Services anzeigen & Team & OK\\
+\textbf{88} & Customer kündigt Service & Team & OK\\
+\textbf{87} & Customer abonniert Service & Team & OK\\
+\end{tabularx}
+
+\end{center}
+\newpage
+
+\section{Kommentare}
+
+\subsection{99, Customer Service anzeigen zum abonnieren}
+Die Services bestehen momentan aus den XML Files für die Konfiguration von libvirt. Im nächsten Sprint werden diese XML Files durch eigene Konfigurations Files ersetzt.\\
+
+\subsection{98, Customer abonnierte Services anzeigen}
+Die abonnierten Services werden momentan in einem String-Array gespeichert, der die uuids von Compute, Storage und Network beinhaltet. So können die abonnierten Services wieder gekündigt werden.
+Im nächsten Sprint wird dort ein Konfigurations File gespeichert, das die uuids und weitere Informationen enthält (z.B. Um welchen Service handelt es sich).
+
+\subsection{88, Customer kündigt Service}
+Die Kündigung des Services verläuft momentan noch sehr linear. Es ist nicht möglich zwei Storages in einem Service zu verwenden. Im nächsten Sprint wird dieses Problem mit den neuen Konfigurationsfiles gelöst.\\
+
+\subsection{87, Customer abonniert Service}
+Gleiches Problem wie bei (88, Customer kündigt Service)\\
+
+
+\end{document}
