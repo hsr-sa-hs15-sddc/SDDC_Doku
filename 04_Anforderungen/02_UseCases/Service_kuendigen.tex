@@ -1,0 +1,52 @@
+
+\subsubsection{UC02: Service kündigen}
+\begin{longtabu} to \textwidth {X[1,l] X[2,l]}
+	\bfseries Primäraktor & Customer  \\\hline 
+	\bfseries Steakholders und Interessen & Customer: Möchte einen Service kündigen  \\\hline 
+	\bfseries Vorbedingungen & Das Customer-Dashboard wurde geöffnet.  \\\hline 
+	\bfseries Nachbedingungen & Die Service Infos wurden gelöscht und der Workflow wurde angestossen   \\\hline 
+	\bfseries Standartablauf & 
+		\begin{enumerate}
+			\item Wiederholen bis kein Service mehr gekündigt werden soll
+			\begin{enumerate}
+			    \item Der Customer wechselt in die \textbf{Services Übersicht}
+			    \item Der Customer wählt einen der vorhanden \textbf{Services} aus
+			    \item Der Customer drückt auf den link \textbf{terminate}
+			    \item Der Customer wird in die \textbf{Services Übersicht} weitergeleitet
+			\end{enumerate}
+		\item Der Customer schliesst das Customer-Dashboard
+		\end{enumerate}
+      \\\hline
+      	\bfseries Alternativer Ablauf & 
+		\begin{enumerate}
+		  
+		  \item 
+                 \begin{enumerate}
+		    \item Der Customer entscheidet sich um
+		    \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		    \end{enumerate}
+		    \item  Der Customer entscheidet sich um
+		     \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		      \item wählt einen anderen Service
+		    \end{enumerate}
+		    
+		       \item  Der Customer entscheidet sich um
+		     \begin{enumerate}
+		      \item Schliesst das Fenster/Tab
+		      \item wählt einen anderen Service
+		    \end{enumerate}
+		    
+		  \end{enumerate}
+			
+		\end{enumerate}
+	 \\\hline
+
+      \\\hline
+	\bfseries Spezielle Anforderungen & siehe nichtfunktionale Anforderungen  \\\hline 
+	\bfseries Technologie- und Datenvarianten & Keine  \\\hline 
+	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
+	\bfseries Offene Fragen & Keine  \\\hline  
+\end{longtabu}
+%Service kündigen end
