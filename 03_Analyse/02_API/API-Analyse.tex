@@ -60,7 +60,8 @@
 \textbf{25.09.15} & 1.03 & Fazit & Fabian Binna\\
 \textbf{25.09.15} & 1.04 & Einführung + Gültigkeit & Fabian Binna\\
 \textbf{02.10.15} & 1.05 & Verweis auf API-Matrixvergleich.pdf & Fabian Binna\\
-
+\textbf{06.11.15} & 1.06 & Neueste Erkenntnisse Nachtragen + verbessern & Silvan 
+Adrian\\
 \end{tabularx}
 
 \newpage
@@ -79,6 +80,7 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 \href{https://github.com/esl/elibcloud}{elibcloud}\\
 \href{https://github.com/fog/fog/blob/master/lib/fog/openstack/docs/getting_started.md}{fog}\\
 \href{https://github.com/pkgcloud/pkgcloud}{pkgcloud}\\
+\href{http://http://libvirt.org/}{libvirt}\\
 
 \newpage
 
@@ -89,7 +91,8 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 
 \subsection{\href{https://jclouds.apache.org}{jClouds}}
 \textbf{Sprache: }Java\\
-\textbf{Wichtigste Provider: }OpenStack, Docker, DigitalOcean, Google Cloud Platform, Rackspace, HP Cloud, CloudStack, Amazon web services, abiquo, CloudSigma, joyent\\
+\textbf{Wichtigste Provider: }OpenStack, Docker, DigitalOcean, Google Cloud Platform, 
+Rackspace, HP Cloud, CloudStack, Amazon web services, abiquo, CloudSigma, joyent\\
 
 \subsection{\href{https://github.com/esl/elibcloud}{elibcloud}}
 \textbf{Sprache: }Erlang\\
@@ -97,17 +100,27 @@ elibcloud ist ein Wrapper für libcloud.\\
 
 \subsection{\href{https://github.com/fog/fog/blob/master/lib/fog/openstack/docs/getting_started.md}{fog}}
 \textbf{Sprache: }Ruby\\
-\textbf{Wichtigste Provider: }CloudSigma, CloudStack, GoGrid, Google Cloud Platform, Joyent, Libvirt, Linode, OpenStack, OpenVZ, Rackspace, Zerigo, IBM, HP\\
+\textbf{Wichtigste Provider: }CloudSigma, CloudStack, GoGrid, Google Cloud Platform, Joyent, 
+Libvirt, Linode, OpenStack, OpenVZ, Rackspace, Zerigo, IBM, HP\\
 
 \subsection{\href{https://github.com/pkgcloud/pkgcloud}{pkgcloud}}
 \textbf{Sprache: }JavaScript (Node.js)\\
-\textbf{Wichtigste Provider: }Amazon, Azure, DigitalOcean, Joyent, OpenStack, Rackspace, Google, HP,\\
+\textbf{Wichtigste Provider: }Amazon, Azure, DigitalOcean, Joyent, OpenStack, Rackspace, Google, HP\\
+
+\subsection{\href{http://http://libvirt.org/}{libvirt}}
+\textbf{Sprache: }C\\
+\textbf{Wichtigste Provider: }Xen, KVM, OpenVZ, VMware ESX, VirtualBox, IBM PowerVM\\
 
 \newpage
 
 \section{Support}
 \subsection{Compute}
-Die grösste Auswahl an Providern liefert Libcloud.JClouds hingegen unterstützt auch Docker, was ein grosser Vorteil gegenüber Libcloud ist. Im Dokument Compute.ods im Ordner 02\_Analyse\//01\_API wird genau aufgeführt, welche Provider von welchen APIs unterstützt werden. Es werden nur public Clouds berücksichtigt.
+Die grösste Auswahl an Providern liefert Libcloud.JClouds hingegen 
+unterstützt auch Docker, was ein grosser Vorteil gegenüber Libcloud ist. Im 
+Dokument Compute.ods im Ordner 02\_Analyse\//01\_API wird genau aufgeführt, 
+welche Provider von welchen APIs unterstützt werden. Es werden nur public Clouds berücksichtigt.
+Für den private Cloud Bereich bietet sich hier eher Libvirt an, da neben XEN, 
+KVM, Qemu und weitere unterstützt werden.
 
 \subsection{Storage (Object/Blob)}
 \textbf{libcloud}
@@ -148,15 +161,22 @@ Die grösste Auswahl an Providern liefert Libcloud.JClouds hingegen unterstützt
 \item Rackspace
 \end{itemize}
 
-\subsection{Network}
-Alle APIs ausser pkgcloud erwähnen keine Provider für die Unterstützung von Network Providern. Bei libcloud sind jedoch Methoden vorhanden, die auf eine Netzwerkkonfigurationsmöglichkeit hinweisen, werden aber nicht genauer dokumentiert.\\
-
-\textbf{pkgcloud}
+\textbf{libvirt}
 \begin{itemize}
-\item HP
-\item OpenStack
-\item Rackspace
+  \item GlusterFS
+  \item Sheepdog
+  \item SCSI
+  \item iSCSI
+  \item FiberChannel
+  \item NFS
+  \item lvm
+  \item filesystems
 \end{itemize}
+
+\subsection{Network}
+Libvirt allein bietet hier mit Abstand die beste Unterstützung von Network Konfigurationen 
+(VLANs, Bridges, etc.) und ist sehr auf Private Clouds ausgelegt.\\
+
 
 \subsection{Other}
 \subsubsection{Database}
@@ -243,13 +263,22 @@ Alle APIs ausser pkgcloud erwähnen keine Provider für die Unterstützung von N
 
 \section{Fazit}
 
-Im Gesamtbild schneidet libcloud am besten ab. Es bietet deutlich am meisten Compute und Storage Provider. Die Dokumentation ist sehr ausführlich, mit konkreten Ratschlägen zur Implementation (z.B. Thread Safe). Zusätzlich bietet libcloud Module für SSL und Pricing.
-Jclouds ist eine Library für Java, was für uns am besten ist, da wir am meisten Erfahrung mit Java haben. Es gibt jedoch nicht viele Compute Provider, dafür unterstützt jclouds als einziger Docker.
+Im Gesamtbild schneidet libcloud am besten ab. Es bietet deutlich am meisten Compute und 
+Storage Provider. Die Dokumentation ist sehr ausführlich, mit konkreten Ratschlägen zur 
+Implementation (z.B. Thread Safe). Zusätzlich bietet libcloud Module für SSL und Pricing.
+Jclouds ist eine Library für Java, was für uns am besten ist, da wir am meisten Erfahrung mit 
+Java haben. Es gibt jedoch nicht viele Compute Provider, dafür unterstützt jclouds als einziger Docker.
 Der einzige Vorteil von fog ist die Möglichkeit CDNs als Service anzubieten.
 Pkgcloud unterstützt eine breite Auswahl von Services (z.B. Database, Load Balancer, DNS).
-Elibcloud ist ein erlang Wrapper für libcloud und unterstützt somit das gleiche wie libcloud (sonlange die Version auf dem neusten stand ist). Erlang würde sich für eine parallele Umgebung eignen, es sind jedoch keinerlei Erlang Kenntnisse im Team vorhanden.\\
+Elibcloud ist ein erlang Wrapper für libcloud und unterstützt somit das gleiche wie libcloud 
+(sonlange die Version auf dem neusten stand ist). Erlang würde sich für eine parallele Umgebung eignen, 
+es sind jedoch keinerlei Erlang Kenntnisse im Team vorhanden.\\
+Libvirt ist allerdings die einzige API, die sich völlig auf Private Anbieter 
+zugeschnitten ist (wird auch von OpenStack verwendet), wäre also die Beste 
+Lösung, wenn es darum geht eine Private Cloud aufzubauen.
 
-\textbf{Wir entscheiden uns für libcloud. Die Gründe dafür sind unten und im Dokument 02\_Analyse\//02\_API-Matrixvergleich.pdf aufgeführt}
+\textbf{Wir entscheiden uns für libvirt. Die Gründe dafür sind unten und im Dokument 
+02\_Analyse\//02\_API-Matrixvergleich.pdf aufgeführt}
 
 
 \subsection{libcloud}
@@ -265,7 +294,7 @@ Elibcloud ist ein erlang Wrapper für libcloud und unterstützt somit das gleich
 \subsection{jclouds}
 \begin{Argumentation}
 \pro Unterstützt Docker.
-\pro Java Librariy. Das Team hat am meisten Erfahrung mit Java.
+\pro Java Library. Das Team hat am meisten Erfahrung mit Java.
 \pro Code Examples für fast jeden Provider.
 
 \contra Kleine Auswahl an Compute Providern.
@@ -275,7 +304,8 @@ Elibcloud ist ein erlang Wrapper für libcloud und unterstützt somit das gleich
 \begin{Argumentation}
 \pro Es ist möglich ein CDN als Service anzubieten.
 
-\contra Mässige Dokumentation. Es existieren zwar Examples, die sind aber nicht besonders aussagekräftig.
+\contra Mässige Dokumentation. Es existieren zwar 
+Examples, die sind aber nicht besonders aussagekräftig.
 \contra Kleine Auswahl an Compute Providern.
 \end{Argumentation}
 
@@ -288,6 +318,17 @@ Elibcloud ist ein erlang Wrapper für libcloud und unterstützt somit das gleich
 
 \contra Mässige Dokumentation. Es existieren zwar Examples, die sind aber nicht besonders aussagekräftig.
 \contra Kleine Auswahl an Compute Providern.
+\end{Argumentation}
+
+\subsection{libvirt}
+\begin{Argumentation}
+\pro Grösste Auswahl an ``Private Cloud Anbietern''.
+\pro Grosse Storage Unterstützung.
+\pro Explizite Unterstützung von Network.
+\pro Bietet Java Library (language Bindings)
+
+\contra Ungenügende Dokumentation. Es existieren zwar Examples und 
+sonst existiert nur eine Javadoc zur Library.
 \end{Argumentation}
 
 \end{document}
