@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Configfile}
-\cfoot{Version: 1.01}
+\cfoot{Version: 1.02}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -56,12 +56,14 @@ linkcolor = black]{hyperref}
 \hline
 \textbf{17.10.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
 \textbf{19.10.15} & 1.01 & Configfile Optionen& Silvan Adrian \\
+\textbf{07.11.15} & 1.02 & JSON definition + Anpassungen auf neue Anforderungen & Fabian Binna\\
 \end{tabularx}
 
 \newpage
 \tableofcontents
 \newpage
-\section{Einführung}\subsection{Zweck}
+\section{Einführung}
+\subsection{Zweck}
 Dieses Dokument beschreibt das Configfile
 \subsection{Gültigkeit}
 Dieses Dokument ist währen des ganzen Projekts gültig und wird laufend erweitert
@@ -69,26 +71,19 @@ Dieses Dokument ist währen des ganzen Projekts gültig und wird laufend erweite
 Dieses Dokument soll eine Übersicht über die Inhalte des Configfiles geben.
 
 \section{Configfile}
-Das Configfile wird jeweils einem Servicemodul hinterlegt, bei welchen die Typen 
-Compute, Network und Storage bestehen.
-Auf diesem Weg kann ein Servicemodul auch mehrmals weiterverwendet werden für 
-verschiedene Servies.
-Die Einstellungen, die im Configfile stehen können sich je nach library ändern in 
-diesem Beispiel wird vorerst auf libvirt Bezug genommen und wird bei Bedarf 
-erweitert.
-
+Das Configfile beschreibt einen Service möglichst abstakt. Die Punkte Compute und Storage
+werden durch allgemeingültige Grössen (S, M, L) beschrieben. Der eigentliche Service ist auf einem
+Image vorinstalliert. Im Configfile wird dieses Image referenziert und bei aufsetzten des Services auf
+dem Server installiert.
 
 \subsection{Allgemein}
 Da je nach Bedarf Compute, Storage oder Netzwerk zuerst erstellt werden muss 
 wird dies über eine Art Workflow behandelt, welcher entscheidet welches
 Servicemodul zuerst erstellt werden soll.
-Dies geschieht indem die Reihenfolge der Servicemodule eingehalten wird und 
-eines nach dem anderen erstellt wird.
-\subsubsection{XML}
-Das Configfile wird in XML geschrieben und wird auch so an die Generische API 
+
+\subsubsection{JSON}
+Das Configfile wird in JSON geschrieben und wird auch so an die Generische API 
 übergeben.
-Während dem Projekt soll bei Bedarf eine bessere Lösung gesucht werden z.B.: 
-durch YAML ersetzen.
 
 \subsection{Compute}
 In Compute werden Memory, vCPU, Harddisk und Netzwerk (IP) zugewiesen.
@@ -149,6 +144,32 @@ OpenFlow spezifische Konfigurationen unterstützt.
 Zu diesem Zeitpunkt wird dies allerdings noch nicht behandelt.
 
 
+\subsection{Syntax}
+
+\subsubsection{Service}
+
+\{\\
+id : <number>,\\
+serviceName : <string>,\\
+image : <string>,\\
+
+compute : \{\\
+size : S | M | L\\
+\},\\
+
+storage : \{\\
+size : S | M | L\\
+\},\\
+\}\\
+
+\subsubsection{OrderedService}
+
+\{\\
+id : <number>,\\
+serviceName : <string>,\\
+
+identifiers : [ <string>, ... ]\\
+\}\\
 
 
 \end{document}
