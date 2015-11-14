@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{REST API}
-\cfoot{Version: 1.00}
+\cfoot{Version: 1.02}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -56,7 +56,7 @@ linkcolor = black]{hyperref}
 \hline
 \textbf{11.10.15} & 1.00 & Erstellung des Dokuments & Fabian Binna \\
 \textbf{17.10.2015} & 1.01 & Service + OrderedService & Fabian Binna\\
-
+\textbf{14.11.2015} & 1.02 & Anpassungen an neue Anforderungen & Silvan Adrian\\
 \end{tabularx}
 
 \newpage
@@ -76,8 +76,22 @@ Dieses Dokument ist währen des ganzen Projekts gültig und wird laufend erweite
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /services\\
 \textbf{Methods} & GET\\
-\textbf{JSON Format Response} & [{" id":<ServiceID>,"name":<ServiceName>}]\\
 \end{tabularx}
+
+\subsection{JSON Response}
+
+\{\\
+id : <number>,\\
+serviceName : <string>,\\
+serviceModules:[{
+category:<string>,
+size:<string>,
+name:<string>
+\}, \\ 
+...]
+\},\\
+...\\
+\}\\
 
 \subsection{Service}
 
@@ -85,23 +99,62 @@ Dieses Dokument ist währen des ganzen Projekts gültig und wird laufend erweite
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /services/\{id\}\\
 \textbf{Methods} & GET, PUT, DELETE\\
-\textbf{JSON Format Response} & JSON Service Config File\\
 \end{tabularx}
+
+\subsection{JSON Response}
+\{\\
+id : <number>,\\
+serviceName : <string>,\\
+serviceModules:[{
+category:<string>,
+size:<string>,
+name:<string>
+\}, \\ 
+...]
+\}
 
 \section{CRUD OrderedService}
 \subsection{OrderedServices}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /OrderedServices\\
 \textbf{Methods} & GET\\
-\textbf{JSON Format Response} & [{" id":<ServiceID>,"name":<ServiceName>}]\\
 \end{tabularx}
+
+\subsection{JSON Response}
+\{\\
+id : <number>,\\
+orderedServiceName : <string>,\\
+identifiers:[{
+id:<number>,
+uuid:<string>,
+category:<string>,
+size:<string>
+\}, \\ 
+...]
+\},\\
+...\\
+\}\\
+
 
 \subsection{OrderedService}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /OrderedServices/\{id\}\\
 \textbf{Methods} & GET, PUT, DELETE\\
-\textbf{JSON Format Response} & JSON Service Config File\\
 \end{tabularx}
+
+\subsection{JSON Response}
+\{\\
+id : <number>,\\
+orderedServiceName : <string>,\\
+identifiers:[{
+id:<number>,
+uuid:<string>,
+category:<string>,
+size:<string>
+\}, \\ 
+...]
+\}
+
 
 \end{document}
 
