@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Architektur}
-\cfoot{Version: 1.03}
+\cfoot{Version: 1.04}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -58,6 +58,7 @@ linkcolor = black]{hyperref}
 \textbf{18.10.15} & 1.01 & Dokumentaufbau + Logische Sicht & Fabian Binna\\
 \textbf{20.10.15} & 1.02 & Klassenstrukturen & Fabian Binna\\
 \textbf{26.10.15} & 1.03 & Klassenstrukturen verbessert + Klassenstruktur genericapi & Fabian Binna\\
+\textbf{14.11.15} & 1.04 & Datenmodell und Verbesserungen & Silvan Adrian\\
 
 \end{tabularx}
 
@@ -115,11 +116,16 @@ Hier befinden sich die Facaden, welche die Mindestanforderungen für die darunte
 
 \subsection{persistence}
 
+Wird durch OR Mapper (Hibernate) vorgenommen, dieser mappt die Java Objekte auf 
+die Datenbank.
+
 \section{Deployment}
+
+\includegraphics[width=\textwidth]{deployment}
 
 \section{Persistierung}
 
-
+\includegraphics[width=\textwidth]{Datenmodell}
 
 
 
