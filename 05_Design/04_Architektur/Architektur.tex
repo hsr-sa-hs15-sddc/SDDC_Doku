@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Architektur}
-\cfoot{Version: 1.04}
+\cfoot{Version: 1.05}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -59,6 +59,7 @@ linkcolor = black]{hyperref}
 \textbf{20.10.15} & 1.02 & Klassenstrukturen & Fabian Binna\\
 \textbf{26.10.15} & 1.03 & Klassenstrukturen verbessert + Klassenstruktur genericapi & Fabian Binna\\
 \textbf{14.11.15} & 1.04 & Datenmodell und Verbesserungen & Silvan Adrian\\
+\textbf{22.11.15} & 1.05 & Logisch Architektur erneuert & Fabian Binna\\
 
 \end{tabularx}
 
@@ -76,7 +77,13 @@ Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktual
 \section{Systemübersicht}
 
 \section{Logische Architektur}
-Im Package controller wird die REST Schnittstelle implementiert. Die Packages service und orderedservice rufen in der domain die CRUD Methoden auf. Die CRUD Methoden greifen über die dataaccess Schnittstelle auf die generische api und die Datenbank zu. Diese Aufteilung sorgt für einen möglichst modularen Aufbau, ohne unnötige Schichten zu erfinden.
+\begin{itemize}
+	\item services: Web-Schnittstelle (RESTful)
+	\item genericapi: Abstraktion für Compute, Storage und Network
+	\item common: DTOs (Service, OrderedService, ServiceModule)
+	\item util: Tools zur Bearbeitung von Configfiles
+	\item presistence: OR-Mapping
+\end{itemize}
 
 \begin{center}
 \includegraphics[scale=0.5]{LogischeSicht}
@@ -86,33 +93,7 @@ Im Package controller wird die REST Schnittstelle implementiert. Die Packages se
 
 \section{Klassenstruktur}
 
-\subsection{controller}
-Die Klassen im Package implementieren die REST API. Sie leiten die Anfragen an die Domainschicht weiter.
 
-\begin{center}
-\includegraphics[scale=0.5]{Klassenstruktur-controller}
-\end{center}
-
-\subsection{domain}
-\begin{center}
-\includegraphics[scale=0.5]{Klassenstruktur-domain}
-\end{center}
-
-\newpage
-
-\subsection{data access}
-Hier befinden sich die Facaden, welche die Mindestanforderungen für die darunter liegenden Schichten definiert. Das ermöglicht den einfachen Austausch der Implementation für persistence und Infrastruktur (Software, welche die Hardware steuert).
-
-\begin{center}
-\includegraphics[scale=0.5]{Klassenstruktur-dataaccess}
-\end{center}
-
-
-\subsection{generic api}
-
-\begin{center}
-\includegraphics[scale=0.5]{Klassenstruktur-genericapi}
-\end{center}
 
 \subsection{persistence}
 
