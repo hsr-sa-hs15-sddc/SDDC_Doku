@@ -26,7 +26,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Projektplan: SDDC}
-\cfoot{Version: 1.14}
+\cfoot{Version: 1.15}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -81,6 +81,7 @@ Adrian\\
 Adrian\\
 \textbf{26.10.15} & 1.13 & Testing Anpassungen & Fabian Binna\\
 \textbf{26.10.15} & 1.14 & Planung Anpassungen & Silvan Adrian\\
+\textbf{22.11.15} & 1.15 & Allgemeine Überarbeitung & Fabian Binna\\
 \end{tabularx}
 
 \newpage
@@ -101,12 +102,12 @@ Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktual
 \subsubsection{SCRUM Guide:} 
 \href{http://www.scrumguides.org/docs/scrumguide/v1/Scrum-Guide-DE.pdf}{http://www.scrumguides.org}
 \section{Projektübersicht}
-Es soll eine generische API erstellt oder eine bestehende API verwendet werden, um über ein 
-Dashboard direkt Services zu abonnieren, dabei können bei der API Vorlagen 
+Es soll eine generische API erstellt werden, um über ein 
+Dashboard Services zu abonnieren, dabei können bei der API Vorlagen 
 hinterlegt werden, welche mehrere Servicemodule beinhalten 
 (Compute,Storage,Network).
-Die API soll dabei möglichst modular aufgebaut sein, damit Neuerungen einfach 
-auf den neusten Stand gebracht werden können.
+Die API soll dabei möglichst modular aufgebaut sein, damit sie für verschiedenste
+Kombinationen von Compute, Storage und Network einsetzbar ist.
 \subsection{Zweck und Ziel}
  Gelerntes aus verschiedenen Modulen anwenden, sich mit der gestellten 
  Aufgabenstellung auseinandersetzen 
@@ -120,7 +121,7 @@ auf den neusten Stand gebracht werden können.
   \item Unterstützung von mindestens 1 Storage Anbieter
   \item Unterstützung von mindestens 1 Network Anbieter
   \item Admin Dashboard um Services verwalten zu können
-  \item Spartanisches User-Dashboard
+  \item simples User-Dashboard
 \end{itemize}
 \subsection{Erweiterte Features}
 \begin{itemize}
@@ -131,6 +132,7 @@ auf den neusten Stand gebracht werden können.
 \end{itemize}
 \subsection{Lieferumfang}
 \begin{itemize}
+  \item Cloud Analyse (Provider, Libraries ...)
   \item Source-Code
   \item Projektdokumentation
   \item Generische API Dokumentation
@@ -138,11 +140,11 @@ auf den neusten Stand gebracht werden können.
 \end{itemize}
 
 \subsection{Annahmen und Einschränkungen}
-Die Applikation setzte sich aus einem Admin-Dashboard und einer generischen 
+Die Applikation setzt sich aus einem Admin-Dashboard und einer generischen 
 API/Restful API
 zusammen, die sollten dabei verteilt betrieben werden können.
 Das User-Dashboard würde lediglich zum Testen der API verwendet.
-Die generische API soll dabei so viele Anbieter wie möglich abdecken.
+Die generische API soll dabei so viele Anbieter wie möglich abdecken können.
 \section{Projektorganisation}
 Wir setzen beim Project auf Scrum, wodurch lediglich die Projektrollen Product 
 Owner, Entwickler und Scrum-Master zur Verfügung stehen.
@@ -229,7 +231,7 @@ Risiken werden im Dokument Initiales\_Risikomanagement.pdf beschrieben
 \subsection{Umgang mit Risiken}
 Für die Risiken werden Reserven eingeplant. Die Reserven werden direkt in die einzelnen Tickets 
 einberechnet. Falls Risiken eintreffen werden diese sofort an einem der Daily-Meetings kommuniziert 
-und mögliche Lösungen kurz evaluiert.
+und mögliche Lösungen evaluiert.
 \section{Arbeitspakete}
 
 Die Arbeitspakete werden in Open Project erstellt und gepflegt.
