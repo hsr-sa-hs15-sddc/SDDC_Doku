@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{REST API}
-\cfoot{Version: 1.02}
+\cfoot{Version: 1.03}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -57,6 +57,7 @@ linkcolor = black]{hyperref}
 \textbf{11.10.15} & 1.00 & Erstellung des Dokuments & Fabian Binna \\
 \textbf{17.10.2015} & 1.01 & Service + OrderedService & Fabian Binna\\
 \textbf{14.11.2015} & 1.02 & Anpassungen an neue Anforderungen & Silvan Adrian\\
+\textbf{22.11.2015} & 1.03 & POST für oderService & Fabian Binna\\
 \end{tabularx}
 
 \newpage
@@ -98,7 +99,7 @@ name:<string>
 
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /services/\{id\}\\
-\textbf{Methods} & GET, PUT, DELETE\\
+\textbf{Methods} & GET, PUT, DELETE, POST\\
 \end{tabularx}
 
 \subsection{JSON Response}
@@ -139,7 +140,7 @@ size:<string>
 \subsection{OrderedService}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /OrderedServices/\{id\}\\
-\textbf{Methods} & GET, PUT, DELETE\\
+\textbf{Methods} & GET, DELETE\\
 \end{tabularx}
 
 \subsection{JSON Response}
