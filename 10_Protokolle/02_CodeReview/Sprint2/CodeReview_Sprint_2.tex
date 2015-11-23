@@ -1,0 +1,89 @@
+\documentclass[11pt]{scrartcl}
+
+\title{Code Review}
+\author{Silvan Adrian \\ Fabian Binna}
+\date{\today{}}
+
+\usepackage[ngerman]{babel}
+\usepackage[automark]{scrpage2}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\graphicspath{ {./images/} }
+\pagestyle{scrheadings}
+
+\clearscrheadfoot
+
+\ohead{Projekt: SDDC}
+\ifoot{Code Review}
+\cfoot{Version: 1.00}
+\ofoot{Datum: \today{}}
+\setheadsepline{0.5pt}
+\setfootsepline{0.5pt}
+
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\def\arraystretch{1.5}
+\begin{titlepage}
+\begin{center}
+\vspace{10em}
+
+\vspace{10em}
+\end{center}
+\begin{center}
+\huge {Code Review}\\
+
+Durchgeführt am 23. November 2015\\
+Sprint 2
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Arbeitspakete}
+
+\begin{center}
+
+\begin{tabularx}{\linewidth}{l l l l}
+\textbf{ID} & \textbf{Subject} & \textbf{Assignee} & \textbf{Bewertung}\\
+\hline
+\textbf{119} & Customer geht in die Service Übersicht & Team & OK \\
+\textbf{118} & Customer geht in die Offerings Übersicht & Team & OK\\
+\textbf{116} & Admin erstellt Service & Team & OK\\
+\textbf{117} & Admin löscht Service & Team & OK\\
+\textbf{115} & Admin ändert Service & Team & Nachbearbeiten\\
+\end{tabularx}
+
+\end{center}
+\newpage
+
+\section{Kommentare}
+
+\subsection{115, Admin ändert Service}
+Das ändern eines Services funktioniert noch nicht komplett. Die Problematik besteht darin, das Spring keine Update Methode anbietet.
+
+\subsection{Allgemein}
+\subsubsection{Hilfsklassen}
+Die Hilfsklassen werfen keine Exception.
+Es können RuntimeExceptions auftreten, die behandelt werden müssen.
+
+\subsubsection{Factory}
+Die generische API soll mit Dependency Injection aufgebaut werden.
+Dafür werden Factories benötigt, die die teils sehr komplexen generische APIs aufbauen.
+
+\subsubsection{Config Files}
+Die Config Files werden momentan aus dem Rootverzeichnis geladen.
+Hier wird noch eine schöne Lösung benötigt.
+
+
+\end{document}
