@@ -1,79 +1,4 @@
-\documentclass[11pt]{scrartcl}
-
-\title{API Analyse}
-\author{Silvan Adrian \\ Fabian Binna}
-\date{\today{}}
-
-\usepackage[ngerman]{babel}
-\usepackage[automark]{scrpage2}
-\usepackage{hyperref}
-\usepackage{color}
-\usepackage[normalem]{ulem}
-\usepackage{scrpage2}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{minutes}
-\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
-\pagestyle{scrheadings}
-
-\clearscrheadfoot
-\ihead{\includegraphics[scale=0.3]{SDDC}}
-\ohead{Projekt: SDDC}
-\ifoot{API Analyse}
-\cfoot{Version: 1.05}
-\ofoot{Datum: \today{}}
-\setheadsepline{0.5pt}
-\setfootsepline{0.5pt}
-
-\usepackage{ucs}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-
-\begin{document}
-\def\arraystretch{1.5}
-\begin{titlepage}
-\begin{center}
-\vspace{10em}
-\includegraphics[scale=2]{SDDC}
-\vspace{10em}
-\end{center}
-\begin{center}
-\huge {API Analyse}
-\end{center}
-\begin{center}
-\vspace{10em}
-\LARGE {Silvan Adrian} \\
-\LARGE {Fabian Binna}
-\end{center}
-
-\end{titlepage}
-
-\newpage
-\section{Änderungshistorie}
-\begin{tabularx}{\linewidth}{l l l l}
-\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
-\hline
-\textbf{25.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
-\textbf{25.09.15} & 1.01 & APIs & Fabian Binna\\
-\textbf{25.09.15} & 1.02 & Support & Fabian Binna\\
-\textbf{25.09.15} & 1.03 & Fazit & Fabian Binna\\
-\textbf{25.09.15} & 1.04 & Einführung + Gültigkeit & Fabian Binna\\
-\textbf{02.10.15} & 1.05 & Verweis auf API-Matrixvergleich.pdf & Fabian Binna\\
-\textbf{06.11.15} & 1.06 & Neueste Erkenntnisse Nachtragen + verbessern & Silvan 
-Adrian\\
-\end{tabularx}
-
-\newpage
-\tableofcontents
-\newpage
-
-\section{Einführung}
-\subsection{Zweck}
-Dieses Dokument beinhaltet die Analyse von APIs die den Zugriff auf diverse Cloud Anbieter ermöglicht.
-\subsection{Gültigkeitsbereich}
-Dieses Dokument ist während des ganzen Projekts gültig.
-
+%Alle Referenzen ins Bib File verschieben
 \subsection{Referenzen}
 \href{https://libcloud.apache.org}{Libcloud}\\
 \href{https://jclouds.apache.org}{jClouds}\\
@@ -84,7 +9,7 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 
 \newpage
 
-\section{APIs}
+\section{API Analyse}
 \subsection{\href{https://libcloud.apache.org}{Libcloud}}
 \textbf{Sprache: }Python\\
 \textbf{Wichtigste Provider: }Rackspace, Amazon web services, CloudStack, OpenStack, DigitalOcean, Eucalyptus, Joyent, Linode, exoscale,NephoScale, Google Cloud Platform, Zerigo, CloudSigma, iKoula, libvirt\\
@@ -277,8 +202,7 @@ Libvirt ist allerdings die einzige API, die sich völlig auf Private Anbieter
 zugeschnitten ist (wird auch von OpenStack verwendet), wäre also die Beste 
 Lösung, wenn es darum geht eine Private Cloud aufzubauen.
 
-\textbf{Wir entscheiden uns für libvirt. Die Gründe dafür sind unten und im Dokument 
-02\_Analyse\//02\_API-Matrixvergleich.pdf aufgeführt}
+\textbf{Wir entscheiden uns für libvirt. Die Gründe dafür sind unten im API Matrixvergleich aufgeführt}
 
 
 \subsection{libcloud}
@@ -330,9 +254,6 @@ Examples, die sind aber nicht besonders aussagekräftig.
 \contra Ungenügende Dokumentation. Es existieren zwar Examples und 
 sonst existiert nur eine Javadoc zur Library.
 \end{Argumentation}
-
-\end{document}
-
 
 
 

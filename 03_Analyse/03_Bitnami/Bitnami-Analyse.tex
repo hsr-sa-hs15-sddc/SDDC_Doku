@@ -1,77 +1,5 @@
-\documentclass[11pt]{scrartcl}
 
-\title{Analyse Bitnami}
-\author{Silvan Adrian \\ Fabian Binna}
-\date{\today{}}
-
-\usepackage[ngerman]{babel}
-\usepackage[automark]{scrpage2}
-\usepackage[colorlinks = true,
-linkcolor = black]{hyperref}
-\usepackage{color}
-\usepackage[normalem]{ulem}
-\usepackage{scrpage2}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
-\pagestyle{scrheadings}
-
-\clearscrheadfoot
-\ihead{\includegraphics[scale=0.3]{SDDC}}
-\ohead{Projekt: SDDC}
-\ifoot{Template}
-\cfoot{Version: 1.03}
-\ofoot{Datum: \today{}}
-\setheadsepline{0.5pt}
-\setfootsepline{0.5pt}
-
-\usepackage{ucs}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-
-\begin{document}
-\def\arraystretch{1.5}
-\begin{titlepage}
-\begin{center}
-\vspace{10em}
-\includegraphics[scale=2]{SDDC}
-\vspace{10em}
-\end{center}
-\begin{center}
-\huge {Analyse Bitnami}
-\end{center}
-\begin{center}
-\vspace{10em}
-\LARGE {Silvan Adrian} \\
-\LARGE {Fabian Binna}
-\end{center}
-
-\end{titlepage}
-
-\newpage
-\section{Änderungshistorie}
-\begin{tabularx}{\linewidth}{l l X l}
-\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
-\hline
-\textbf{25.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
-\textbf{25.09.15} & 1.01 & Einführung + Referenzen & Silvan Adrian \\
-\textbf{25.09.15} & 1.02 & informationen zu Launchpads und Dashboard + 
-Screenshots von den Möglichkeiten & Silvan Adrian \\
-\textbf{25.09.15} & 1.03 & AWS \&Azure \& Google \& Digitalocean \& VMware & 
-Silvan Adrian\\
-\end{tabularx}
-
-\newpage
-\tableofcontents
-\newpage
-
-\section{Einführung}
-\subsection{Zweck}
-Dieses Dokument beinhaltet die Analyse vom Bitnami Dashboard.
-\subsection{Gültigkeitsbereich}
-Dieses Dokument ist während des ganzen Projekts gültig.
-
+%referenzen ins Bib File
 \subsection{Referenzen}
 \textbf{Bitnami Consoles:}\\
 \href{https://digitalocean.bitnami.com}{https://digitalocean.bitnami.com}\\
@@ -80,7 +8,7 @@ Dieses Dokument ist während des ganzen Projekts gültig.
 \href{https://vmware.bitnami.com/}{https://vmware.bitnami.com/}\\
 \href{https://app.bitnamihosting.com/}{https://app.bitnamihosting.com/ (AWS)}\\
 
-\section{Bitnami}
+\section{Bitnami Analyse}
 \subsection{Einführung}
 Bitnami bietet ein Dashboard für einige Cloud Anbieter (VMware, AWS, Google Cloud, Azure, 
 Digitalocean), um ganz einfach vorgegebene viel verwendete WebApps,Datenbanken oder Technologie Stacks 
@@ -90,7 +18,7 @@ Diese Analyse soll dabei helfen eine gute Lösung für unser Dashboard zu
 konzipieren und auf bereits bewährtes zurückgreifen können.
 
 \subsection{Cloud Anbieter}
-\includegraphics[width=\textwidth]{clouds}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/clouds}
 \subsubsection{Bitnami Cloud Hosting}
 Beim Bitnami Cloud Hosting steckt AWS dahinter, hier sind die meisten 
 Einstellungen möglich im Vergleich zu den anderen Dashboards.
@@ -98,79 +26,79 @@ Einstellungen möglich im Vergleich zu den anderen Dashboards.
 
 \textbf{Übersicht}
 kurze Übersicht über die möglichen Konfigurationen einer AWS Instanz.
-\includegraphics[width=0.8\textwidth]{aws_overview}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/aws_overview}
 \newpage
 \textbf{Application Options:}
 
-\includegraphics[width=0.5\textwidth]{aws_application_options}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_application_options}
 
 \textbf{Applikationsauswahl:}
 
-\includegraphics[width=0.5\textwidth]{aws_add_application}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_add_application}
 
 \textbf{Betriebssystem:}
 
-\includegraphics[width=0.5\textwidth]{aws_operating_system}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_operating_system}
 
 \textbf{Servertyp:}
 
-\includegraphics[width=0.5\textwidth]{aws_servertype}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_servertype}
 \newpage
 \textbf{Diskgrösse:}
 
-\includegraphics[width=0.5\textwidth]{aws_disk}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_disk}
 
 \textbf{Region,IP,Account:}
 
-\includegraphics[width=0.5\textwidth]{aws_random}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_random}
 
 \textbf{Management:}
 
-\includegraphics[width=\textwidth]{aws_overview_managment}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_overview_managment}
 
-\includegraphics[width=0.5\textwidth]{aws_resourcen}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_resourcen}
 
 \textbf{Ressourcen:}
 
-\includegraphics[width=0.5\textwidth]{aws_managment}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_managment}
 
-\includegraphics[width=0.5\textwidth]{aws_resrouces}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_resrouces}
 
 \newpage
 \subsubsection{Digitalocean Launchpad}
-\includegraphics[width=\textwidth]{digitalocean_launchpad}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_launchpad}
 \textbf{Instanzen:}
 Sobald eine Applikation ausgewählt wurde kann eine Instanz mit dem App gestartet 
 werden, dabei kann noch die Instanzgrösse und Location gewählt werden.
 
-\includegraphics[width=\textwidth]{digitalocean_size}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_size}
 Sobald Instanz erstellt lässt sich deren Status überprüfen + App spezifische 
 Links werden gesetzt.
 
-\includegraphics[width=\textwidth]{digitalocean_infos}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_infos}
 
 \textbf{Authorize Application:}
 Um wirkliche Instanz erstellen zu können muss das Bitnami Dashboard Zugriff auf 
 den Cloud spezifischen Account haben.
 
-\includegraphics[width=\textwidth]{digitalocean_authorize}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_authorize}
 
 Dabei können mehrere Accounts hinzugefügt werden:
 
-\includegraphics[width=\textwidth]{digitalocean_accounts}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_accounts}
 
 Und unter jedem Account können spezifisch VM's erstellt werden:
 
-\includegraphics[width=0.4\textwidth]{digitalocean_account_specific}
+\includegraphics[width=0.4\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_account_specific}
 
 Danach taucht die Instanz in der Übersicht auf:
 
-\includegraphics[width=\textwidth]{digitalocean_instances}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_instances}
 
 \newpage
 \textbf{Instanzinfos:}
 
-\includegraphics[width=\textwidth]{digitalocean_instanceinfo}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_instanceinfo}
 
 \subsubsection{Azure Launchpad}
 Beim Azure Launchpad wird wieder gleich vorgegangen, wie bei Digitalocean.
@@ -181,23 +109,23 @@ Digitalocean sind + wird bei Azure mit Subscriptions und nicht anhand von
 Accounts unterschieden.
 \textbf{Serverinfo:}
 
-\includegraphics[width=0.5\textwidth]{azure_serverinfo}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/azure_serverinfo}
 
 \textbf{Authorization:}
 
 Bei Azure wird das Dashboard über ein Managment Certificate autorisiert:
 
-\includegraphics[width=0.8\textwidth]{azure_authorize}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/azure_authorize}
 
 Danach wird die vorhandene Subscription/s vom Microsoft Account eingebunden:
 
-\includegraphics[width=0.8\textwidth]{azure_subscriptions}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/azure_subscriptions}
 
 
 Sobald dann ein neuer Server erstellt wurde kann dieser auch wieder gelöscht 
 werden und all dessen Infos angesehen werden.
 
-\includegraphics[width=0.8\textwidth]{azure_instanceinfos}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/azure_instanceinfos}
 
 \subsubsection{Google Launchpad}
 
@@ -206,17 +134,17 @@ Hier wird einfach mit Projekten unterschieden (schliesslich kann jedem Projekt m
 oder andere Services angefügt sein.)
 
 
-\includegraphics[width=0.4\textwidth]{google_instancereation}
+\includegraphics[width=0.4\textwidth]{./03_Analyse/03_Bitnami/images/google_instancereation}
 
 
 \subsubsection{VMware Launchpad}
 Das VMware Launchpad kann für die WMware vCloud Air gebraucht werden.
 
-\includegraphics[width=0.8\textwidth]{vmware_creation}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/vmware_creation}
 
 \textbf{Infos:}
 
-\includegraphics[width=0.4\textwidth]{vmware_infos}
+\includegraphics[width=0.4\textwidth]{./03_Analyse/03_Bitnami/images/vmware_infos}
 
 \subsection{Security}
 Da durch das zentrale zusammenfassen von mehreren Accounts auch immer 
@@ -224,7 +152,7 @@ Sicherheitsrisiken zu beachten sind, wird bei Bitnami zusätzlich zum normalen
 Loginpasswort auch noch ein Vaultpasswort festgelegt, welches wohl die 
 Logindaten symmetrisch verschlüsselt und in einem ``Vault'' ablegt.
 
-\includegraphics[width=0.8\textwidth]{bitnami_security}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/bitnami_security}
 
 \subsection{Applikationen}
 Die Applikationen können sich von Anbieter zu Anbieter unterscheiden, jedoch 
@@ -233,10 +161,10 @@ Image.
 Es besteht bereits eine sehr grosse Auswahl für sehr viel verschiedene Apps und 
 es werden immer mehr, wodurch es immer einfacher wird schnell eine Applikation 
 aufzusetzen.
-\includegraphics[width=\textwidth]{apps}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/apps}
 
 \subsubsection{Kategorien}
-\includegraphics[width=0.3\textwidth]{categories}
+\includegraphics[width=0.3\textwidth]{./03_Analyse/03_Bitnami/images/categories}
 
 \section{Fazit}
 Bitnami bietet einiges was Computing angeht und ist der einzig grössere 
@@ -246,6 +174,3 @@ Bitnami ist daher nur für eigene Instanzen/Vms zu gebrauchen und nicht mit eine
 generellen Service Unterstützung konzipiert worden.
 Das Dashboard bei Bitnami bietet jedenfalls einiges und gibt einem einen guten 
 Überblick über seine eigenen abonnierten Services (VM Instanzen).
-
-
-\end{document}

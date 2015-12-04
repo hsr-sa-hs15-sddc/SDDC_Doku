@@ -1,84 +1,4 @@
-\documentclass[11pt]{scrartcl}
 
-\title{Dashboard Analyse}
-\author{Silvan Adrian \\ Fabian Binna}
-\date{\today{}}
-
-\usepackage[ngerman]{babel}
-\usepackage[automark]{scrpage2}
-\usepackage[colorlinks = true,
-linkcolor = black]{hyperref}
-\usepackage{color}
-\usepackage[normalem]{ulem}
-\usepackage{scrpage2}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
-\pagestyle{scrheadings}
-
-\clearscrheadfoot
-\ihead{\includegraphics[scale=0.3]{SDDC}}
-\ohead{Projekt: SDDC}
-\ifoot{Dashboard Analyse}
-\cfoot{Version: 1.05}
-\ofoot{Datum: \today{}}
-\setheadsepline{0.5pt}
-\setfootsepline{0.5pt}
-
-\usepackage{ucs}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-
-\begin{document}
-\def\arraystretch{1.5}
-\begin{titlepage}
-\begin{center}
-\vspace{10em}
-\includegraphics[scale=2]{SDDC}
-\vspace{10em}
-\end{center}
-\begin{center}
-\huge {Dashboard Analyse}
-\end{center}
-\begin{center}
-\vspace{10em}
-\LARGE {Silvan Adrian} \\
-\LARGE {Fabian Binna}
-\end{center}
-
-\end{titlepage}
-
-\newpage
-\section{Änderungshistorie}
-\begin{tabularx}{\linewidth}{l l X l}
-\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
-\hline
-\textbf{17.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
-\textbf{25.09.15} & 1.01 & Einführung, Security etc. & Silvan Adrian \\
-\textbf{26.09.15} & 1.02 & Beschreibung der einzelnen Offerings und Wireframes 
-dazu & Silvan Adrian\\
-\textbf{26.09.15} & 1.03 & Unterteilung nach Services \& Offerings + Mockups 
-eingefügt  & Silvan Adrian\\
-\textbf{26.09.15} & 1.04 & Fazit eingefügt wegen Sicherheitsbedenken  & Silvan Adrian\\
-\textbf{27.09.15} & 1.05 & Verbesserungen & Silvan Adrian\\
-\end{tabularx}
-
-\newpage
-\tableofcontents
-\newpage
-
-\section{Einführung}
-
-\subsection{Zweck}
-
-Dieses Dokument beinhaltet die Analyse für das eigene Dashboard mit einigen 
-Mockups um einen besseren Überblick über die Funktionen des Dashboards zu 
-bekommen.
-
-\subsection{Gültigkeitsbereich}
-
-Dieses Dokument ist während des ganzen Projekts gültig.
 
 \subsection{Referenzen}
 Bitnami-Analyse.pdf\\
@@ -99,14 +19,14 @@ möglichen Funktionalitäten des Dashboard geben.
 Der Nutzer kriegt eine Übersicht über die vorhanden Cloud Anbieter und kann 
 gemäss Wunsch den richtigen wählen.
 
-\includegraphics[width=\textwidth]{homescreen_user}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_user}
 
 \subsection{Homescreen Admin}
 
 Der Administrator kriegt lediglich eine Übersicht über die vorhanden Nutzer und 
 kann diese löschen oder ändern.
 \begin{figure}[h]
-  \includegraphics[width=0.8\textwidth]{homescreen_admin}
+  \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_admin}
 \end{figure}
 
 
@@ -114,7 +34,7 @@ kann diese löschen oder ändern.
 Sobald man einer der Cloud Anbieter gewählt hat (auf dem Homescreen) öffnet 
 sich das jeweilige Dashboard des Anbieters mit dessen spezifischen Services.
 \begin{figure}[h]
-  \includegraphics[width=\textwidth]{homescreen_google}
+  \includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google}
 \end{figure}
 
 \newpage
@@ -123,7 +43,7 @@ sich das jeweilige Dashboard des Anbieters mit dessen spezifischen Services.
 Hier werden nur Compute Offerings angezeigt z.B.: App Engine, Compute Engine, 
 Container Engine, EC2 etc., können nach Anbieter variieren
 \begin{figure}[h]
-   \includegraphics[width=0.8\textwidth]{homescreen_google_compute}
+   \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_compute}
 \end{figure}
  
 
@@ -134,7 +54,7 @@ Container Engine, EC2 etc., können nach Anbieter variieren
 Nur Storage spezifische Offerings anzeigen z.B.: Cloud Datastore, Cloud SQL, 
 Cloud BigTable), die sich je nach Anbieter ändern.
 
-  \includegraphics[width=0.8\textwidth]{homescreen_google_storage}
+  \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_storage}
 
 
 
@@ -142,7 +62,7 @@ Cloud BigTable), die sich je nach Anbieter ändern.
 Network spezifische Offerings anbieten (Firewall, VPN, Netzwerke, Cloud DNS etc.) 
 und dann verändert sich die Auswahl auch Anbieter spezifisch.
 
-  \includegraphics[width=0.8\textwidth]{homescreen_google_network}
+  \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_network}
 
 
 
@@ -151,7 +71,7 @@ und dann verändert sich die Auswahl auch Anbieter spezifisch.
 In Services kriegt man einen Überblick über all seine abonnierten Services des jeweiligen 
 Anbieters und kann den zu bearbeitenden wählen.
 
-\includegraphics[width=0.8\textwidth]{services_overview}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/services_overview}
 
 
 \subsubsection{Compute}
@@ -163,7 +83,7 @@ Im Management kann dann die Instant direkt neugestartet/heruntergefahren oder ge
 werden + sollen noch Links (Ip etc.) zur Verfügung stehen um sich auf die Instanz 
  verbinden zu können.
 
-\includegraphics[width=0.8\textwidth]{service_info_compute}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/service_info_compute}
 
 \subsubsection{Storage}
 Bei Storage spielt es wieder eine Rolle was für eine Art Storage es ist in 
@@ -172,7 +92,7 @@ Dabei wird vielmals anhand der Anzahl Rows oder Grösse der Datenbank abgerechne
 + sollen hier auch wieder Links verfügbar sein, um auf ein Datenbankdashboard zu 
 gelangen + die Möglichkeit geben den Service löschen zu können.
 
-\includegraphics[width=0.8\textwidth]{service_info_storage}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/service_info_storage}
 
 
 \subsubsection{Network}
@@ -183,7 +103,7 @@ die Möglichkeit haben Firewall Regeln festlegen zu können.
 Das könnte Schlussendlich in etwa so aussehen:
 
 \begin{figure}[h]
-  \includegraphics[width=0.8\textwidth]{service_info_network}
+  \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/service_info_network}
 \end{figure}
 
 
@@ -197,7 +117,7 @@ Dadurch hat man immer den Überblick für welches Projekt/Account man wie viele
 Services abonniert hat.
 
 
-\includegraphics[width=0.8\textwidth]{account_projects.png}
+\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/account_projects.png}
 
 
 \section{Security}
@@ -218,16 +138,14 @@ einfach noch die Absicherung der Zugriffe auf alle die Cloud Anbieter und deren
 Services.
 Z.B.: Bitnami bietet ein Download für Private Key und Putty Key File an:
 
-\includegraphics[width=0.5\textwidth]{bitnami_private_key}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Dashboard/images/bitnami_private_key}
 
 Und erstellt für jeden Server ein neues keypaar:
 
-\includegraphics[width=0.5\textwidth]{bitnami_key}
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Dashboard/images/bitnami_key}
 
 Was ja auch nicht gerade die beste Lösung ist, da in dem fall eigentlich bereits 
 ein Public Key bei Digitalocean besteht und bei jedem neuen Server auch 
 hinzugefügt werden sollte.
 Je nachdem sind es aber zu viele Funktionalitäten und müssten reduziert werden, 
 damit es in dem vorgegebenen Zeitraum programmiert werden kann.
-
-\end{document}
