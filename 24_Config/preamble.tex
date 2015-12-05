@@ -1,4 +1,4 @@
-\documentclass[a4paper, parskip,ngerman] {scrreprt} 
+\documentclass[11pt,a4paper, parskip,ngerman] {report} 
 
 
 %Preamble for the Document for reuse and the last Document
@@ -7,7 +7,8 @@
 \title{\arbeit}
 \usepackage[T1]{fontenc} % Font family encoding: 8 Bit
 \usepackage[utf8]{inputenc} % Encoding in the created document: UTF-8
-\usepackage{lmodern} % Font family
+\usepackage[sfdefault]{FiraSans} % Font family
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
 \usepackage[babel]{microtype} % Automatische Grauwertverbesserung
 \usepackage[ngerman]{babel}
 \usepackage[automark]{scrpage2}
@@ -18,8 +19,8 @@ linkcolor = black]{hyperref}
 \usepackage{scrpage2}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{textcomp}
 
-\usepackage{ucs}
 \usepackage{framed}
 \usepackage{geometry}
 \usepackage{minutes}
@@ -27,3 +28,11 @@ linkcolor = black]{hyperref}
 \usepackage[table]{xcolor}
 \usepackage{multicol}
 \usepackage{longtable,tabu}
+
+\usepackage[style=verbose-ibid,backend=bibtex]{biblatex}
+\addbibresource{./SDDC.bib}
+\usepackage{titlesec}
+\usepackage[printonlyused] {acronym}
+\titleformat{\chapter}{\normalfont\huge\bf}{\thechapter}{20pt}{\huge\bf}
+\pagestyle{plain}
+
