@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Architektur}
-\cfoot{Version: 1.10}
+\cfoot{Version: 1.11}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -65,6 +65,7 @@ linkcolor = black]{hyperref}
 \textbf{22.11.15} & 1.08 & Deployment Angepasst & Silvan Adrian\\
 \textbf{29.11.15} & 1.09 & Architektur verbessert & Silvan Adrian\\
 \textbf{05.12.15} & 1.10 & Services erweitert & Silvan Adrian\\
+\textbf{06.12.15} & 1.11 & GenericAPI + Dependency Injection & Fabian Binna\\
 \end{tabularx}
 
 \newpage
@@ -114,11 +115,31 @@ Der Workflow erstellt/löscht einen Service.
 \includegraphics[width=\textwidth]{domain}
 \end{center}
 
+\subsection{GenericAPI}
+\subsubsection{ServiceModuleHandler}
+Der ServiceModuleHandler entscheidet an welchen ResourceController ein ServiceModule/Identifier übergeben wird.
+Der Entscheidungsalgorithmus kann auf verschiedenste Weise implementiert werden, deshalb gibt es ein Interface.
+
+\subsubsection{ResourceController}
+Der ResourceController ist eine Abstraktion eines Controllers, die nicht auf irgendwelche Bibliotheksabhängigkeiten (z.B. LibVirt, JClouds) eingeht und lediglich dem ServiceModuleHandler die nötigen Informationen anbietet.
+
+\subsubsection{LibVirtController}
+Der LibVirtController ist eine weitere Abstraktion eines Controllers, die aber speziell einer Bibliothek (in diesem Fall LibVirt) zugewiesen ist. Die Klasse kümmert sich um die Instanziierung und kann, wenn nötig, Helfermethoden anbieten.
+
+\subsubsection{LibVirt<category>Controller}
+
+Die konkrete Klasse des Controllers implementiert nur noch die abstrakten Methoden des ResourceControllers.
+
+\includegraphics[width=\textwidth]{genericapi}
 
 \subsection{persistence}
 
 Wird durch OR Mapper (Hibernate) vorgenommen, dieser mappt die Java Objekte auf 
 die Datenbank.
+
+\section{Dependency Injection}
+
+Die GenericAPI ist relativ komplex ausgefallen und kann erweitert werden. Um unnötigen Code in den oberen Schichten zu vermeiden, wird die GenericAPI mit Hilfe von Dependency Injection aufgesetzt. Es ist möglich in einem XML die gesamte GenericAPI nach belieben zusammenzusetzen.
 
 \section{Deployment}
 
