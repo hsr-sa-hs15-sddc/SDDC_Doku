@@ -1,0 +1,100 @@
+\chapter{Anforderungen}
+\input{./04_Anforderungen/01_Anforderungen/anforderungen}
+
+\section{Use Cases}
+\subsection{Use Case Diagramm}
+\includegraphics[width=0.84\textwidth]{./04_Anforderungen/images/UseCase-Diagramm}
+\subsection{Aktoren \& Stakeholders\autocite{uml2}}
+\subsubsection{Customer}
+Als Customer möchte ich meine abonnierten Services verwalten.
+\\
+\begin{tabularx}{\linewidth}{l l X }
+  \textbf{Aktor} & \textbf{Typ} & \textbf{Ziele}\\
+  \hline
+  Customer & Primary & 
+  \begin{minipage}{5in}
+  \vskip 4pt
+  \begin{itemize}
+    \item Service abonnieren
+    \item Service kündigen
+  \end{itemize}
+  \vskip 4pt
+ \end{minipage}\\
+ \hline
+\end{tabularx}
+
+
+\subsubsection{Admin}
+Als Admin möchte ich Services und Servicemodule verwalten können.
+\\
+\begin{tabularx}{\linewidth}{l l X }
+  \textbf{Aktor} & \textbf{Typ} & \textbf{Ziele}\\
+  \hline
+  Admin & Primary & 
+  \begin{minipage}{5in}
+  \vskip 4pt
+  \begin{itemize}
+    \item Service erstellen
+    \item Service anpassen
+    \item Service löschen
+    \item Servicemodul erstellen
+    \item Servicemodul anpassen
+    \item Servicemodul löschen
+  \end{itemize}
+  \vskip 4pt
+ \end{minipage}\\
+ \hline
+\end{tabularx}
+
+\newpage
+\subsection{Beschreibungen fully dressed}
+
+\input{./04_Anforderungen/02_UseCases/Service_abonnieren}
+\newpage
+\input{./04_Anforderungen/02_UseCases/Service_kuendigen}
+
+\newpage
+
+\input{./04_Anforderungen/02_UseCases/Service_verwalten}
+
+\newpage
+
+\newpage
+\section{Epics}
+\subsection{Customer}
+\begin{itemize}
+  \item Service abonnieren
+  \item Service kündigen
+\end{itemize}
+\subsection{Admin}
+\begin{itemize}
+  \item Service verwalten
+  \item Servicemodul verwalten
+\end{itemize}
+\section{User Stories}
+\subsection{Rollen}
+\subsubsection{Customer}
+Als Customer benutze ich das Dashboard, um für mich einen Service zu abonnieren oder zu 
+kündigen, ebenfalls verwalte ich meine Cloud Login Daten
+\subsubsection{Admin}
+Als Admin erstelle ich neue Services und Servicemodule und erweitere diese um 
+neue Funktionen/Verbesserungen.
+\subsection{Customer}
+
+\input{./04_Anforderungen/03_UserStories/Sprint_1_Customer}
+
+\input{./04_Anforderungen/03_UserStories/Sprint_2_Customer}
+
+ \input{./04_Anforderungen/03_UserStories/Sprint_3_Customer}
+  
+ \subsection{Admin}
+ 
+ \input{./04_Anforderungen/03_UserStories/Sprint_2_Admin}
+ 
+ \input{./04_Anforderungen/03_UserStories/Sprint_3_Admin}
+
+\newpage
+
+\section{Nicht-funktionale Anforderungen}
+
+\input{./04_Anforderungen/04_NFR/nfr}

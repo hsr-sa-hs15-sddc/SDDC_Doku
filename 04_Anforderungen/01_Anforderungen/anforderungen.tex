@@ -1,4 +1,4 @@
-\subsection{API}
+\section{API}
 Die API definiert einen Workflow der einen Service auf einer Cloud erstellt. Es ist offen, ob 
 dieser Service über mehrere Cloud Anbieter hinaus geht. Der Service wird durch 
 ein Konfigurationsfile definiert. Die Software auf den Instanzen wird durch Images installiert.
@@ -9,33 +9,41 @@ ein Konfigurationsfile definiert. Die Software auf den Instanzen wird durch Imag
  werden Compute, Storage, Network usw. als ServiceModule bezeichnet. 
  Diese Abstraktion ermöglicht das wiederverwenden und erweitern der API.
 \newpage
-\subsection{Customer-Dashboard}
-\subsubsection{Homescreen}
+\section{Customer-Dashboard}
+\subsection{Homescreen}
 Im Homescreen werden alle zu 
 Verfügung stehenden Services angezeigt.
 Hier werden die Services Offerings genannt um eine Unterscheidung zwischen 
 Abonnierten Services (Services) und zur Verfügung stehenden Services (Offerings) 
 machen zu können.
 \newline
-\includegraphics[width=\textwidth]{homescreen_customer}
+\begin{figure}[!htbp]
+\includegraphics[width=\textwidth]{./04_Anforderungen/images/homescreen_customer}
+\caption{Homescreen Customer}
+\end{figure}
 
-\subsubsection{Services Übersicht}
+\subsection{Services Übersicht}
 In der Services Übersicht werden dem Customer alle abonnierten Services 
 angezeigt und können hier auch gekündigt werden.
 \newline
-\includegraphics[width=\textwidth]{services_overview}
+\begin{figure}[!htbp]
+\includegraphics[width=\textwidth]{./04_Anforderungen/images/services_overview}
+\caption{Services Übersicht}
+\end{figure}
 
-
-\subsubsection{Service abonnieren}
+\subsection{Service abonnieren}
 Sobald ein Service auf dem Homescreen ausgewählt wird und auf den ``subscribe'' 
 Button geklickt wird, wird dieser abonniert und wird in der Services Übersicht 
 angezeigt.
 \newline
-\includegraphics[width=\textwidth]{service_settings}
 
+\begin{figure}[!htbp]
+\includegraphics[width=\textwidth]{./04_Anforderungen/images/service_settings}
+\caption{Services Settings}
+\end{figure}
 
 \newpage
-\subsection{Admin-Dashboard}
+\section{Admin-Dashboard}
 Zusätzlich zum Customer-Dashboard soll ein Admin-Dashboard zur Verfügung stellen 
 in welchem der Admin Services und Servicemodule erstellen kann.
 
@@ -45,4 +53,7 @@ Anzahl Servicemodule zugeteilt. um den Service abbilden zu können.
 Hier kann der Admin den Service ändern und je nach Anforderung den Service 
 anpassen.
 \newline
-\includegraphics[width=\textwidth]{homescreen_admin}
+\begin{figure}[!htbp]
+\includegraphics[width=\textwidth]{./04_Anforderungen/images/homescreen_admin}
+\caption{Homescreen Admin}
+\end{figure}
