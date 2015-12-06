@@ -20,7 +20,7 @@ linkcolor = black]{hyperref}
 \ihead{\includegraphics[scale=0.3]{SDDC}}
 \ohead{Projekt: SDDC}
 \ifoot{Architektur}
-\cfoot{Version: 1.11}
+\cfoot{Version: 1.12}
 \ofoot{Datum: \today{}}
 \setheadsepline{0.5pt}
 \setfootsepline{0.5pt}
@@ -66,6 +66,7 @@ linkcolor = black]{hyperref}
 \textbf{29.11.15} & 1.09 & Architektur verbessert & Silvan Adrian\\
 \textbf{05.12.15} & 1.10 & Services erweitert & Silvan Adrian\\
 \textbf{06.12.15} & 1.11 & GenericAPI + Dependency Injection & Fabian Binna\\
+\textbf{06.12.15} & 1.12 & Squenzdiagramm auf neue GenericAPI angepasst & Fabian Binna\\
 \end{tabularx}
 
 \newpage
@@ -85,7 +86,6 @@ Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktual
 \begin{itemize}
 	\item services: Web-Schnittstelle (RESTful)
 	\item genericapi: Abstraktion für Compute, Storage und Network
-	\item common: DTOs (Service, OrderedService, ServiceModule)
 	\item util: Tools zur Bearbeitung von Configfiles
 	\item presistence: OR-Mapping
 \end{itemize}
@@ -153,7 +153,7 @@ Die GenericAPI ist relativ komplex ausgefallen und kann erweitert werden. Um unn
 \subsection{service bestellen}
 
 \begin{center}
-\includegraphics[scale=0.3]{orderService}
+\includegraphics[width=\textwidth]{orderService}
 \end{center}
 
 
