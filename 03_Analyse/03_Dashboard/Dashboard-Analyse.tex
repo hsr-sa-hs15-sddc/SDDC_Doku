@@ -1,9 +1,4 @@
-
-
-\subsection{Referenzen}
-Bitnami-Analyse.pdf\\
-\href{https://protonmail.ch}{https://protonmail.ch (Security)} 
-
+\newpage
 \section{Dashboard}
 Das Dashboard soll dem Nutzer schnell und einfach die Übersicht über seine 
 eigenen abonnierten Services bieten (Compute,Storage,Network).
@@ -18,61 +13,71 @@ möglichen Funktionalitäten des Dashboard geben.
 \subsection{Homescreen Nutzer}
 Der Nutzer kriegt eine Übersicht über die vorhanden Cloud Anbieter und kann 
 gemäss Wunsch den richtigen wählen.
-
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_user}
+\caption{Homescreen Nutzer}
+\end{figure}
+
+\newpage
 
 \subsection{Homescreen Admin}
 
 Der Administrator kriegt lediglich eine Übersicht über die vorhanden Nutzer und 
 kann diese löschen oder ändern.
-\begin{figure}[h]
-  \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_admin}
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_admin}
+  \caption{Homescreen Admin}
 \end{figure}
 
 
 \subsection{Offerings}
 Sobald man einer der Cloud Anbieter gewählt hat (auf dem Homescreen) öffnet 
 sich das jeweilige Dashboard des Anbieters mit dessen spezifischen Services.
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google}
+  \caption{Homescreen Google}
 \end{figure}
 
 \newpage
-\subsubsection{Compute:}
 
+   \subsubsection{Compute:}
 Hier werden nur Compute Offerings angezeigt z.B.: App Engine, Compute Engine, 
 Container Engine, EC2 etc., können nach Anbieter variieren
-\begin{figure}[h]
-   \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_compute}
+
+\begin{figure}[!htbp]
+
+   \includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_compute}
+   \caption{Homescreen Kategorie Compute}
 \end{figure}
  
-
-
 
 \subsubsection{Storage:}
 
 Nur Storage spezifische Offerings anzeigen z.B.: Cloud Datastore, Cloud SQL, 
-Cloud BigTable), die sich je nach Anbieter ändern.
-
-  \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_storage}
-
-
+Cloud BigTable), die sich je nach Anbieter ändern. 
+\begin{figure}[!htbp]
+ \includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_storage}
+  \caption{Homescreen Kategorie Storage}
+\end{figure}
 
 \subsubsection{Network:}
 Network spezifische Offerings anbieten (Firewall, VPN, Netzwerke, Cloud DNS etc.) 
-und dann verändert sich die Auswahl auch Anbieter spezifisch.
+und dann verändert sich die Auswahl auch Anbieter spezifisch. 
 
-  \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_network}
+\begin{figure}[!htbp]
+ \includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_network}
+    \caption{Homescreen Kategorie Network}
+\end{figure}
 
-
-
+\newpage
 
 \subsection{Services}
 In Services kriegt man einen Überblick über all seine abonnierten Services des jeweiligen 
 Anbieters und kann den zu bearbeitenden wählen.
-
-\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/services_overview}
-
+\begin{figure}[!htbp]
+\includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/services_overview}
+\caption{Services Übersicht}
+\end{figure}
 
 \subsubsection{Compute}
 Wenn man einen Compute Service wählt kriegt man eine Übersicht des Services, 
@@ -82,8 +87,11 @@ Monat angezeigt.
 Im Management kann dann die Instant direkt neugestartet/heruntergefahren oder gelöscht 
 werden + sollen noch Links (Ip etc.) zur Verfügung stehen um sich auf die Instanz 
  verbinden zu können.
-
-\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/service_info_compute}
+ 
+\begin{figure}[!htbp]
+\includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/service_info_compute}
+\caption{Services Infos Compute}
+\end{figure}
 
 \subsubsection{Storage}
 Bei Storage spielt es wieder eine Rolle was für eine Art Storage es ist in 
@@ -92,8 +100,10 @@ Dabei wird vielmals anhand der Anzahl Rows oder Grösse der Datenbank abgerechne
 + sollen hier auch wieder Links verfügbar sein, um auf ein Datenbankdashboard zu 
 gelangen + die Möglichkeit geben den Service löschen zu können.
 
+\begin{figure}[!htbp]
 \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/service_info_storage}
-
+\caption{Services Infos Storage}
+\end{figure}
 
 \subsubsection{Network}
 Bei Network kann man noch einige Dinge konfigurieren von Cloud DNS bis zu 
@@ -102,11 +112,12 @@ vielmals nur SSH und HTTP/S zugelassener traffic ist muss man schliesslich auch
 die Möglichkeit haben Firewall Regeln festlegen zu können.
 Das könnte Schlussendlich in etwa so aussehen:
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/service_info_network}
+  \caption{Services Infos Network}
 \end{figure}
 
-
+\newpage
 
 \subsection{Accounts/Subscriptions/Projects/...}
 Für jeden Anbieter soll dem User eine Übersicht über die 
@@ -116,9 +127,10 @@ Handhabung von mehreren Accounts und alle sind in einem Dashboard zusammengefüg
 Dadurch hat man immer den Überblick für welches Projekt/Account man wie viele 
 Services abonniert hat.
 
-
-\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Dashboard/images/account_projects.png}
-
+\begin{figure}[!htbp]
+\includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/account_projects.png}
+\caption{Accounts Übersicht}
+\end{figure}
 
 \section{Security}
 Wie bei Bitnami wäre es wohl sicherer die Zugriffsdaten für die Cloud Anbieter 
@@ -127,25 +139,26 @@ könnte ein Angreifer ganze Instanzen bei verschiedenen Anbietern löschen oder
 sonstige Bösartige Absichten ausüben.
 
 Dieser Vault soll auch durch ein zusätzliches Passwort geschützt sein und 
-wird symmetrisch verschlüsselt (Mail Anbieter: Proton Mail macht dies ebenfalls 
+wird symmetrisch verschlüsselt (Mail Anbieter: Proton Mail\autocite{proton} macht dies ebenfalls 
 so) -> jedoch fragt Bitnami bei jedem login wieder nach dem Passwort und 
 vergisst dann wieder alle Instanzen (ein Abgleich mit dem Anbieter wäre hier sicher nicht 
 schlecht).
+
+\newpage
 
 \section{Fazit}
 Das Servicedashboard scheint soweit umsetzbar zu sein, ein Knackpunkt wird 
 einfach noch die Absicherung der Zugriffe auf alle die Cloud Anbieter und deren 
 Services.
 Z.B.: Bitnami bietet ein Download für Private Key und Putty Key File an:
-
+\begin{figure}[!htbp]
 \includegraphics[width=0.5\textwidth]{./03_Analyse/03_Dashboard/images/bitnami_private_key}
-
+\caption{Bitnami Private Key}
+\end{figure}
 Und erstellt für jeden Server ein neues keypaar:
-
+\begin{figure}[!htbp]
 \includegraphics[width=0.5\textwidth]{./03_Analyse/03_Dashboard/images/bitnami_key}
+\caption{Bitnami Key}
+\end{figure}
+Was nicht gerade die Beste Lösung ist.
 
-Was ja auch nicht gerade die beste Lösung ist, da in dem fall eigentlich bereits 
-ein Public Key bei Digitalocean besteht und bei jedem neuen Server auch 
-hinzugefügt werden sollte.
-Je nachdem sind es aber zu viele Funktionalitäten und müssten reduziert werden, 
-damit es in dem vorgegebenen Zeitraum programmiert werden kann.

@@ -1,4 +1,4 @@
-
+\newpage
 \section{Bitnami Analyse}
 \subsection{Einführung}
  
@@ -10,141 +10,243 @@ Diese Analyse soll dabei helfen eine gute Lösung für unser Dashboard zu
 konzipieren und auf bereits bewährtes zurückgreifen können.
 
 \subsection{Cloud Anbieter}
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/clouds}
-\subsubsection{Bitnami Cloud Hosting}
+  \caption{Cloud Anbieter}
+\end{figure}
+
+\newpage
+\subsubsection{Bitnami Cloud Hosting\autocite{aws}}
+
 Beim Bitnami Cloud Hosting steckt AWS dahinter, hier sind die meisten 
 Einstellungen möglich im Vergleich zu den anderen Dashboards.
 
-
-\textbf{Übersicht}
+\textbf{Übersicht}\\
 kurze Übersicht über die möglichen Konfigurationen einer AWS Instanz.
-\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/aws_overview}
-\newpage
-\textbf{Application Options:}
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_overview}
+  \caption{AWS Übersicht}
+\end{figure}
 
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_application_options}
-
+\begin{figure}[!htbp]
+  \centering
+  \begin{subfigure}[b]{.49\textwidth}
+\textbf{Applikationseinstellungen:}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_application_options}
+\caption{AWS Application Options}
+\end{subfigure}
+  \hfill
+\begin{subfigure}[b]{.49\textwidth}
 \textbf{Applikationsauswahl:}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_add_application}
+\caption{AWS Apllikationsauswahl}
+\end{subfigure}
+\end{figure}
 
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_add_application}
-
+\begin{figure}[!htbp]
+  \centering
+\begin{subfigure}[b]{.49\textwidth}
 \textbf{Betriebssystem:}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_operating_system}
+\caption{AWS Betriebssystem}
+\end{subfigure}
+  \hfill
+\begin{subfigure}[b]{.49\textwidth}
+\textbf{Servertyp:}\\
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_servertype}
+\caption{AWS Servertyp}
+\end{subfigure}
+\end{figure}
 
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_operating_system}
+\begin{figure}[!htbp]
+  \centering
+  \begin{subfigure}[b]{.49\textwidth}
+\textbf{Diskgrösse:}\\
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_disk}
+\caption{AWS Diskgrösse}
+\end{subfigure}
+  \hfill
+\begin{subfigure}[b]{.49\textwidth}
+\textbf{Region,IP,Account:}\\
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_random}
+\caption{AWS Region,IP und Account}
+\end{subfigure}
+\end{figure}
 
-\textbf{Servertyp:}
-
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_servertype}
 \newpage
-\textbf{Diskgrösse:}
+ 
+\begin{figure}[!htbp]
+   \centering
+    \textbf{Management:}\\
+\includegraphics[width=.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_resourcen}
+\caption{AWS Management Ressourcen}
+\end{figure}
 
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_disk}
 
-\textbf{Region,IP,Account:}
-
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_random}
-
-\textbf{Management:}
-
-\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_overview_managment}
-
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_resourcen}
-
-\textbf{Ressourcen:}
-
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_managment}
-
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/aws_resrouces}
+\begin{figure}[!htbp]
+ \centering
+  \begin{subfigure}[b]{.49\textwidth}
+\textbf{Ressourcen:}\\
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_managment}
+\caption{AWS Server Management}
+\end{subfigure}
+  \hfill
+ \begin{subfigure}[b]{.49\textwidth}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/aws_resrouces}
+\caption{AWS Server Ressourcen}
+\end{subfigure}
+\end{figure}
 
 \newpage
-\subsubsection{Digitalocean Launchpad}
+\subsubsection{Digitalocean Launchpad\autocite{digitalocean}}
+
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_launchpad}
-\textbf{Instanzen:}
-Sobald eine Applikation ausgewählt wurde kann eine Instanz mit dem App gestartet 
-werden, dabei kann noch die Instanzgrösse und Location gewählt werden.
+\caption{Digitalocean Launchpad}
+\end{figure}
 
-\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_size}
-Sobald Instanz erstellt lässt sich deren Status überprüfen + App spezifische 
-Links werden gesetzt.
-
-\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_infos}
-
-\textbf{Authorize Application:}
-Um wirkliche Instanz erstellen zu können muss das Bitnami Dashboard Zugriff auf 
+\newpage
+\textbf{Authorize Application:}\\
+Um Instanz erstellen zu können muss das Bitnami Dashboard Zugriff auf 
 den Cloud spezifischen Account haben.
 
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_authorize}
+\caption{Digitalocean Applikation autorisieren}
+\end{figure}
 
-Dabei können mehrere Accounts hinzugefügt werden:
 
+
+
+\begin{figure}[!htbp]
+   \begin{subfigure}[b]{.49\textwidth}
+\textbf{Instanzen:}\\
+Sobald eine Applikation ausgewählt wurde kann eine Instanz mit dem App gestartet 
+werden, dabei kann noch die Instanzgrösse und Location gewählt werden.
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_size}
+\caption{Digitalocean Instanz}
+\end{subfigure}
+  \hfill
+ \begin{subfigure}[b]{.49\textwidth}
+  \textbf{Instanzinfos:}
+  Sobald Instanz erstellt lässt sich deren Status überprüfen + App spezifische 
+Links werden gesetzt und Private Key/Public Key lassen sich herunterladen.\\
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_instanceinfo}
+\caption{Digitalocean Instanzinfos}
+\end{subfigure}
+\end{figure}
+
+\textbf{Cloud Accounts:}\\
+Es können in Bitnami mehrere Cloud Accounts hinzugefügt werden
+
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_accounts}
+\caption{Digitalocean Cloud Accounts}
+\end{figure}
 
-Und unter jedem Account können spezifisch VM's erstellt werden:
 
-\includegraphics[width=0.4\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_account_specific}
+
+\begin{figure}[!htbp]
+\centering
+Und unter jedem Account können spezifisch VM's erstellt werden:\\
+\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_account_specific}
+\caption{Digitalocean Account spezifischische VMs}
+\end{figure}
+
 
 Danach taucht die Instanz in der Übersicht auf:
-
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_instances}
+\caption{Digitalocean Instanzen}
+\end{figure}
 
 \newpage
-\textbf{Instanzinfos:}
 
-\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_instanceinfo}
-
-\subsubsection{Azure Launchpad}
+\subsubsection{Azure Launchpad\autocite{azure}}
 Beim Azure Launchpad wird wieder gleich vorgegangen, wie bei Digitalocean.
 Nur das sich die infos ändern (Bspw.: Bei Digitalocean Droplet, jetzt Server).
 
 Ebenfalls ändern sich die Instanzgrössen. welche bei Azure anders als bei 
 Digitalocean sind + wird bei Azure mit Subscriptions und nicht anhand von 
 Accounts unterschieden.
-\textbf{Serverinfo:}
 
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Bitnami/images/azure_serverinfo}
 
-\textbf{Authorization:}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.4\textwidth]{./03_Analyse/03_Bitnami/images/azure_serverinfo}
+\caption{Azure Serverinfo}
+\end{figure}
 
-Bei Azure wird das Dashboard über ein Managment Certificate autorisiert:
-
-\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/azure_authorize}
-
+\begin{figure}[!htbp]
+ \begin{subfigure}[b]{.49\textwidth}
+\textbf{Authorization:}\\
+Bei Azure wird das Dashboard über ein Management Certificate autorisiert:
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/azure_authorize}
+\caption{Azure Management Zertifikat}
+\end{subfigure}
+\hfill
+ \begin{subfigure}[b]{.49\textwidth}
 Danach wird die vorhandene Subscription/s vom Microsoft Account eingebunden:
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/azure_subscriptions}
+\caption{Azure Subscription}
+\end{subfigure}
+\caption{Azure Authorization}
+\end{figure}
 
-\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/azure_subscriptions}
 
-
+\begin{figure}[!htbp]
 Sobald dann ein neuer Server erstellt wurde kann dieser auch wieder gelöscht 
-werden und all dessen Infos angesehen werden.
+werden und all dessen Infos angesehen werden.\\
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/azure_instanceinfos}
+\caption{Azure Instanzinfos}
+\end{figure}
 
-\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/azure_instanceinfos}
+\newpage
 
-\subsubsection{Google Launchpad}
+\subsubsection{Google Launchpad\autocite{google}}
 
 Beim Google Launchpad wieder dasselbe, wie bei Azure oder Digitalocean.
 Hier wird einfach mit Projekten unterschieden (schliesslich kann jedem Projekt mehrere Compute Instanzen 
 oder andere Services angefügt sein.)
 
-
+\begin{figure}[!htbp]
+  \centering
 \includegraphics[width=0.4\textwidth]{./03_Analyse/03_Bitnami/images/google_instancereation}
+\caption{Google Instanzerstellung}
+\end{figure}
 
 
-\subsubsection{VMware Launchpad}
+\subsubsection{VMware Launchpad\autocite{vmware}}
 Das VMware Launchpad kann für die WMware vCloud Air gebraucht werden.
+\begin{figure}[!htbp]
+   \begin{subfigure}[b]{.6\textwidth}
 
-\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/vmware_creation}
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/vmware_creation}
+\caption{VMware Instanzerstellung}
+   \end{subfigure}
+     \hfill
+   \begin{subfigure}[b]{.39\textwidth}
+  \centering
+\textbf{Infos:}\\
+\includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/vmware_infos}
+\caption{VMware Infos}
+\end{subfigure}
+   \caption{VMware Launchpad}
+\end{figure}
 
-\textbf{Infos:}
 
-\includegraphics[width=0.4\textwidth]{./03_Analyse/03_Bitnami/images/vmware_infos}
-
-\subsection{Security}
-Da durch das zentrale zusammenfassen von mehreren Accounts auch immer 
+  \subsection{Security}
+  Da durch das zentrale zusammenfassen von mehreren Accounts auch immer 
 Sicherheitsrisiken zu beachten sind, wird bei Bitnami zusätzlich zum normalen 
 Loginpasswort auch noch ein Vaultpasswort festgelegt, welches wohl die 
 Logindaten symmetrisch verschlüsselt und in einem ``Vault'' ablegt.
 
-\includegraphics[width=0.8\textwidth]{./03_Analyse/03_Bitnami/images/bitnami_security}
+\begin{figure}[!htbp]
+  \centering
+\includegraphics[width=0.6\textwidth]{./03_Analyse/03_Bitnami/images/bitnami_security}
+\caption{Bitnami Security}
+\end{figure}
+\newpage
 
 \subsection{Applikationen}
 Die Applikationen können sich von Anbieter zu Anbieter unterscheiden, jedoch 
@@ -153,11 +255,13 @@ Image.
 Es besteht bereits eine sehr grosse Auswahl für sehr viel verschiedene Apps und 
 es werden immer mehr, wodurch es immer einfacher wird schnell eine Applikation 
 aufzusetzen.
+
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/apps}
+\caption{Applikationen}
+\end{figure}
 
-\subsubsection{Kategorien}
-\includegraphics[width=0.3\textwidth]{./03_Analyse/03_Bitnami/images/categories}
-
+\newpage 
 \section{Fazit}
 Bitnami bietet einiges was Computing angeht und ist der einzig grössere 
 Dashboard Anbieter, der mehrere verschiedene Cloud Anbieter unterstützt.
