@@ -1,60 +1,4 @@
-\documentclass[11pt]{scrartcl}
-
-\title{Systemtest}
-\author{Silvan Adrian \\ Fabian Binna}
-\date{\today{}}
-
-\usepackage[ngerman]{babel}
-\usepackage[automark]{scrpage2}
-\usepackage[colorlinks = true,
-linkcolor = black]{hyperref}
-\usepackage{color}
-\usepackage[normalem]{ulem}
-\usepackage{scrpage2}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\graphicspath{ {../../../22_Grafiken/01_Logo/}{images/}{../images/Sprint1/}{../images/Sprint2/}{../images/Sprint3/}{../../22_Grafiken/01_Logo/} }
-\pagestyle{scrheadings}
-
-\clearscrheadfoot
-\ihead{\includegraphics[scale=0.3]{SDDC}}
-\ohead{Projekt: SDDC}
-\ifoot{Systemtest}
-\cfoot{Version: 1.00}
-\ofoot{Datum: 2. November 2015}
-\setheadsepline{0.5pt}
-\setfootsepline{0.5pt}
-
-\usepackage{ucs}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-
-\begin{document}
-\def\arraystretch{1.5}
-\begin{titlepage}
-\begin{center}
-\vspace{10em}
-\includegraphics[scale=2]{SDDC}
-\vspace{10em}
-\end{center}
-\begin{center}
-\huge {Testprotokoll}\\
-\huge {02.11.15 - Sprint 1}\\
-\end{center}
-\begin{center}
-\vspace{10em}
-\LARGE {Silvan Adrian} \\
-\LARGE {Fabian Binna}
-\end{center}
-
-\end{titlepage}
-
-
-\newpage
-\tableofcontents
-\newpage
-
+\chapter{Testprotokoll Sprint 1}
 \section{Test}
 \subsection{Angaben zum Test}
 
@@ -105,41 +49,39 @@ Die abschliessenden Metriken vom Sprint aus SonarQube.
 \includegraphics[]{loc}
 
 \subsection{Unit Tests Coverage}
-\includegraphics[]{coverage}
+\includegraphics[]{./10_Protokolle/04_Testprotokoll/images/Sprint1/coverage}
 
 \subsection{Coverage Verteilung auf einzelne Dateien}
-\includegraphics[]{covergaeperfile}
+\includegraphics[]{./10_Protokolle/04_Testprotokoll/images/Sprint1/covergaeperfile}
 
 \subsection{Findbugs Issues}
-\includegraphics[]{issues}
+\includegraphics[]{./10_Protokolle/04_Testprotokoll/images/Sprint1/issues}
 \subsubsection{Issues}
 \textbf{HashCode}\\
-Da es isch hierbei nur um einen Persistance Fake handelt wurde drauf verzichtet 
+Da es sich hierbei nur um einen Persistance Fake handelt wurde drauf verzichtet 
 das Issue zu beheben und wird im nächsten Sprint sowieso entfernt.
 \newline
-\includegraphics[width=\textwidth]{hashcode}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint1/hashcode}
 \newline
 \textbf{Encoding}\\
 Issue besteht im Main File. welches im nächsten Sprint nicht mehr so existiert.
 \newline
-\includegraphics[width=\textwidth]{encoding}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint1/encoding}
 \newline
 \textbf{Infiniteloop}\\
 Für die Konsolen Eingaben wurde ein Infinite Loop erstellt, welcher es einem 
 erlaubt mehrmals Eingaben zu machen.
 \newline
-\includegraphics[width=\textwidth]{infiniteloop}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint1/infiniteloop}
 \newline
 \textbf{Null Check}\\
 Ebenfalls im Main java File, welches noch abgeändert und nicht mehr in dieser 
 Konstellation existieren wird.
 \newline
-\includegraphics[width=\textwidth]{nullcheck}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint1/nullcheck}
 
 \section{Kommentare}
 
 Die Konsolen App bietet ganz einfach Eingaben und Möglichkeiten die Service 
 abonnieren und kündigen zu können.
 Verbesserungen werden im Code Review Dokument beschrieben.
-
-\end{document}

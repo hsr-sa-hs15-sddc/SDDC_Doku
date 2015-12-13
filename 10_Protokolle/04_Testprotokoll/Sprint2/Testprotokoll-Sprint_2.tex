@@ -1,60 +1,4 @@
-\documentclass[11pt]{scrartcl}
-
-\title{Systemtest}
-\author{Silvan Adrian \\ Fabian Binna}
-\date{\today{}}
-
-\usepackage[ngerman]{babel}
-\usepackage[automark]{scrpage2}
-\usepackage[colorlinks = true,
-linkcolor = black]{hyperref}
-\usepackage{color}
-\usepackage[normalem]{ulem}
-\usepackage{scrpage2}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\graphicspath{ {../../../22_Grafiken/01_Logo/}{images/}{../images/Sprint2/}{../images/Sprint3/}{../../22_Grafiken/01_Logo/} }
-\pagestyle{scrheadings}
-
-\clearscrheadfoot
-\ihead{\includegraphics[scale=0.3]{SDDC}}
-\ohead{Projekt: SDDC}
-\ifoot{Systemtest}
-\cfoot{Version: 1.00}
-\ofoot{Datum: 23. November 2015}
-\setheadsepline{0.5pt}
-\setfootsepline{0.5pt}
-
-\usepackage{ucs}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-
-\begin{document}
-\def\arraystretch{1.5}
-\begin{titlepage}
-\begin{center}
-\vspace{10em}
-\includegraphics[scale=2]{SDDC}
-\vspace{10em}
-\end{center}
-\begin{center}
-\huge {Testprotokoll}\\
-\huge {23.11.15 - Sprint 2}\\
-\end{center}
-\begin{center}
-\vspace{10em}
-\LARGE {Silvan Adrian} \\
-\LARGE {Fabian Binna}
-\end{center}
-
-\end{titlepage}
-
-
-\newpage
-\tableofcontents
-\newpage
-
+\chapter{Testprotokoll Sprint 2}
 \section{Test}
 \subsection{Angaben zum Test}
 
@@ -111,16 +55,16 @@ Systemtest 6: & & \\
 \section{Metriken}
 Die abschliessenden Metriken vom Sprint aus SonarQube.
 \subsection{Projekt in Zahlen}
-\includegraphics[width=\textwidth]{loc}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint2/loc}
 
 \subsection{Unit Tests Coverage}
-\includegraphics[width=\textwidth]{coverage}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint2/coverage}
 
 \subsection{Coverage Verteilung auf einzelne Dateien}
-\includegraphics[width=\textwidth]{coverageperfile}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint2/coverageperfile}
 
 \subsection{Findbugs Issues}
-\includegraphics[width=\textwidth]{issues}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint2/issues}
 \subsubsection{Issues}
 \textbf{Incorrect Lazy Initialization}
 \newline
@@ -129,7 +73,7 @@ das der Singleton mehrmals instanziert wird, da wir bisher noch keine bessere
 Möglichkeit gefunden haben um zwischen einzelnen ConnectionStrings zu 
 unterscheiden wurde es so gelöst, im nächsten Sprint wird das Problem jedoch behoben.
 \newline
-\includegraphics[width=\textwidth]{lazy}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint2/lazy}
 
 \section{Kommentare}
 
@@ -138,6 +82,5 @@ Services eingesehen werden können, dabei können bestehende Services (Ubuntu 14
 abonniert werden und werden auf unserer KVM Umgebung erstellt und bei Kündigung 
 auch wieder gelöscht.
 \newline
-\includegraphics[width=\textwidth]{dashboard}
+\includegraphics[width=\textwidth]{./10_Protokolle/04_Testprotokoll/images/Sprint2/dashboard}
 
-\end{document}
