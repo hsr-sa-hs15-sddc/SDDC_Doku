@@ -1,10 +1,10 @@
 \chapter*{Abstract}\addcontentsline{toc}{chapter}{Abstract}
-\section{Ausgangslage}
+\section*{Ausgangslage}
 Unter „Software Defined“ versteht man die Zentralisierung der Intelligenz in Kontrollern. Gerade moderne Data Center werden immer häufiger von Software Kontrollern gesteuert, damit die Dynamik der Bereitstellung von neuen Services massiv erhöht werden kann. 
 Ziel ist es, die Ressourcen Storage, Network und Compute abstrahiert als skalierbare Pools der „Service Ebene“ zur Verfügung zu stellen. Dies soll als eine generische Middleware/API realisiert werden, um verschiedene Kontroller möglichst einfach in Business Applikationen zu integrieren.
 
-\section{Vorgehen/Technologie}
+\section*{Vorgehen/Technologie}
 Nach der Analyse verschiedenster Cloud Provider und Libraries wurde eine möglichst systemunabhängige Schnittstelle definiert. Damit dies überhaupt möglich ist, musste ein strikt einzuhaltender Contract erstellt werden. Ein Modul beinhaltet die Konfiguration für eine Ressource und beim erstellen einer Ressource wird ein Identifier zurückgegeben, wobei Modul und Identifier völlig abstrakt sind. Damit die Software in Business Applikationen integriert werden kann wurde eine RESTful API definiert, die Services abstrahiert. Diese beiden Schnittstellen müssen mit einem Workflow zusammengefügt werden. Der Workflow bestimmt, bei Bestellung einses Services,  welche Module zum Einsatz kommen und persistiert die Identifier, um die erstellten Ressourcen später wieder anzusprechen.
 
-\section{Ergebnis}
+\section*{Ergebnis}
 Das Resultat ist ein Webservice, der mit Hilfe von Spring implementiert wurde. Die Datenhaltung läuft auf Postgres und wird über ein OR-Mapping an die Domain angehängt. Der Webservice kann über die RESTful API angesprochen werden. Die generische API kann in einer XML Datei definiert werden. Beim Start des Webservices wird die generische API mit Spring Dependency Injection zusammengesetzt. So kann die generische API beliebig mit neuen Kontrollern erweitert und an den Webservice angehängt werden. Für Demonstrationszwecke wurde noch eine Webseite entwickelt, mit der man Services bestellten, ansehen und löschen kann.
