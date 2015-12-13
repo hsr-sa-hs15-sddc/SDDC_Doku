@@ -1,0 +1,46 @@
+%Servicemodule verwalten begin
+\subsubsection{UC05: Servicemodul verwalten}
+\begin{longtabu} to \textwidth {X[1,l] X[2,l]}
+	\bfseries Primäraktor & Customer  \\\hline 
+	\bfseries Steakholders und Interessen & Admin: Möchte ein Servicemodul verwalten  \\\hline 
+	\bfseries Vorbedingungen & Das Admin-Dashboard wurde geöffnet, 
+	falls Servicemodul gelöscht werden soll darf kein Service mehr das Servicemodul verwenden. \\\hline 
+	\bfseries Nachbedingungen & Das Admin-Dashboard wurde geschlossen und 
+	Änderungen wurden gespeichert \\\hline 
+	\bfseries Standartablauf & 
+	\begin{enumerate}
+			\item Der Admin gibt die Webadresse für das Admin-Dashboard ein
+			\item Wiederholen bis kein neues Servicemodul hinzugefügt werden muss
+			\begin{enumerate}
+			  \item Der Admin wechselt in die \textbf{Servicemodules Übersicht}
+			  \item Der Admin drückt auf den button \textbf{create Servicemodule}
+			  \item Der Admin füllt die benötigten Daten ein \textbf{(Name, Provider,Typ)}
+			  \item der Admin bestätigt mit Klick auf Button \textbf{Save}
+			\end{enumerate}
+		\end{enumerate}
+      \\\hline
+      \bfseries Alternativer Ablauf & 
+      \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item 
+        \begin{enumerate}
+          \item Wiederholen bis kein Servicemodul mehr geändert werden muss
+            \begin{enumerate}
+              \item Servicemodul auswählen und auf Link \textbf{change} klicken
+              \item Daten ändern
+              \item Durch Klick auf Button \textbf{Save} bestätigen
+            \end{enumerate}
+            \item Wiederholen bis kein Servicemodul mehr gelöscht werden muss
+            \begin{enumerate}
+              \item Service auswählen und Link \textbf{löschen} auswählen
+            \end{enumerate}
+        \end{enumerate}
+      \end{enumerate}
+      \\\hline
+
+	\bfseries Spezielle Anforderungen & siehe nichtfunktionale Anforderungen  \\\hline 
+	\bfseries Technologie- und Datenvarianten & Keine  \\\hline 
+	\bfseries Auftrittshäufigkeit & mehrmals pro Woche  \\\hline 
+	\bfseries Offene Fragen & Keine  \\\hline  
+\end{longtabu}
+%Servicemodule verwalten end
