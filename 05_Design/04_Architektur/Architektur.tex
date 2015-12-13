@@ -41,10 +41,13 @@ Der ServiceModuleHandler entscheidet an welchen ResourceController ein ServiceMo
 Der Entscheidungsalgorithmus kann auf verschiedenste Weise implementiert werden, deshalb gibt es ein Interface.
 
 \subsubsection{ResourceController}
-Der ResourceController ist eine Abstraktion eines Controllers, die nicht auf irgendwelche Bibliotheksabhängigkeiten (z.B. LibVirt, JClouds) eingeht und lediglich dem ServiceModuleHandler die nötigen Informationen anbietet.
+Der ResourceController ist eine Abstraktion eines Controllers, die nicht auf irgendwelche 
+Bibliotheksabhängigkeiten (z.B. LibVirt, JClouds) eingeht und lediglich dem ServiceModuleHandler die nötigen Informationen anbietet.
 
 \subsubsection{LibVirtController}
-Der LibVirtController ist eine weitere Abstraktion eines Controllers, die aber speziell einer Bibliothek (in diesem Fall LibVirt) zugewiesen ist. Die Klasse kümmert sich um die Instanziierung und kann, wenn nötig, Helfermethoden anbieten.
+Der LibVirtController ist eine weitere Abstraktion eines Controllers, die aber speziell einer 
+Bibliothek (in diesem Fall LibVirt) zugewiesen ist. Die Klasse kümmert sich um die 
+Instanzierung und kann, wenn nötig, Helfermethoden anbieten.
 
 \subsubsection{LibVirt<category>Controller}
 
@@ -59,13 +62,47 @@ die Datenbank.
 
 \section{Dependency Injection}
 
-Die GenericAPI ist relativ komplex ausgefallen und kann erweitert werden. Um unnötigen Code in den oberen Schichten zu vermeiden, wird die GenericAPI mit Hilfe von Dependency Injection aufgesetzt. Es ist möglich in einem XML die gesamte GenericAPI nach belieben zusammenzusetzen.
+Die GenericAPI ist relativ komplex ausgefallen und kann erweitert werden. Um unnötigen 
+Code in den oberen Schichten zu vermeiden, wird die GenericAPI mit Hilfe von Dependency
+ Injection aufgesetzt. Es ist möglich in einem XML die gesamte GenericAPI nach belieben zusammenzusetzen.
 
 \section{Deployment}
+
+Spring liefert einen Application Server mit, bei welchem es sich um einen Tomcat 
+Server handelt, der Datenbankserver wird über den JDBC Treiber angesprochen.
 
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/deployment}
 
 \section{Persistierung}
+Für die Persistierung wird ein OR Mapper verwendet, wodurch die vorhanden 
+Objekte 1:1 auf die Datenbank abgebildet werden können.
+
+\subsection{Service}
+Der Service wird mit einer automatisch generierten ID und einem Namen 
+abgespeichert, dabei ist der Name des Service Unique und kann nur einmal 
+verwendet werden, was das finden eines Service vereinfacht.
+
+\subsection{Servicemodule}
+Das Servicemodul wird mit einer automatisch generierten ID und besitzt einen 
+Name (zur Identifizierung Unqique).
+Category, Size und Provider sind Enums und geben feste werte vor z.B.: Size: 
+S,M,L.
+Das Configfile ist ein Text, wodurch es keine Rolle Spielt ob nun ein XML, JSON 
+oder YAML abgespeichert wird.
+
+\subsection{Orderedservice}
+Der Orderedservice besitzt eine automatisch generierte ID + einen nicht Uniqen 
+Namen, um einen Service auch mehrfach abonnieren zu können.
+
+\subsection{Identifier}
+Der Identifier besitzt eine generierte ID + den Namen des dazugehörigen 
+Servicemodul.
+Kategorie, Size und Provider werden ebenfalls vom Servicemodul übernohmen.
+Die uuid ist je nach Provider verschieden und wird durch diesen vorgegeben.
+
+\subsection{Identifier_infos}
+Die Identifier Infos beinhalten die vorhanden Infos zu einem abonnierten 
+Servicemodul, welche schlussendlich auf dem Dashboard ausgegeben werden können.
 
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/Datenmodell}
 
