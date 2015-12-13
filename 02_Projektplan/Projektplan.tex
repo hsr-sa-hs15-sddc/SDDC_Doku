@@ -1,106 +1,3 @@
-\documentclass[11pt]{scrartcl}
-
-\title{Projektplan: SDDC}
-\author{Silvan Adrian \\ Fabian Binna}
-\date{\today{}}
-
-\usepackage[ngerman]{babel}
-\usepackage[automark]{scrpage2}
-\usepackage[colorlinks = true,
-linkcolor = black]{hyperref}
-\usepackage{color}
-\usepackage[normalem]{ulem}
-\usepackage{scrpage2}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\graphicspath{ {../22_Grafiken/01_Logo/}{images/}{../../22_Grafiken/01_Logo/} }
-\usepackage{tikz}
-\usetikzlibrary{positioning,shadings}
-\usetikzlibrary{arrows}
-\usepackage{pbox}
-\pagestyle{scrheadings}
-
-\definecolor{logocolor}{RGB}{6,103,236}
-
-\clearscrheadfoot
-\ihead{\includegraphics[scale=0.3]{SDDC}}
-\ohead{Projekt: SDDC}
-\ifoot{Projektplan: SDDC}
-\cfoot{Version: 1.15}
-\ofoot{Datum: \today{}}
-\setheadsepline{0.5pt}
-\setfootsepline{0.5pt}
-
-\usepackage{ucs}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-\begin{document}
-\def\arraystretch{1.5}
-\begin{titlepage}
-\begin{center}
-\vspace{10em}
-\includegraphics[scale=2]{SDDC}
-\vspace{10em}
-\end{center}
-\begin{center}
-\huge {Projektplan}
-\end{center}
-\begin{center}
-\vspace{10em}
-\LARGE {Silvan Adrian} \\
-\LARGE {Fabian Binna}
-\end{center}
-
-\end{titlepage}
-
-\newpage
-\section{Änderungshistorie}
-\begin{tabularx}{\textwidth}{l l X l}
-\textbf{Datum} & \textbf{Version} & \textbf{Änderung}  & \textbf{Autor} \\
-\hline
-\textbf{17.09.15} & 1.00 & Erstellung des Dokuments & Gruppe \\
-\textbf{18.09.15} & 1.01 & Organisationsstruktur + Einführung + 
-Projektübersicht & Silvan Adrian\\
-\textbf{18.09.15} & 1.02 & Qualitätsmassnahmen & Fabian Binna\\
-\textbf{20.09.15} & 1.03 &  Text verbessert und zusätzliche Infos eingefügt & Silvan Adrian\\
-\textbf{25.09.15} & 1.04 & Verbesserungen & Silvan Adrian\\
-\textbf{25.09.15} & 1.05 & Sprint Planungsübersicht eingefügt & Silvan Adrian\\
-\textbf{26.09.15} & 1.06 & Testing erweitert/verbessert + Logging & Fabian 
-Binna\\
-\textbf{02.10.15} & 1.07 & Verbesserungen gemäss neusten Erkenntnissen & Silvan 
-Adrian\\
-\textbf{03.10.15} & 1.08 & Testing angepasst + IDE definiert & Fabian Binna\\
-\textbf{04.10.15} & 1.09 & Beschreibungen von Sprintplanung verbessert & Silvan 
-Adrian\\
-\textbf{14.10.15} & 1.10 &  Verbesserungen Projektplanung + Features & Silvan 
-Adrian\\
-\textbf{19.10.15} & 1.11 &  Verbesserungen Projektplanung + Testing & Silvan 
-Adrian\\
-\textbf{25.10.15} & 1.12 &  Metriken verbessert + Testing & Silvan 
-Adrian\\
-\textbf{26.10.15} & 1.13 & Testing Anpassungen & Fabian Binna\\
-\textbf{26.10.15} & 1.14 & Planung Anpassungen & Silvan Adrian\\
-\textbf{22.11.15} & 1.15 & Allgemeine Überarbeitung & Fabian Binna\\
-\end{tabularx}
-
-\newpage
-\tableofcontents
-\newpage
-
-\section{Einführung}
-\subsection{Zweck}
-Dieses Dokument beschreibt die Planung der SA SDDC.
-\subsection{Gültigkeitsbereich}
-Dieses Dokument ist während des ganzen Projekts gültig und wird laufend aktualisiert.
-
-\subsection{Referenzen}
-\subsubsection{APIs:} \href{http://developer.openstack.org/}{http://developer.openstack.org/} 
-\\
-\href{http://libvirt.org/}{http://libvirt.org/} \\
-\href{https://jclouds.apache.org/}{https://jclouds.apache.org/}
-\subsubsection{SCRUM Guide:} 
-\href{http://www.scrumguides.org/docs/scrumguide/v1/Scrum-Guide-DE.pdf}{http://www.scrumguides.org}
 \section{Projektübersicht}
 Es soll eine generische API erstellt werden, um über ein 
 Dashboard Services zu abonnieren, dabei können bei der API Vorlagen 
@@ -146,7 +43,7 @@ zusammen, die sollten dabei verteilt betrieben werden können.
 Das User-Dashboard würde lediglich zum Testen der API verwendet.
 Die generische API soll dabei so viele Anbieter wie möglich abdecken können.
 \section{Projektorganisation}
-Wir setzen beim Project auf Scrum, wodurch lediglich die Projektrollen Product 
+Wir setzen beim Project auf Scrum\autocite{scrum}, wodurch lediglich die Projektrollen Product 
 Owner, Entwickler und Scrum-Master zur Verfügung stehen.
 \subsection{Organisationsstruktur}
 \begin{tikzpicture}[auto, node distance = 0.4cm, thick,
@@ -155,18 +52,18 @@ Owner, Entwickler und Scrum-Master zur Verfügung stehen.
     text width = 4.5cm, align = center, minimum height = 1cm}]
   \node (PO) {\textbf{Beat Stettler} \\
       \vspace{0.2cm}
-  \includegraphics[width=0.7\textwidth]{stettler}
+  \includegraphics[width=0.7\textwidth]{./02_Projektplan/images/stettler}
    \vspace{0.2cm}
   Product Owner};
   \coordinate [below = 3cm of PO] (Mitte);
   \node (Silvan) [left  = 2mm of Mitte]  {\textbf{Silvan Adrian} \\
     \vspace{0.2cm}
-  \includegraphics[width=0.7\textwidth]{silvan}
+  \includegraphics[width=0.7\textwidth]{./02_Projektplan/images/silvan}
    \vspace{0.2cm}
 Entwickler/Scrum Master};
   \node (Fabian) [right = 2mm of Mitte]  {\textbf{Fabian Binna} \\
   \vspace{0.2cm}
-  \includegraphics[width=0.7\textwidth]{fabian}
+  \includegraphics[width=0.7\textwidth]{./02_Projektplan/images/fabian}
    \vspace{0.2cm}
  Entwickler};
   \draw [logocolor!60!black,thick]
@@ -227,7 +124,7 @@ ob alles gemäss Plan erledigt wurde + die aktuellste Version der Software
 released.
 \section{Risikomanagement}
 \subsection{Risiken}
-Risiken werden im Dokument Initiales\_Risikomanagement.pdf beschrieben
+\includepdf[pages=-]{./02_Projektplan/Initiales_Risikomanagement.pdf}
 \subsection{Umgang mit Risiken}
 Für die Risiken werden Reserven eingeplant. Die Reserven werden direkt in die einzelnen Tickets 
 einberechnet. Falls Risiken eintreffen werden diese sofort an einem der Daily-Meetings kommuniziert 
@@ -368,5 +265,3 @@ Produkte:
 
 \subsection{Abnahmetest}
 Der Abnahmetest wird vom Kunden selbst durchgeführt.
-
-\end{document}
