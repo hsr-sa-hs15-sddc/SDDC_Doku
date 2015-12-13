@@ -1,0 +1,22 @@
+%TODO alles zusammenfügen und in ein Dokument mit REPORT und Chapters (gemäss Ordnerstruktur)
+\input{./24_Config/preamble}
+\input{./24_Config/texts}
+
+\begin{document}
+\input{./01_Einleitung/titelseite}
+\input{./01_Einleitung/abstract}
+\tableofcontents
+\input{./01_Einleitung/einleitung}
+%Analyse
+\part{Technischer Bericht}
+\input{./03_Analyse/index}
+%Anforderungen
+\input{./04_Anforderungen/index}
+%Design
+\input{./05_Design/index}
+%Appendix (Deployment Sprints, Qualitätsmassnahmen, Docker etc., Github)
+\part{Appendix}
+\printbibliography
+\input{./11_Appendix/Glossar}
+\input{./11_Appendix/abbreviations}
+\end{document}
