@@ -1,0 +1,69 @@
+\chapter{Zeitauswertung}
+
+\section{Wochenauswertung}
+
+\begin{table}[h]
+\begin{tabularx}{\linewidth}{l X X X X X X X}
+& \multicolumn{7}{c}{\textbf{Woche}}\\
+\hline
+\textbf{Mitglied} & \textbf{W1} & \textbf{W2} & \textbf{W3} & \textbf{W4} & \textbf{W5} & \textbf{W6} & \textbf{W7} \\
+\hline
+\textbf{Silvan Adrian} & 11.80  & 23.03  & 21.25 & 13.25 & 17.00 & 14.70 & 15.25  \\
+\hline
+\textbf{Fabian Binna} & 10.00 & 20.50 & 16.25 & 12.00 & 19.00 & 6.75 & 19.75 \\
+\end{tabularx}
+\end{table}
+\begin{table}[h]
+\begin{tabularx}{\linewidth}{l X X X X X X X}
+ & \multicolumn{7}{c}{\textbf{Woche}}\\
+\hline
+\textbf{Mitglied} & \textbf{W8} & \textbf{W9} & \textbf{W10} & \textbf{W11} & \textbf{W12} &
+ \textbf{W13} & \textbf{W14}\\
+\hline
+\textbf{Silvan Adrian} & 19.50 & 16.45 & 27.00 & 29.05  & 20.50  & 13.95 &  \\
+\hline
+\textbf{Fabian Binna} & 17.25 & 15.25 & 21.25 & 17.75 & 20.50 & 8.00 & \\
+\end{tabularx}
+\end{table}
+
+\section{Aktivitäten}
+
+\newcommand{\Specification}{34.50}
+\newcommand{\Development}{109.95} 
+\newcommand{\Testing}{27.00} 
+\newcommand{\Allgemein}{146.85} 
+\newcommand{\Dokumentation}{85.43} 
+\newcommand{\Analyse}{46.00} 
+
+\begin{tikzpicture}
+\pie[text=pin,sum=480.00]{\Specification/Specification,\Development/Development,
+\Testing/Testing, \Allgemein/Allgemein, \Dokumentation/Dokumentation, \Analyse/Analyse }
+\end{tikzpicture}
+
+\section{Aktivitäten pro Person}
+%Silvan
+\newcommand{\SpecificationSil}{22.00}
+\newcommand{\DevelopmentSil}{48.45} 
+\newcommand{\TestingSil}{19.50} 
+\newcommand{\AllgemeinSil}{92.60} 
+\newcommand{\DokumentationSil}{53.93} 
+\newcommand{\AnalyseSil}{9.00} 
+\subsection{Silvan Adrian}
+\begin{tikzpicture}
+\pie[text=pin, sum=260.00]{\SpecificationSil/Specification,\DevelopmentSil/Development,
+\TestingSil/Testing, \AllgemeinSil/Allgemein, \DokumentationSil/Dokumentation, \AnalyseSil/Analyse }
+\end{tikzpicture}
+%Fabian
+\newcommand{\SpecificationFab}{12.50}
+\newcommand{\DevelopmentFab}{61.50} 
+\newcommand{\TestingFab}{7.50} 
+\newcommand{\AllgemeinFab}{54.25} 
+\newcommand{\DokumentationFab}{31.50} 
+\newcommand{\AnalyseFab}{37.00} 
+\subsection{Fabian Binna}
+\begin{tikzpicture}
+\pie[text=pin, sum=260.00]{\SpecificationFab/Specification,\DevelopmentFab/Development,
+\TestingFab/Testing, \AllgemeinFab/Allgemein, \DokumentationFab/Dokumentation, \AnalyseFab/Analyse }
+\end{tikzpicture}
+
+
