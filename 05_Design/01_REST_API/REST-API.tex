@@ -1,90 +1,496 @@
 \section{REST API}
 
-\section{CRUD Service}
+\section{Service Controller}
 \subsection{Services}
 \begin{tabularx}{\linewidth}{l l}
-\textbf{URI Path} & /services\\
+\textbf{URI Path} & /api/services\\
 \textbf{Methods} & GET\\
 \end{tabularx}
 
-\subsection{JSON Response}
+\subsection{GET}
 
-\{\\
-id : <number>,\\
-serviceName : <string>,\\
-serviceModules:[{
-category:<string>,
-size:<string>,
-name:<string>
-\}, \\ 
-...]
-\},\\
-...\\
-\}\\
+\subsubsection{Curl}
+\begin{lstlisting}[style=Bash] 
+curl -X GET --header "Accept: */*" "http://example.com/api/services"
+\end{lstlisting}
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/services
+\end{lstlisting}
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+[
+  {
+    "id": 1,
+    "serviceName": "string",
+    "modules": [
+      {
+        "id": 1,
+        "category": "Network",
+        "size": null,
+        "provider": "LibVirt",
+        "config": "string",
+        "name": "string"
+      }
+    ]
+  }
+]
+\end{lstlisting}
+
+
+\subsection{Neuer Service}
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /api/services/new\\
+\textbf{Methods} & POST\\
+\end{tabularx}
+
+\subsection{POST -> new Service}
+\subsubsection{}
+\begin{lstlisting}[style=Bash] 
+curl -X POST --header "Content-Type: application/json" --header "Accept: */*" -d "{
+  \"id\": 1,
+  \"modules\": [
+    {
+      \"category\": \"Compute\",
+      \"config\": \"string\",
+      \"id\": 1,
+      \"name\": \"string\",
+      \"provider\": \"LibVirt\",
+      \"size\": \"S\"
+    }
+  ],
+  \"serviceName\": \"string\"
+}" "http://example.com/api/services/new"
+\end{lstlisting}
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/services/new
+\end{lstlisting}
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+[
+  {
+    "id": 1,
+    "serviceName": "string",
+    "modules": [
+      {
+        "id": 1,
+        "category": "Network",
+        "size": null,
+        "provider": "LibVirt",
+        "config": "string",
+        "name": "string"
+      }
+    ]
+  }
+]
+\end{lstlisting}
+
+
+
+
 
 \subsection{Service}
-
-
 \begin{tabularx}{\linewidth}{l l}
-\textbf{URI Path} & /services/\{id\}\\
+\textbf{URI Path} & /api/services/\{id\}\\
 \textbf{Methods} & GET, PUT, DELETE, POST\\
 \end{tabularx}
 
-\subsection{JSON Response}
-\{\\
-id : <number>,\\
-serviceName : <string>,\\
-serviceModules:[{
-category:<string>,
-size:<string>,
-name:<string>
-\}, \\ 
-...]
-\}
+\subsection{GET}
+\subsubsection{Curl}
+\begin{lstlisting}[style=Bash] 
+curl -X GET --header "Accept: */*" "http://example.com/api/services/1"
+\end{lstlisting}
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/services/1
+\end{lstlisting}
 
-\section{CRUD OrderedService}
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+[
+  {
+    "id": 1,
+    "serviceName": "string",
+    "modules": [
+      {
+        "id": 1,
+        "category": "Network",
+        "size": null,
+        "provider": "LibVirt",
+        "config": "string",
+        "name": "string"
+      }
+    ]
+  }
+]
+\end{lstlisting}
+
+
+
+\subsection{PUT}
+\subsubsection{Curl}
+\begin{lstlisting}[style=Bash] 
+curl -X PUT --header "Content-Type: application/json" --header "Accept: */*" -d "{
+  \"id\": 1,
+  \"modules\": [
+    {
+      \"category\": \"Compute\",
+      \"config\": \"string\",
+      \"id\": 1,
+      \"name\": \"string\",
+      \"provider\": \"LibVirt\",
+      \"size\": \"S\"
+    }
+  ],
+  \"serviceName\": \"string\"
+}" "http://example.com/api/services/1"
+\end{lstlisting}
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/services/1
+\end{lstlisting}
+
+
+\subsection{POST -> Order Service}
+\subsubsection{}
+\begin{lstlisting}[style=Bash] 
+curl -X POST --header "Content-Type: application/json" --header "Accept: */*" -d "{
+  \"id\": 1,
+  \"modules\": [
+    {
+      \"category\": \"Network\",
+      \"config\": \"string\",
+      \"id\": 1,
+      \"name\": \"string\",
+      \"provider\": \"LibVirt\",
+      \"size\": \"null\"
+    }
+  ],
+  \"serviceName\": \"string\"
+}" "http://example.com/api/services/1"
+\end{lstlisting}
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/services/1
+\end{lstlisting}
+
+
+
+
+\subsection{DELETE}
+\begin{lstlisting}[style=Bash] 
+  curl -X DELETE --header "Accept: */*" "http://example.com/api/services/1"
+\end{lstlisting}
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/services/1
+\end{lstlisting}
+
+\section{OrderedService Controller}
 \subsection{OrderedServices}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /OrderedServices\\
 \textbf{Methods} & GET\\
 \end{tabularx}
 
-\subsection{JSON Response}
-\{\\
-id : <number>,\\
-orderedServiceName : <string>,\\
-identifiers:[{
-id:<number>,
-uuid:<string>,
-category:<string>,
-size:<string>
-\}, \\ 
-...]
-\},\\
-...\\
-\}\\
+\subsection{GET}
+\begin{lstlisting}[style=Bash] 
+curl -X GET --header "Accept: */*" "http://example.com/api/orderedservices"
+\end{lstlisting}
 
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/orderedservices
+\end{lstlisting}
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+[
+  {
+    "id": 1,
+    "identifiers": [
+      {
+        "id": 1,
+        "name": "string",
+        "uuid": "string",
+        "category": "Storage",
+        "size": "M",
+        "provider": "LibVirt",
+        "infos": {
+          "name": "string",
+          "capacity": "string"
+        }
+      }
+    ],
+    "orderedServiceName": "string"
+  }
+]
+\end{lstlisting}
 
 \subsection{OrderedService}
 \begin{tabularx}{\linewidth}{l l}
-\textbf{URI Path} & /OrderedServices/\{id\}\\
+\textbf{URI Path} & /api/OrderedServices/\{id\}\\
 \textbf{Methods} & GET, DELETE\\
 \end{tabularx}
 
-\subsection{JSON Response}
-\{\\
-id : <number>,\\
-orderedServiceName : <string>,\\
-identifiers:[{
-id:<number>,
-uuid:<string>,
-category:<string>,
-size:<string>
-\}, \\ 
-...]
-\}
+\subsection{GET}
+\subsubsection{Curl}
+\begin{lstlisting}[] 
+curl -X GET --header "Accept: */*" "http://example.com/api/orderedservices/1"
+\end{lstlisting}
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/orderedservices/1
+\end{lstlisting}
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+[
+  {
+    "id": 1,
+    "identifiers": [
+      {
+        "id": 1,
+        "name": "string",
+        "uuid": "string",
+        "category": "Storage",
+        "size": "M",
+        "provider": "LibVirt",
+        "infos": {
+          "name": "string",
+          "capacity": "string"
+        }
+      },
+       {
+      "id": 2
+      "name": "string",
+      "uuid": "string",
+      "category": "Compute",
+      "size": "M",
+      "provider": "LibVirt",
+      "infos": {
+        "memory": "string",
+        "vcpu": "string",
+        "name": "string"
+      }
+    }
+    ],
+    "orderedServiceName": "string"
+  }
+]
+\end{lstlisting}
 
 
+\subsection{DELETE}
+\subsubsection{Curl}
+\begin{lstlisting}[] 
+curl -X DELETE --header "Accept: */*" "http://example.com/api/orderedservices/1"
+\end{lstlisting}
+
+\section{ServiceModule Controller}
+\subsection{ServiceModules}
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /api/servicemodules\\
+\textbf{Methods} & GET\\
+\end{tabularx}
+
+\subsection{GET}
+\subsubsection{Curl}
+\begin{lstlisting}[] 
+  curl -X GET --header "Accept: */*" "http://example.com/api/servicemodules"
+\end{lstlisting}
+
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/servicemodules
+\end{lstlisting}
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+[
+  {
+    "id": 1,
+    "category": "Compute",
+    "size": "M",
+    "provider": "LibVirt",
+    "config": "string",
+    "name": "string"
+  },
+  {
+    "id": 2,
+    "category": "Compute",
+    "size": "M",
+    "provider": "LibVirt",
+    "config": "string",
+    "name": "string"
+  }
+]
+\end{lstlisting}
+
+\subsubsection{Response Code}
+\begin{lstlisting}[] 
+  200
+\end{lstlisting}
+
+\subsection{ServiceModule}
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /api/servicemodules\\
+\textbf{Methods} & GET,PUT,POST,DELETE\\
+\end{tabularx}
+
+\subsection{GET}
+\subsubsection{CURL}
+\begin{lstlisting}[] 
+curl -X GET --header "Accept: */*" "http://example.com/api/servicemodules/1"
+\end{lstlisting}
+
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/servicemodules/1
+\end{lstlisting}
+
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+{
+  "id": 1,
+  "category": "Compute",
+  "size": "M",
+  "provider": "LibVirt",
+  "config": "string",
+  "name": "string"
+}
+\end{lstlisting}
+
+
+\subsection{PUT}
+\subsubsection{CURL}
+\begin{lstlisting}[] 
+curl -X PUT --header "Content-Type: application/json" --header "Accept: */*" -d "{
+  \"category\": \"Compute\",
+  \"config\": \"string\",
+  \"id\": 1,
+  \"name\": \"string\",
+  \"provider\": \"LibVirt\",
+  \"size\": \"S\"
+}" "http://example.com/api/servicemodules/1"
+\end{lstlisting}
+
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/servicemodules/1
+\end{lstlisting}
+
+\subsection{POST}
+\begin{lstlisting}[] 
+curl -X POST --header "Content-Type: application/json" --header "Accept: */*" -d "{
+  \"category\": \"Compute\",
+  \"config\": \"string\",
+  \"id\": 1,
+  \"name\": \"string\",
+  \"provider\": \"LibVirt\",
+  \"size\": \"S\"
+}" "http://example.com/api/servicemodules/new"
+\end{lstlisting}
+
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/servicemodules/new
+\end{lstlisting}
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+{
+  "id": 1,
+  "category": "Compute",
+  "size": "S",
+  "provider": "LibVirt",
+  "config": "string",
+  "name": "string"
+}
+\end{lstlisting}
+
+\subsection{DELETE}
+\begin{lstlisting}[] 
+curl -X DELETE --header "Accept: */*" "http://example.com/api/servicemodules/1"
+\end{lstlisting}
+
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/servicemodules/1
+\end{lstlisting}
+
+
+\subsection{Kategorien}
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /api/servicemodules/categories\\
+\textbf{Methods} & GET\\
+\end{tabularx}
+\subsection{GET}
+\begin{lstlisting}[] 
+curl -X GET --header "Accept: */*" "http://example.com/api/servicemodules/categories"
+\end{lstlisting}
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+[
+  "Compute",
+  "Storage",
+  "Network"
+]
+\end{lstlisting}
+
+\subsection{Grössen}
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /api/servicemodules/sizes\\
+\textbf{Methods} & GET\\
+\end{tabularx}
+\subsection{GET}
+\begin{lstlisting}[] 
+curl -X GET --header "Accept: */*" "http://example.com/api/servicemodules/sizes"
+\end{lstlisting}
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+[
+  "S",
+  "M",
+  "L"
+]
+\end{lstlisting}
+
+
+\subsection{Provider}
+\begin{tabularx}{\linewidth}{l l}
+\textbf{URI Path} & /api/servicemodules/providers\\
+\textbf{Methods} & GET\\
+\end{tabularx}
+\subsection{GET}
+\begin{lstlisting}[] 
+curl -X GET --header "Accept: */*" "http://example.com/api/servicemodules/providers"
+\end{lstlisting}
+
+\subsubsection{Response Body}
+\begin{lstlisting}[language=json] 
+[
+  "LibVirt"
+]
+\end{lstlisting}
+
+
+\newpage
 
 
 
