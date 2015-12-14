@@ -97,7 +97,7 @@ KVM, Qemu und weitere unterstützt werden.
 
 \subsection{Network}
 Libvirt allein bietet hier mit Abstand die beste Unterstützung von Network Konfigurationen 
-(VLANs, Bridges, etc.) und ist sehr auf Private Clouds ausgelegt.\\
+(VLANs, Bridges, etc.) und ist auf Private Clouds ausgelegt.\\
 
 
 \subsection{Other}
@@ -198,7 +198,7 @@ Libvirt allein bietet hier mit Abstand die beste Unterstützung von Network Konf
 
 \section{Fazit}
 
-Im Gesamtbild schneidet libcloud am besten ab. Es bietet deutlich am meisten Compute und 
+Im Gesamtbild schneidet libcloud sehr gut ab. Es bietet deutlich am meisten Compute und 
 Storage Provider. Die Dokumentation ist sehr ausführlich, mit konkreten Ratschlägen zur 
 Implementation (z.B. Thread Safe). Zusätzlich bietet libcloud Module für SSL und Pricing.
 Jclouds ist eine Library für Java, was für uns am besten ist, da wir am meisten Erfahrung mit 
@@ -257,10 +257,11 @@ Examples, die sind aber nicht besonders aussagekräftig.
 
 \subsection{libvirt}
 \begin{Argumentation}
-\pro Grösste Auswahl an ``Private Cloud Anbietern''.
+\pro Grösste Auswahl an `Private Cloud Anbietern.
 \pro Grosse Storage Unterstützung.
 \pro Explizite Unterstützung von Network.
 \pro Bietet Java Library (language Bindings)
+\pro Thread-Safe
 
 \contra Ungenügende Dokumentation. Es existieren zwar Examples und 
 sonst existiert nur eine Javadoc zur Library.

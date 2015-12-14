@@ -7,7 +7,7 @@ Digitalocean), um ganz einfach vorgegebene viel verwendete WebApps,Datenbanken o
 schnell in der Cloud zu starten.
 Dabei wird bei jedem eine Compute Instanz erstellt und das Image installiert.
 Diese Analyse soll dabei helfen eine gute Lösung für unser Dashboard zu 
-konzipieren und auf bereits bewährtes zurückgreifen können.
+konzipieren und auf bereits bewährtes zurückgreifen zu können.
 
 \subsection{Cloud Anbieter}
 \begin{figure}[!htbp]
@@ -111,7 +111,7 @@ kurze Übersicht über die möglichen Konfigurationen einer AWS Instanz.
 
 \newpage
 \textbf{Authorize Application:}\\
-Um Instanz erstellen zu können muss das Bitnami Dashboard Zugriff auf 
+Um Instanzen erstellen zu können muss das Bitnami Dashboard Zugriff auf 
 den Cloud spezifischen Account haben.
 
 \begin{figure}[!htbp]
@@ -133,7 +133,7 @@ werden, dabei kann noch die Instanzgrösse und Location gewählt werden.
   \hfill
  \begin{subfigure}[b]{.49\textwidth}
   \textbf{Instanzinfos:}
-  Sobald Instanz erstellt lässt sich deren Status überprüfen + App spezifische 
+  Sobald die Instanz erstellt ist lässt sich deren Status überprüfen + App spezifische 
 Links werden gesetzt und Private Key/Public Key lassen sich herunterladen.\\
 \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/digitalocean_instanceinfo}
 \caption{Digitalocean Instanzinfos}
@@ -171,7 +171,7 @@ Danach taucht die Instanz in der Übersicht auf:
 Beim Azure Launchpad wird wieder gleich vorgegangen, wie bei Digitalocean.
 Nur das sich die infos ändern (Bspw.: Bei Digitalocean Droplet, jetzt Server).
 
-Ebenfalls ändern sich die Instanzgrössen. welche bei Azure anders als bei 
+Ebenfalls ändern sich die Instanzgrössen, welche bei Azure anders als bei 
 Digitalocean sind + wird bei Azure mit Subscriptions und nicht anhand von 
 Accounts unterschieden.
 
@@ -185,7 +185,7 @@ Accounts unterschieden.
 \begin{figure}[!htbp]
  \begin{subfigure}[b]{.49\textwidth}
 \textbf{Authorization:}\\
-Bei Azure wird das Dashboard über ein Management Certificate autorisiert:
+Bei Azure wird das Dashboard über ein Management Zertifikat autorisiert:
 \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/azure_authorize}
 \caption{Azure Management Zertifikat}
 \end{subfigure}
@@ -201,7 +201,7 @@ Danach wird die vorhandene Subscription/s vom Microsoft Account eingebunden:
 
 \begin{figure}[!htbp]
 Sobald dann ein neuer Server erstellt wurde kann dieser auch wieder gelöscht 
-werden und all dessen Infos angesehen werden.\\
+werden und all dessen Infos eingesehen werden.\\
 \includegraphics[width=\textwidth]{./03_Analyse/03_Bitnami/images/azure_instanceinfos}
 \caption{Azure Instanzinfos}
 \end{figure}
@@ -211,8 +211,8 @@ werden und all dessen Infos angesehen werden.\\
 \subsubsection{Google Launchpad\autocite{google}}
 
 Beim Google Launchpad wieder dasselbe, wie bei Azure oder Digitalocean.
-Hier wird einfach mit Projekten unterschieden (schliesslich kann jedem Projekt mehrere Compute Instanzen 
-oder andere Services angefügt sein.)
+Hier wird einfach mit Projekten unterschieden (schliesslich können jedem Projekt mehrere Compute Instanzen 
+oder andere Services angefügt werden).
 
 \begin{figure}[!htbp]
   \centering
@@ -243,7 +243,7 @@ Das VMware Launchpad kann für die WMware vCloud Air gebraucht werden.
   \subsection{Security}
   Da durch das zentrale zusammenfassen von mehreren Accounts auch immer 
 Sicherheitsrisiken zu beachten sind, wird bei Bitnami zusätzlich zum normalen 
-Loginpasswort auch noch ein Vaultpasswort festgelegt, welches wohl die 
+Benutzerpasswort auch noch ein Vaultpasswort festgelegt, welches wohl die 
 Logindaten symmetrisch verschlüsselt und in einem ``Vault'' ablegt.
 
 \begin{figure}[!htbp]
@@ -269,9 +269,9 @@ aufzusetzen.
 \newpage 
 \section{Fazit}
 Bitnami bietet einiges was Computing angeht und ist der einzig grössere 
-Dashboard Anbieter, der mehrere verschiedene Cloud Anbieter unterstützt.
+Dashboard Anbieter, der mehrere verschiedene Public Cloud Anbieter unterstützt.
 Allerdings fehlen verschiedene PaaS Angebote (Bspw.: Cloud SQL bei Google etc.), 
-Bitnami ist daher nur für eigene Instanzen/Vms zu gebrauchen und nicht mit einer 
+Bitnami ist daher nur für eigene Instanzen zu gebrauchen und nicht mit einer 
 generellen Service Unterstützung konzipiert worden.
 Das Dashboard bei Bitnami bietet jedenfalls einiges und gibt einem einen guten 
 Überblick über seine eigenen abonnierten Services (VM Instanzen).
