@@ -1,4 +1,22 @@
 \chapter{Installationsanleitung}
-TODO
+\section{Einführung}
+Für die Software steht ein Docker Container zur Verfügung, welchen es einem sehr 
+vereinfacht die Software aufzuschalten.
+Dadurch sind die Abhängigkeiten (Java, Libvirt-bin etc.) bereits vorinstalliert 
+und der Container muss nur noch gestartet werden.
+Der Container, der hier vorgestellt wird verbindet auf die vorgestellte 
+Testumgebung, verwendet jedoch eine inMemory Datenbank.
 
-Pull Docker Container oder Dockerfile kopieren
+\section{Docker Container}
+Der Docker Container ist auf dem Dockerhub aufgeschaltet und kann von dort 
+gepulled werden.
+\begin{lstlisting}[language=bash,caption={Pull Docker Container}]
+#!/binbash
+docker pull silvanadrian/sddc_docker
+\end{lstlisting}
+Oder der Container kann direkt gestartet werden (dann wird er automatisch gepulled)
+
+\begin{lstlisting}[language=bash,caption={Run Docker Container}]
+  #!/binbash
+  docker run -d -p 80:8080 silvanadrian/sddc_docker
+\end{lstlisting}
