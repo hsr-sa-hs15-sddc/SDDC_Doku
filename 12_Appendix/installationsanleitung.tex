@@ -10,13 +10,13 @@ Testumgebung, verwendet jedoch eine inMemory Datenbank.
 \section{Docker Container}
 Der Docker Container ist auf dem Dockerhub aufgeschaltet und kann von dort 
 gepulled werden.
-\begin{lstlisting}[language=bash,caption={Pull Docker Container}]
+\begin{lstlisting}[style=BASH,language=bash,caption={Pull Docker Container}]
 #!/binbash
 docker pull silvanadrian/sddc_docker
 \end{lstlisting}
 Oder der Container kann direkt gestartet werden (dann wird er automatisch gepulled)
 
-\begin{lstlisting}[language=bash,caption={Run Docker Container}]
+\begin{lstlisting}[style=Bash,language=bash,caption={Run Docker Container}]
   #!/binbash
   docker run -d -p 80:8080 silvanadrian/sddc_docker
 \end{lstlisting}
