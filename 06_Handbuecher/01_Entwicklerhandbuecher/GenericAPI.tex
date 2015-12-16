@@ -1,5 +1,4 @@
-\chapter{Generic API Entwicklerhandbuch}
-
+\chapter{Entwicklerandbuch: GenericAPI}
 \section{Einleitung}
 In diesem Dokument soll beschrieben werden wie ein ComputeController für die LibVirt Library implementiert werden kann. 
 
@@ -48,7 +47,7 @@ Die Hilfsmethode ReplaceUUID wird für die Bearbeitung der Configfiles benötigt
 Der LibVirtComputeController ist die konkrete Implementation des ResourceController.
 
 \subsection{ResourceController Code}
-\begin{lstlisting}[frame=single] 
+\begin{lstlisting}[style=java,frame=single] 
 public abstract class ResourceController {
 	
 	private final Category category;
@@ -68,20 +67,20 @@ public abstract class ResourceController {
 	 *	Resource/Module
 	 * @return An Identifier that stores information 
 	 *	about the created Resource
-	 */
+	 **/
 	public abstract Identifier create(ServiceModule module);
 	
 	/**
 	 * Deletes an existing resource
 	 * @param identifier 
-	 */
+	 **/
 	public abstract void delete(Identifier identifier);
 	
 	/**
 	 * Gets information about an existing Resource/Module
 	 * @param identifier
 	 * @return 
-	 */
+	 **/
 	public abstract Map<String, String> 
 		getInformations(Identifier identifier);
 	
@@ -95,20 +94,23 @@ public abstract class ResourceController {
 }
 \end{lstlisting}
 
-Es müssen also die abstrakten Methoden create, delete und getInformations implementiert werden. Dabei ist die Art der Implementation unwichtig. Wichtig ist nur der Contract, der Methoden.\\
+Es müssen also die abstrakten Methoden create, delete und getInformations implementiert werden. 
+Dabei ist die Art der Implementation unwichtig. 
+Wichtig ist nur der Contract, der Methoden.
 
-\textbf{create}\\
-Anhand der Informationen im ServiceModule wird die Resource erstellt. Als Rückgabe muss ein Identifier erstellt werden, der zum Beispiel eine UUID beinhaltet.\\
+\subsubsection{create}
+Anhand der Informationen im ServiceModule wird die Resource erstellt. Als Rückgabe muss ein Identifier erstellt werden, der zum Beispiel eine UUID beinhaltet.
 
-\textbf{delete}\\
-Mit dem Identifier kann die Resource erreicht, und somit auch gelöscht werden.\\
+\subsubsection{delete}
+Mit dem Identifier kann die Resource erreicht, und somit auch gelöscht werden.
 
-\textbf{getInformations}\\
-Die Methode getInformations ist undefiniert. Das heisst es ist unklar welche Informationen sich in der Map befinden. Je nach Library können mehr oder weniger Informationen abgerufen werden. Es ist also praktisch unmöglich eine klare Definition über den Inhalt zu machen.
+\subsubsection{getInformations}
+Die Methode getInformations ist undefiniert. Das heisst es ist unklar welche Informationen sich in der Map befinden. Je nach Library können mehr oder weniger Informationen abgerufen werden. 
+Es ist also praktisch unmöglich eine klare Definition über den Inhalt zu machen.
 
 \subsection{LibVirtComputeController Code}
 
-\begin{lstlisting}[language=java,frame=single] 
+\begin{lstlisting}[style=java,frame=single] 
 public class LibVirtComputeController 
 			extends LibVirtController {
 	
@@ -193,10 +195,19 @@ public class LibVirtComputeController
 
 }
 \end{lstlisting}
-Im Konstruktor wird die Klasse Connect weitergegeben und die Kategory des Controllers definiert (Compute). Die Implementationen der ResourceController Methoden sind nicht immer leicht, da jede Library einen anderen Ansatz hat. Die Exceptions helfen hier nur wenig, da sie nicht in die höheren Schichten weitergeleitet werden dürfen und ohnehin für den Benutzer keine relevanten Informationen beinhalten. Das Logging der Exceptions wurde hier aus Gründen der Übersicht entfernt. Falls eine Resource nicht erstellt (create) werden konnte wird einfach null zurückgegeben. Der Workflow entscheidet dann was geschehen soll. Im Moment wird bei einem Fehler ein Rollback gemacht.
+Im Konstruktor wird die Klasse Connect weitergegeben und die Kategory des 
+Controllers definiert (Compute). Die Implementationen der ResourceController 
+Methoden sind nicht immer leicht, da jede Library einen anderen Ansatz hat. 
+Die Exceptions helfen hier nur wenig, da sie nicht in die höheren Schichten weitergeleitet werden 
+dürfen und ohnehin für den Benutzer keine relevanten Informationen beinhalten. Das Logging der
+ Exceptions wurde hier aus Gründen der Übersicht entfernt. Falls eine Resource nicht erstellt (create) 
+ werden konnte wird einfach null zurückgegeben. Der Workflow entscheidet dann was geschehen soll. 
+ Im Moment wird bei einem Fehler ein Rollback gemacht.
 
 \section{Dependency Injection}
-Die GenericAPI wird schlussendlich mit Dependency Injection zusammengesetzt. Die Konfiguration befindet sich im File Config.xml, welches nach dem ausrollen der Software im Rootverzeichnis liegt.
+Die GenericAPI wird schlussendlich mit Dependency Injection zusammengesetzt. 
+Die Konfiguration befindet sich im File Config.xml, welches nach dem ausrollen der Software
+im Rootverzeichnis liegt.
 
 \subsection{Config.xml}
 \begin{lstlisting}[style=XML,frame=single]
@@ -250,4 +261,10 @@ Die GenericAPI wird schlussendlich mit Dependency Injection zusammengesetzt. Die
 
 
 \end{lstlisting}
-Als erstes wird die Klasse Connect erstellt. Wie schon erwähnt handelt es sich hier um eine Klasse aus der LibVirt Library. Bei anderen Libraries kann die Instanziierung also komplett anders ausfallen. Wichtig ist hier, dass die Connect Klasse mit test:///default instanziiert wird, ansonsten funktionieren die Tests nicht. Danach können die konkreten Controller (LibVirtComputeController) definiert werden. Hier muss dann nur noch die Connect Klasse übergeben werden. Am Ende wird noch der LibVirtServiceModuleHandler benötigt, der alle Controller bündelt.\\
+Als erstes wird die Klasse Connect erstellt. Wie schon erwähnt handelt es sich hier 
+um eine Klasse aus der LibVirt Library. Bei anderen Libraries kann die Instanziierung 
+also komplett anders ausfallen. Wichtig ist hier, dass die Connect Klasse mit test:///default 
+instanziiert wird, ansonsten funktionieren die Tests nicht. Danach können die konkreten 
+Controller (LibVirtComputeController) definiert werden. Hier muss dann nur noch die Connect 
+Klasse übergeben werden. Am Ende wird noch der LibVirtServiceModuleHandler benötigt, 
+der alle Controller bündelt.\\
