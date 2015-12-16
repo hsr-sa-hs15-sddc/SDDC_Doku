@@ -3,10 +3,10 @@
 Das Dashboard soll dem Nutzer schnell und einfach die Übersicht über seine 
 eigenen abonnierten Services bieten (Compute,Storage,Network).
 Dabei soll auf eine Anzahl von Cloud Anbietern angeboten werden, sowohl Public 
-Cloud(z.B.: AWS, Google Cloud, Azure, Digitalocean), wie auch Private Cloud (z.B.:CloudStack.Open 
-Stack).
+Cloud(z.B.: AWS, Google Cloud, Azure, Digitalocean), wie auch Private Cloud (z.B.: XEN, KVM, VMWare ESX).
 Die nachfolgenden Mockups sollen bereits einen ersten Eindruck der 
-möglichen Funktionalitäten des Dashboard geben.
+möglichen Funktionalitäten eines Dashboard geben, welches auch Einfluss auf die 
+Konzipierung der RESTful und Generic API hat.
 \\
 \textbf{Beim Login wird zwischen Nutzern und Administrator unterschieden.}
 
@@ -42,7 +42,7 @@ sich das jeweilige Dashboard des Anbieters mit dessen spezifischen Services.
 
    \subsubsection{Compute:}
 Hier werden nur Compute Offerings angezeigt z.B.: App Engine, Compute Engine, 
-Container Engine, EC2 etc., können nach Anbieter variieren
+Container Engine, EC2 etc., diese können nach Anbieter variieren
 
 \begin{figure}[!htbp]
 
@@ -62,7 +62,7 @@ Cloud BigTable), die sich je nach Anbieter ändern.
 
 \subsubsection{Network:}
 Network spezifische Offerings anbieten (Firewall, VPN, Netzwerke, Cloud DNS etc.) 
-und dann verändert sich die Auswahl auch Anbieter spezifisch. 
+und hier ist die Auswahl ebenfalls Anbieter spezifisch. 
 
 \begin{figure}[!htbp]
  \includegraphics[width=\textwidth]{./03_Analyse/03_Dashboard/images/homescreen_google_network}
@@ -79,6 +79,7 @@ Anbieters und kann den zu bearbeitenden wählen.
 \caption{Services Übersicht}
 \end{figure}
 
+\newpage
 \subsubsection{Compute}
 Wenn man einen Compute Service wählt kriegt man eine Übersicht des Services, 
 welcher Storage, Leistung + Region (Storage und Compute werden jedoch 
@@ -133,32 +134,22 @@ Services abonniert hat.
 \end{figure}
 
 \section{Security}
+\label{Dashboard:Security}
 Wie bei Bitnami wäre es wohl sicherer die Zugriffsdaten für die Cloud Anbieter 
+(Benutzername/Passwort und SSH Keys)
 abzusichern (bei Bitnami wird dies über ein Vault sichergestellt), ansonsten 
 könnte ein Angreifer ganze Instanzen bei verschiedenen Anbietern löschen oder 
 sonstige Bösartige Absichten ausüben.
-
+\newline
 Dieser Vault soll auch durch ein zusätzliches Passwort geschützt sein und 
 wird symmetrisch verschlüsselt (Mail Anbieter: Proton Mail\autocite{proton} macht dies ebenfalls 
 so) -> jedoch fragt Bitnami bei jedem login wieder nach dem Passwort und 
-vergisst dann wieder alle Instanzen (ein Abgleich mit dem Anbieter wäre hier sicher nicht 
-schlecht).
-
-\newpage
+vergisst dann wieder alle Instanzen (ein Abgleich mit dem Anbieter wäre hier sicher sinnvoll).
 
 \section{Fazit}
-Das Servicedashboard scheint soweit umsetzbar zu sein, ein Knackpunkt wird 
-einfach noch die Absicherung der Zugriffe auf alle die Cloud Anbieter und deren 
-Services.
-Z.B.: Bitnami bietet ein Download für Private Key und Putty Key File an:
-\begin{figure}[!htbp]
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Dashboard/images/bitnami_private_key}
-\caption{Bitnami Private Key}
-\end{figure}
-Und erstellt für jeden Server ein neues keypaar:
-\begin{figure}[!htbp]
-\includegraphics[width=0.5\textwidth]{./03_Analyse/03_Dashboard/images/bitnami_key}
-\caption{Bitnami Key}
-\end{figure}
-Was nicht gerade die Beste Lösung ist.
+Das Dashboard scheint soweit umsetzbar zu sein, ein Knackpunkt wird 
+einfach noch die Absicherung der Zugriffe auf alle Cloud Anbieter und deren 
+Services (Wie in \ref{Dashboard:Security} beschrieben)
+
+
 

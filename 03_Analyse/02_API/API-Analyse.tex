@@ -3,7 +3,7 @@
 \textbf{Sprache: }Python\\
 \textbf{Wichtigste Provider: }Rackspace, Amazon web services, CloudStack, OpenStack, DigitalOcean, 
 Eucalyptus, Joyent, Linode, exoscale,NephoScale, Google Cloud Platform, Zerigo, CloudSigma, iKoula, 
-libvirt
+KVM,XEN,VMWare ESX
 
 \subsection{jClouds\autocite{jclouds}}
 \textbf{Sprache: }Java\\
@@ -30,9 +30,9 @@ Libvirt, Linode, OpenStack, OpenVZ, Rackspace, Zerigo, IBM, HP
 Die grösste Auswahl an Providern liefert Libcloud.JClouds hingegen 
 unterstützt auch Docker, was ein grosser Vorteil gegenüber Libcloud ist. Im 
 Abschnitt \ref{Compute Vergleich} wird genau aufgeführt, 
-welche Provider von welchen APIs unterstützt werden. Es werden nur public Clouds berücksichtigt.
+welche Provider von welchen APIs unterstützt werden.
 Für den private Cloud Bereich bietet sich hier eher Libvirt an, da neben XEN, 
-KVM, Qemu und weitere unterstützt werden.
+KVM, Qemu auch VMWare ESX unterstützt wird.
 
 \subsection{Storage (Object/Blob)}
 \textbf{libcloud}
@@ -97,7 +97,7 @@ KVM, Qemu und weitere unterstützt werden.
 
 \subsection{Network}
 Libvirt allein bietet hier mit Abstand die beste Unterstützung von Network Konfigurationen 
-(VLANs, Bridges, etc.) und ist auf Private Clouds ausgelegt.\\
+(VLANs, Bridges, etc.).\\
 
 
 \subsection{Other}
@@ -206,12 +206,12 @@ Java haben. Es gibt jedoch nicht viele Compute Provider, dafür unterstützt jcl
 Der einzige Vorteil von fog ist die Möglichkeit CDNs als Service anzubieten.
 Pkgcloud unterstützt eine breite Auswahl von Services (z.B. Database, Load Balancer, DNS).
 Elibcloud ist ein erlang Wrapper für libcloud und unterstützt somit das gleiche wie libcloud 
-(sonlange die Version auf dem neusten stand ist). Erlang würde sich für eine parallele Umgebung eignen, 
+(solange die Version auf dem neusten stand ist). Erlang würde sich für eine parallele Umgebung eignen, 
 es sind jedoch keinerlei Erlang Kenntnisse im Team vorhanden.\\
 Libvirt ist allerdings die einzige API, die sich völlig auf Private Anbieter 
 zugeschnitten ist (wird auch von OpenStack verwendet), wäre also die Beste 
 Lösung, wenn es darum geht eine Private Cloud aufzubauen.
-
+\\
 \textbf{Wir entscheiden uns für libvirt. Die Gründe dafür sind im Abschnitt \ref{API Vergleichsmatrix} aufgeführt}
 
 
@@ -257,7 +257,7 @@ Examples, die sind aber nicht besonders aussagekräftig.
 
 \subsection{libvirt}
 \begin{Argumentation}
-\pro Grösste Auswahl an `Private Cloud Anbietern.
+\pro Grösste Auswahl an Private Cloud Anbietern.
 \pro Grosse Storage Unterstützung.
 \pro Explizite Unterstützung von Network.
 \pro Bietet Java Library (language Bindings)
