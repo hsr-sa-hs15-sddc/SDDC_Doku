@@ -2,10 +2,12 @@
 \section{Configfile}
 Das Configfile beinhaltet die Config für das jeweilige Servicemodul 
 (Compute,Storage,Network), dabei gibt es für Storage und Compute 3 Grössen 
-(S,M,L), dazu wird dann das nötige Configfile ausgewählt womit der Service 
+(S,M,L), dazu wird dann das nötige Configfile hinterlegt womit der Service 
 konfiguriert und aufgesetzt wird.
-Mit Ausnahme von Network, wo es keine Grössen gibt und  je nach vorgehensweise 
-durch einen ``Typ'' (Bridge,Subnetz etc.) oder direkt durch Config hinterlegen gelöst wird.
+Mit Ausnahme von Network, wo es keine Grössen gibt.
+Die Nachfolgenden Konfigurationen stützen sich hauptsächlich auf Libvirt, bei 
+Public Cloud Anbietern wird die Grösse, Betriebssystem, Storage und Netwerkkonfiguration 
+meistens bereits vorgegeben.
 
 \subsection{Allgemein}
 Da je nach Bedarf Compute, Storage oder Netzwerk zuerst erstellt werden muss 
