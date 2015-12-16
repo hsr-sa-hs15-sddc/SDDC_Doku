@@ -1,8 +1,17 @@
 \chapter{Resultat}
-
-\section{RESTful API}
+Das Resultat umfasst einen kompletten Webservice mit RESTful API gegen die ein Dashboard entwickelt wurde.
 
 \section{Dashboard}
+Das Dashboard demonstriert die Möglichkeiten des Webservices. Es ist möglich Services zu erstellen, bearbeiten, anzusehen und wieder zu löschen. Moderne Frameworks und Libraries, wie AngularJS und Bootstrap ermöglichen ein responsives Design sowie eine klare Abkopplung von Model und View.
 
+\section{RESTful API}
+Die RESTful API ermöglicht verschiedensten Aktoren (z.B. Business Applications) den Zugriff auf den Webservice. Es ist also möglich das andere Systeme über unsere Software Services (z.B. neue Compute-Instanz) erstellen. Die RESTful API wurde mit dem Spring Framework implementiert. 
+
+\section{Workflow}
+Der Workflow konzentriert sich auf das Wesentliche und ist daher konzeptionell erweiterbar. Grundsätzlich kann davon ausgegangen werden, dass zuerst die Netzwerkeinstellungen und danach die Storage und Compute Instanzen abgearbeitet werden müssen. Falls ein Fehler während eines Prozesses auftritt wird der gesamte Service wieder gelöscht (Rollback). Eine Fehlerbehebung während des Prozesses ist praktisch unmöglich.
+
+\section{Persistence}
+Für die Persistierung der Daten kommt Postgres zum Einsatz. Die Struktur der Datenbank wird über einen OR-Mapper aus der Domain erstellt. 
 
 \section{Generic API}
+Die GenericAPI ermöglicht das Zusammenstellen von verschiedensten Kontrollern. Dies geschieht über eine XML Datei. Es wird ein simples aber strikt einzuhaltendes Interface geboten, das die Implementation neuer Kontroller ermöglicht. Durch den modularen Aufbau kann die Software für verschiedenste Umgebungen erweitert werden.
