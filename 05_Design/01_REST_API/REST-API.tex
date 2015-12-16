@@ -9,14 +9,13 @@
 
 \subsection{GET}
 \subsubsection{Curl}
-\begin{lstlisting}[] 
+\begin{lstlisting}[style=Bash] 
 curl -X GET --header "Accept: */*" "http://example.com/api/services"
 \end{lstlisting}
 \subsubsection{Request URL}
 \begin{lstlisting}[] 
 http://example.com/api/services
 \end{lstlisting}
-
 \subsubsection{Response Body}
 \begin{lstlisting}[language=json] 
 [
@@ -37,7 +36,6 @@ http://example.com/api/services
 ]
 \end{lstlisting}
 
-
 \subsection{Neuer Service}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /api/services/new\\
@@ -45,7 +43,7 @@ http://example.com/api/services
 \end{tabularx}
 
 \subsection{POST}
-\subsubsection{}
+\subsubsection{Curl}
 \begin{lstlisting}[style=Bash] 
 curl -X POST --header "Content-Type: application/json" --header "Accept: */*" -d "{
   \"id\": 1,
@@ -250,6 +248,11 @@ curl -X GET --header "Accept: */*" "http://example.com/api/orderedservices/1"
 http://example.com/api/orderedservices/1
 \end{lstlisting}
 
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/orderedservices/1
+\end{lstlisting}
+
 \subsubsection{Response Body}
 \begin{lstlisting}[language=json] 
 [
@@ -333,11 +336,6 @@ http://example.com/api/servicemodules
     "name": "string"
   }
 ]
-\end{lstlisting}
-
-\subsubsection{Response Code}
-\begin{lstlisting}[] 
-  200
 \end{lstlisting}
 
 \subsection{ServiceModule}
@@ -469,7 +467,6 @@ curl -X GET --header "Accept: */*" "http://example.com/api/servicemodules/sizes"
   "L"
 ]
 \end{lstlisting}
-
 
 \subsection{Provider}
 \begin{tabularx}{\linewidth}{l l}

@@ -76,7 +76,9 @@ linkcolor = black]{hyperref}
   stepnumber=2,                    
   stringstyle=\color{mymauve},     
   tabsize=2,	                   
-  title=\lstname             
+  title=\lstname,
+  aboveskip=2mm,
+  belowskip=2mm            
 }
 
 %Java
@@ -87,8 +89,8 @@ linkcolor = black]{hyperref}
 
 \lstdefinestyle{java}{
   language=Java,
-  aboveskip=3mm,
-  belowskip=3mm,
+  aboveskip=2mm,
+  belowskip=2mm,
   showstringspaces=false,
   columns=flexible,
   basicstyle={\footnotesize\ttfamily},
@@ -166,11 +168,13 @@ linkcolor = black]{hyperref}
  frame=single,
   showstringspaces=false,
   commentstyle=\color{green},
-  keywordstyle=\color{blue}
+  keywordstyle=\color{blue},
+  aboveskip=2mm,
+  belowskip=2mm
 }
 
-\titlespacing*{\subsection}
-{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+\titlespacing*{\subsubsection}
+{0pt}{.6ex}{.6ex}
 
 \usepackage{glossaries}
 \makeglossaries
