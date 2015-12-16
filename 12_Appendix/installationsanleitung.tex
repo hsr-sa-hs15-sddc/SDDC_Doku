@@ -5,11 +5,18 @@ vereinfacht die Software aufzuschalten.
 Dadurch sind die Abhängigkeiten (Java, Libvirt-bin etc.) bereits vorinstalliert 
 und der Container muss nur noch gestartet werden.
 Der Container, der hier vorgestellt wird verbindet auf die vorgestellte 
-Testumgebung, verwendet jedoch eine inMemory Datenbank.
+Testumgebung, verwendet jedoch eine inMemory Datenbank und verbindet sich auf 
+test:///default.
+
+\textbf{Standardport:} 8080
+\\
+\texbf{Customer Dashboard:} /services
+\\
+\texbf{Admin Dashboard:} /admin/services
 
 \section{Docker Container}
 Der Docker Container ist auf dem Dockerhub aufgeschaltet und kann von dort 
-gepulled werden.
+heruntergeladen werden.
 \begin{lstlisting}[style=BASH,language=bash,caption={Pull Docker Container}]
 #!/binbash
 docker pull silvanadrian/sddc_docker
