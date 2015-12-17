@@ -3,10 +3,10 @@
 In diesem Dokument soll beschrieben werden wie ein ComputeController für die LibVirt Library implementiert werden kann. 
 
 \section{Package}
-Jede Implementation einer Library gehört in ein eigenes Package. In diesem Fall in das Package sddc.genericapi.libvirt. Dies dient hauptsächlich der Übersicht.
+Jede Implementation einer Library gehört in ein eigenes Package. In diesem Fall in das Package \textbf{sddc.genericapi.libvirt}. Dies dient hauptsächlich der Übersicht.
 
 \section{Provider}
-Damit der neue Provider (LibVirt) als solches erkannt werden kann, muss im Enumerator sddc.services.domain.Provider ein Eintrag "LibVirt" hinzugefügt werden.
+Damit der neue Provider (LibVirt) als solches erkannt werden kann, muss im Enumerator \textbf{sddc.services.domain.Provider} ein Eintrag "LibVirt" hinzugefügt werden.
 
 \section{Category}
 Es existieren bereits die Kategorien Compute, Storage und Network. Es währen auch andere Kategorien, wie Database, denkbar. In unserem Fall benötigen wir also keine neue Kategorie.
