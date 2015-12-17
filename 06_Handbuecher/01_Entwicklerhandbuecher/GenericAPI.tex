@@ -3,10 +3,12 @@
 In diesem Dokument soll beschrieben werden wie ein ComputeController für die LibVirt Library implementiert werden kann. 
 
 \section{Package}
-Jede Implementation einer Library gehört in ein eigenes Package. In diesem Fall in das Package sddc.genericapi.libvirt. Dies dient hauptsächlich der Übersicht.
+Jede Implementation einer Library gehört in ein eigenes Package. In diesem Fall in das Package 
+\textbf{sddc.genericapi.libvirt}. Dies dient hauptsächlich der Übersicht.
 
 \section{Provider}
-Damit der neue Provider (LibVirt) als solches erkannt werden kann, muss im Enumerator sddc.services.domain.Provider ein Eintrag "LibVirt" hinzugefügt werden.
+Damit der neue Provider (LibVirt) als solches erkannt werden kann, muss im Enumerator 
+\textbf{sddc.services.domain.Provider} ein Eintrag "LibVirt" hinzugefügt werden.
 
 \section{Category}
 Es existieren bereits die Kategorien Compute, Storage und Network. Es währen auch andere Kategorien, wie Database, denkbar. In unserem Fall benötigen wir also keine neue Kategorie.
@@ -18,7 +20,7 @@ Der LibVirtController ist eine abstrakte Klasse, die den Konstruktor definiert. 
 
 \subsection{LibVirtController Code}
 
-\begin{lstlisting}[style=java,frame=single] 
+\begin{lstlisting}[language=Java,frame=single] 
 public abstract class LibVirtController 
 	extends ResourceController {
 	
@@ -39,7 +41,7 @@ public abstract class LibVirtController
 
 }
 \end{lstlisting}
-Im Konstruktor werden Libraryabhängige Klassen (Connect), sowie die Kategory übergeben. Die Kategory wird später von den konkreten Implementationen an den LibVirtController weitergeleitet. Der Kostruktor übergibt die Kategory dann nochmals eine Stufe weiter an den ResourceController und definiert mit Provider.LibVirt die eigene Zugehörigkeit.
+Im Konstruktor werden Libraryabhängige Klassen (Connect), sowie die Kategory übergeben. Die Category wird später von den konkreten Implementationen an den LibVirtController weitergeleitet. Der Kostruktor übergibt die Category dann nochmals eine Stufe weiter an den ResourceController und definiert mit Provider.LibVirt die eigene Zugehörigkeit.
 Die Hilfsmethode ReplaceUUID wird für die Bearbeitung der Configfiles benötigt.
 
 \newpage
@@ -47,7 +49,7 @@ Die Hilfsmethode ReplaceUUID wird für die Bearbeitung der Configfiles benötigt
 Der LibVirtComputeController ist die konkrete Implementation des ResourceController.
 
 \subsection{ResourceController Code}
-\begin{lstlisting}[style=java,frame=single] 
+\begin{lstlisting}[language=Java,frame=single] 
 public abstract class ResourceController {
 	
 	private final Category category;
@@ -67,20 +69,23 @@ public abstract class ResourceController {
 	 *	Resource/Module
 	 * @return An Identifier that stores information 
 	 *	about the created Resource
-	 **/
+	 */
+	
 	public abstract Identifier create(ServiceModule module);
 	
 	/**
 	 * Deletes an existing resource
 	 * @param identifier 
-	 **/
+	 */
+	
 	public abstract void delete(Identifier identifier);
 	
 	/**
 	 * Gets information about an existing Resource/Module
 	 * @param identifier
 	 * @return 
-	 **/
+	 */
+	
 	public abstract Map<String, String> 
 		getInformations(Identifier identifier);
 	
@@ -93,7 +98,7 @@ public abstract class ResourceController {
 	}
 }
 \end{lstlisting}
-
+\newline
 Es müssen also die abstrakten Methoden create, delete und getInformations implementiert werden. 
 Dabei ist die Art der Implementation unwichtig. 
 Wichtig ist nur der Contract, der Methoden.
@@ -110,7 +115,7 @@ Es ist also praktisch unmöglich eine klare Definition über den Inhalt zu mache
 
 \subsection{LibVirtComputeController Code}
 
-\begin{lstlisting}[style=java,frame=single] 
+\begin{lstlisting}[language=Java,frame=single] 
 public class LibVirtComputeController 
 			extends LibVirtController {
 	
@@ -195,7 +200,7 @@ public class LibVirtComputeController
 
 }
 \end{lstlisting}
-Im Konstruktor wird die Klasse Connect weitergegeben und die Kategory des 
+Im Konstruktor wird die Klasse Connect weitergegeben und die Category des 
 Controllers definiert (Compute). Die Implementationen der ResourceController 
 Methoden sind nicht immer leicht, da jede Library einen anderen Ansatz hat. 
 Die Exceptions helfen hier nur wenig, da sie nicht in die höheren Schichten weitergeleitet werden 
@@ -262,9 +267,9 @@ im Rootverzeichnis liegt.
 
 \end{lstlisting}
 Als erstes wird die Klasse Connect erstellt. Wie schon erwähnt handelt es sich hier 
-um eine Klasse aus der LibVirt Library. Bei anderen Libraries kann die Instanziierung 
-also komplett anders ausfallen. Wichtig ist hier, dass die Connect Klasse mit test:///default 
-instanziiert wird, ansonsten funktionieren die Tests nicht. Danach können die konkreten 
+um eine Klasse aus der LibVirt Library. Bei anderen Libraries kann die Instanzierung 
+also komplett anders ausfallen. Wichtig ist hier, dass die Connect Klasse mit \texbf{test:///default}
+instanziert wird, ansonsten funktionieren die Tests nicht. Danach können die konkreten 
 Controller (LibVirtComputeController) definiert werden. Hier muss dann nur noch die Connect 
 Klasse übergeben werden. Am Ende wird noch der LibVirtServiceModuleHandler benötigt, 
 der alle Controller bündelt.\\
