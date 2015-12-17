@@ -21,7 +21,7 @@ Der LibVirtController ist eine abstrakte Klasse, die den Konstruktor definiert. 
 
 \subsection{LibVirtController Code}
 
-\begin{lstlisting}[language=Java,frame=single] 
+\begin{lstlisting}[language=Java,frame=single,caption={LibVirtController Code}] 
 public abstract class LibVirtController 
 	extends ResourceController {
 	
@@ -42,7 +42,7 @@ public abstract class LibVirtController
 
 }
 \end{lstlisting}
-
+\subsubsection{}
 Im Konstruktor werden Libraryabhängige Klassen (Connect), sowie die Category übergeben. Die Category wird später von den konkreten Implementationen an den LibVirtController weitergeleitet. Der Kostruktor übergibt die Kategory dann nochmals eine Stufe weiter an den ResourceController und definiert mit Provider.LibVirt die eigene Zugehörigkeit.
 Die Hilfsmethode ReplaceUUID wird für die Bearbeitung der Configfiles benötigt.
 
@@ -51,7 +51,7 @@ Die Hilfsmethode ReplaceUUID wird für die Bearbeitung der Configfiles benötigt
 Der LibVirtComputeController ist die konkrete Implementation des ResourceController.
 
 \subsection{ResourceController Code}
-\begin{lstlisting}[language=Java,frame=single] 
+\begin{lstlisting}[language=Java,frame=single,caption={ResourceController Code}] 
 public abstract class ResourceController {
 	
 	private final Category category;
@@ -100,7 +100,7 @@ public abstract class ResourceController {
 	}
 }
 \end{lstlisting}
-\newline
+\subsubsection{}
 Es müssen also die abstrakten Methoden create, delete und getInformations implementiert werden. 
 Dabei ist die Art der Implementation unwichtig. 
 Wichtig ist nur der Contract, der Methoden.
@@ -117,7 +117,7 @@ Es ist also praktisch unmöglich eine klare Definition über den Inhalt zu mache
 
 \subsection{LibVirtComputeController Code}
 
-\begin{lstlisting}[language=Java,frame=single] 
+\begin{lstlisting}[language=Java,frame=single,caption={LibVirtComputeController Code}] 
 public class LibVirtComputeController 
 			extends LibVirtController {
 	
@@ -217,7 +217,7 @@ Die Konfiguration befindet sich im File Config.xml, welches nach dem ausrollen d
 im Rootverzeichnis liegt.
 
 \subsection{Config.xml}
-\begin{lstlisting}[style=XML,frame=single]
+\begin{lstlisting}[style=XML,frame=single,caption={Config.xml}]
 <?xml version="1.0" encoding="UTF-8"?>  
 <beans  
 

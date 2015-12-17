@@ -1,3 +1,4 @@
+\newpage
 \section{Architektur}
 
 \section{Systemübersicht}
@@ -10,9 +11,10 @@
 	\item presistence: OR-Mapping
 \end{itemize}
 
-\begin{center}
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/LogischeSicht}
-\end{center}
+\caption{Logische Architektur}
+\end{figure}
 
 \newpage
 
@@ -22,19 +24,21 @@
 
 In der Schicht services wird die RestAPI implementiert.
 
-\begin{center}
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/services}
-\end{center}
+\caption{Klassendiagramm Services}
+\end{figure}
 
 \subsection{domain}
 
 Die Domain beinhaltet die Entitäten, die mittels OR-Mapper mit der Datenbank synchronisiert werden.
 Der Workflow erstellt/löscht einen Service.
 
-\begin{center}
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/domain}
-\end{center}
-
+\caption{Klassendiagramm Domain}
+\end{figure}
+\newpage
 \subsection{GenericAPI}
 \subsubsection{ServiceModuleHandler}
 Der ServiceModuleHandler entscheidet an welchen ResourceController ein ServiceModule/Identifier übergeben wird.
@@ -53,9 +57,11 @@ Instanzierung und kann, wenn nötig, Helfermethoden anbieten.
 
 Die konkrete Klasse des Controllers implementiert nur noch die abstrakten Methoden des ResourceControllers.
 
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/genericapi}
-
-
+\caption{Klassendiagramm Libvirt Generic API}
+\end{figure}
+\newpage  
 \section{Dependency Injection}
 
 Die GenericAPI ist relativ komplex ausgefallen und kann erweitert werden. Um unnötigen 
@@ -67,7 +73,10 @@ Code in den oberen Schichten zu vermeiden, wird die GenericAPI mit Hilfe von Dep
 Spring liefert einen Application Server mit, bei welchem es sich um einen Tomcat 
 Server handelt. Der Datenbankserver wird über den JDBC Treiber angesprochen.
 
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/deployment}
+\caption{Deployment Diagramm}
+\end{figure}
 
 \section{Persistierung}
 Für die Persistierung wird ein OR Mapper verwendet, wodurch die Java 
@@ -99,12 +108,14 @@ Die uuid ist je nach Provider verschieden und wird durch diesen vorgegeben.
 \subsection{Identifier Infos}
 Die Identifier Infos beinhalten die vorhanden Infos zu einem abonnierten 
 Servicemodul, welche auf dem Dashboard ausgegeben werden.
-
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/Datenmodell}
-
+\caption{Datenmodell}
+\end{figure}
 \section{Sequenzdiagramme}
 \subsection{service bestellen}
 
-\begin{center}
+\begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/orderService}
-\end{center}
+\caption{Sequenzdiagramm Service bestellen}
+\end{figure}
