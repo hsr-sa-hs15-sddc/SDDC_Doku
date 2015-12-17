@@ -1,12 +1,12 @@
 \section{API}
-Die API definiert einen Workflow der einen Service auf einer Cloud erstellt. Es ist offen, ob 
+Die API definiert einen Workflow, der einen Service auf einer Cloud erstellt. Es ist offen, ob 
 dieser Service über mehrere Cloud Anbieter hinaus geht. Der Service wird durch 
 ein Konfigurationsfile definiert. Die Software auf den Instanzen wird durch Images installiert.
  Ein Service kann auch wieder gelöscht werden.
  Es ist nicht die Aufgabe der API existierende Services zu identifizieren. 
  Die API muss Modular sein, das heisst es sollte möglich sein andere oder eigene 
  Programme für die Cloud Kommunikation zu verwenden. Innerhalb der API 
- werden Compute, Storage, Network usw. als ServiceModule bezeichnet. 
+ werden Compute, Storage, Network usw. als Servicemodule bezeichnet. 
  Diese Abstraktion ermöglicht das wiederverwenden und erweitern der API.
 \newpage
 \section{Customer-Dashboard}
@@ -45,15 +45,23 @@ angezeigt.
 \newpage
 \section{Admin-Dashboard}
 Zusätzlich zum Customer-Dashboard soll ein Admin-Dashboard zur Verfügung stellen 
-in welchem der Admin Services und Servicemodule erstellen kann.
+in welchem der Admin Services und Servicemodule erstellen/bearbeiten/löschen kann.
 
 \subsubsection{Service}
 Ein Service hat einen bestimmten Namen und jedem Service sind eine gewisse 
 Anzahl Servicemodule zugeteilt. um den Service abbilden zu können.
-Hier kann der Admin den Service ändern und je nach Anforderung den Service 
-anpassen.
+Hier kann der Admin je nach Anforderung den Service verwalten.
 \newline
 \begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{./04_Anforderungen/images/homescreen_admin}
 \caption{Homescreen Admin}
+\end{figure}
+
+\subsubsection{Servicemodul}
+Ein Servicemodul besitzt einen Namen, Provider und Kategorie.
+Hier kann der Admin je nach Anforderung das Servicemodul verwalten.
+\newline
+\begin{figure}[!htbp]
+\includegraphics[width=\textwidth]{./04_Anforderungen/images/servicemodules_admin}
+\caption{Servicemodule Übersicht}
 \end{figure}

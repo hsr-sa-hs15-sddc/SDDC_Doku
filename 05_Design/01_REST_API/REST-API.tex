@@ -1,6 +1,9 @@
-\section{REST API}
-
+\section{RESTful API}
+Hier wird die RESTful API beschrieben, welche die Verwaltung von Services und 
+Servicemodulen beschreibt.
 \section{Service Controller}
+Im Service Controller befinden sich alle Funktionen um Services verwalten 
+können und abonnieren zu können.
 \subsection{Services}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /api/services\\
@@ -27,6 +30,20 @@ http://example.com/api/services
         "id": 1,
         "category": "Network",
         "size": null,
+        "provider": "LibVirt",
+        "config": "string",
+        "name": "string"
+      }
+    ]
+  },
+    {
+    "id": 2,
+    "serviceName": "string",
+    "modules": [
+      {
+        "id": 2,
+        "category": "Compute",
+        "size": "M",
         "provider": "LibVirt",
         "config": "string",
         "name": "string"
@@ -75,8 +92,8 @@ http://example.com/api/services/new
     "modules": [
       {
         "id": 1,
-        "category": "Network",
-        "size": null,
+        "category": "Compute",
+        "size": "S",
         "provider": "LibVirt",
         "config": "string",
         "name": "string"
@@ -128,7 +145,7 @@ http://example.com/api/services/1
 
 
 
-\subsection{PUT}
+\subsection{PUT (Service update)}
 \subsubsection{Curl}
 \begin{lstlisting}[style=Bash] 
 curl -X PUT --header "Content-Type: application/json" --header "Accept: */*" -d "{
@@ -191,6 +208,8 @@ http://example.com/api/services/1
 \end{lstlisting}
 
 \section{OrderedService Controller}
+Im OrderedService Controller befinden sich alle Funktionen um die abonnierten 
+Services verwalten zu können.
 \subsection{OrderedServices}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /OrderedServices\\
@@ -227,6 +246,25 @@ http://example.com/api/orderedservices
       }
     ],
     "orderedServiceName": "string"
+  },
+   {
+    "id": 2,
+    "identifiers": [
+      {
+        "id": 2,
+        "name": "string",
+        "uuid": "string",
+        "category": "Compute",
+        "size": "L",
+        "provider": "LibVirt",
+        "infos": {
+          "name": "string",
+          "vcpu": "string",
+          "memory": "string"
+        }
+      }
+    ],
+    "orderedServiceName": "string"
   }
 ]
 \end{lstlisting}
@@ -241,11 +279,6 @@ http://example.com/api/orderedservices
 \subsubsection{Curl}
 \begin{lstlisting}[] 
 curl -X GET --header "Accept: */*" "http://example.com/api/orderedservices/1"
-\end{lstlisting}
-
-\subsubsection{Request URL}
-\begin{lstlisting}[] 
-http://example.com/api/orderedservices/1
 \end{lstlisting}
 
 \subsubsection{Request URL}
@@ -270,23 +303,7 @@ http://example.com/api/orderedservices/1
           "name": "string",
           "capacity": "string"
         }
-      },
-       {
-      "id": 2
-      "name": "string",
-      "uuid": "string",
-      "category": "Compute",
-      "size": "M",
-      "provider": "LibVirt",
-      "infos": {
-        "memory": "string",
-        "vcpu": "string",
-        "name": "string"
       }
-    }
-    ],
-    "orderedServiceName": "string"
-  }
 ]
 \end{lstlisting}
 
@@ -297,8 +314,13 @@ http://example.com/api/orderedservices/1
 curl -X DELETE --header "Accept: */*" "http://example.com/api/orderedservices/1"
 \end{lstlisting}
 
+\subsubsection{Request URL}
+\begin{lstlisting}[] 
+http://example.com/api/orderedservices/1
+\end{lstlisting}
+
 \section{ServiceModule Controller}
-\subsection{ServiceModules}
+\subsection{Servicemodule}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /api/servicemodules\\
 \textbf{Methods} & GET\\
@@ -338,7 +360,10 @@ http://example.com/api/servicemodules
 ]
 \end{lstlisting}
 
-\subsection{ServiceModule}
+\subsection{ServiceModules Controller}
+Im ServiceModules Controller befinden sich alle Funktionen um die 
+Servicemodule verwalten zu können und alle Grössen,Provider und Kategorien zu 
+holen.
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /api/servicemodules\\
 \textbf{Methods} & GET,PUT,POST,DELETE\\
@@ -370,7 +395,7 @@ http://example.com/api/servicemodules/1
 \end{lstlisting}
 
 
-\subsection{PUT}
+\subsection{PUT (update Servicemodul)}
 \subsubsection{CURL}
 \begin{lstlisting}[] 
 curl -X PUT --header "Content-Type: application/json" --header "Accept: */*" -d "{
@@ -389,7 +414,7 @@ curl -X PUT --header "Content-Type: application/json" --header "Accept: */*" -d 
 http://example.com/api/servicemodules/1
 \end{lstlisting}
 
-\subsection{POST}
+\subsection{POST (neues Servicemodul)}
 \begin{lstlisting}[] 
 curl -X POST --header "Content-Type: application/json" --header "Accept: */*" -d "{
   \"category\": \"Compute\",

@@ -6,26 +6,20 @@ Das Configfile beinhaltet die Config für das jeweilige Servicemodul
 konfiguriert und aufgesetzt wird.
 Mit Ausnahme von Network, wo es keine Grössen gibt.
 Die Nachfolgenden Konfigurationen stützen sich hauptsächlich auf Libvirt, bei 
-Public Cloud Anbietern wird die Grösse, Betriebssystem, Storage und Netwerkkonfiguration 
-meistens bereits vorgegeben.
+Public Cloud Anbietern wird die Grösse, Betriebssystem, Storage und Netzwerkkonfiguration 
+vielmals bereits vorgegeben.
 
 \subsection{Allgemein}
 Da je nach Bedarf Compute, Storage oder Netzwerk zuerst erstellt werden muss 
-wird dies über eine Art Workflow behandelt, welcher entscheidet welches
+wird dies über einen Workflow behandelt, welcher entscheidet welches
 Servicemodul zuerst erstellt werden soll.
 
 \subsection{Compute}
-In Compute werden Memory, vCPU, Harddisk und Netzwerk (IP) zugewiesen.
-Es gibt noch einige mehr Funktionen, diese werden zu diesem Zeitpunkt aber noch 
-nicht behandelt.
+In Compute werden Memory, vCPU, Festplatte und Netzwerk (IP,VLAN) zugewiesen.
 
-\subsubsection{Name/uuid}
-Jeder Compute Instanz muss ein eindeutiger Name gegeben werden, dieser wird zu 
-beginn direkt in das Configfile eingefügt und zu einem späteren Zeitpunkt soll 
-es möglich sein denn Namen via Customer-Dashboard festzulegen.
-Bei libvirt wird ebenfalls eine uuid benötigt, welche eine eindeutige 
-Identifizierung erlaubt -> wodurch das auffinden und löschen einer Instanz 
-erleichtert werden soll
+\subsubsection{Name}
+Jeder Compute Instanz muss einen eindeutigen Namen gegeben werden, dieser wird 
+durch den Workflow erstellt.
 
 \subsubsection{Memory}
 Memory wird entweder als fester Wert mitgegeben oder wird über die Instanzgrösse 
@@ -34,19 +28,15 @@ beim Cloud Anbieter vorbestimmt (micro,medium,large).
 \subsubsection{vCPU}
 vCPU's werden entweder als Wert mitgegeben oder durch den Cloud Anbieter vorgegeben (die Instanzgrösse). 
 
-\subsubsection{Image}
-Je nach Anforderung muss der Pfad zu einer Boot ISO mitgegeben werden (für die Installation eines 
-Betriebssystem) 
-
 \subsubsection{Boot Disk}
 Ebenfalls muss noch eine Boot Disk übergeben werden, dies kann ein bereits 
-bestehender Storage Pool,Volume oder eine Datei sein.
+bestehender Storage Pool,Volume oder eine Datei sein (Template mit vorinstallierter Software)
 Die Grösse wird hier durch die ausgewählte Disk/Datei bestimmt, bei Cloud 
 Anbietern jedoch durch die Instanzgrösse.
 
 \subsubsection{Network}
 Beim Netzwerk kann eine IP oder MAC Adresse mitgegeben oder automatisch zugewiesen 
-werden.
+werden, dies geschieht über eine Virtual Bridge oder Eingabe des VLANs.
 
 \subsection{Storage}
 \subsubsection{Name}
