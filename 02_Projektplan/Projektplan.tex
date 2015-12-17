@@ -30,19 +30,17 @@ Kombinationen von Compute, Storage und Network einsetzbar ist.
 \end{itemize}
 \subsection{Lieferumfang}
 \begin{itemize}
-  \item Cloud Analyse (Provider, Libraries ...)
   \item Source-Code
+  \item Source-Code Dokumentation
   \item Projektdokumentation
-  \item Generische API Dokumentation
-  \item Restful API Dokumentation
 \end{itemize}
 
 \subsection{Annahmen und Einschränkungen}
-Die Applikation setzt sich aus einem Admin-Dashboard und einer generischen 
-API/Restful API
+Die Applikation setzt sich aus einem Dashboard und einer generischen 
+API/RESTful API
 zusammen, die sollten dabei verteilt betrieben werden können.
 Das User-Dashboard würde lediglich zum Testen der RESTful API verwendet.
-Die generische API soll dabei so viele Anbieter wie möglich abdecken können.
+Die generische API soll dabei so viele Anbieter wie möglich abdecken.
 \section{Projektorganisation}
 Wir setzen beim Project auf Scrum\autocite{scrum}, wodurch lediglich die Projektrollen Product 
 Owner, Entwickler und Scrum-Master zur Verfügung stehen.
@@ -98,7 +96,7 @@ Gemäss Vorgaben wird mit 480 Stunden gesamt gerechnet.
 \textbf{Anforderung}
 \\
 \textbf{Design} 
-}& Analyse der vorhandenen API's + Anforderungen 
+}& Analyse der vorhandenen APIs + Anforderungen 
 erstellen + Design Grundlagen erstellen & 14.09.15 & 19.10.15\\
 \hline
 \textbf{Sprint 1} & Grundgerüst generische API, um Storage, Compute und Network 
@@ -111,7 +109,7 @@ abonnieren/kündigen zu können
 & 02.11.15 & 23.11.15 \\
 \hline
 \textbf{Sprint 3} & Admin Dashboard, um Services verwalten 
-und ihnen ein Konfigurationsdatei hinterlegen zu können + letzter Release der Software & 23.11.15 & 07.12.15 \\
+und ihnen ein Konfigurationsdatei hinterlegen zu können & 23.11.15 & 07.12.15 \\
 \hline
 \textbf{Abschluss} & Studiengang Arbeit zur Abgabe vorbereiten + Präsentation 
 vorbereiten & 07.12.15 & 18.12.15\\
@@ -119,8 +117,8 @@ vorbereiten & 07.12.15 & 18.12.15\\
 
 \subsection{Besprechungen}
 Daily Meetings (ca. 10 - 15min) werden während der Pause oder über Skype stattfinden, um sich 
-gegenseitig über Probleme, abgeschlossene Arbeitspakete informieren zu können.
-Nach jedem Abschluss eines Sprints wird ein Sprintreview geplant und durchgeführt, um zu prüfen 
+gegenseitig über Probleme oder abgeschlossene Arbeitspakete informieren zu können.
+Nach jedem Abschluss eines Sprints wird ein Sprintreview durchgeführt, um zu prüfen 
 ob alles gemäss Plan erledigt wurde + die aktuellste Version der Software 
 released.
 \section{Risikomanagement}
@@ -154,7 +152,7 @@ Fabian Binna & Lenovo T430s & Windows 10 &  Eclipse Mars\\
 \begin{itemize}
     \item \textbf{BuildServer:} Travis-CI
     \item \textbf{Versionsmanagement:} GIT
-    \item \textbf{Notifications:} \gls{Slack}
+    \item \textbf{Notifications:} Slack
     \item \textbf{Wireframing:} Pencil
     \item \textbf{Test Coverage:} Cobertura
     \item \textbf{Bugs Vorbeugung:} Findbugs
@@ -168,13 +166,14 @@ Fabian Binna & Lenovo T430s & Windows 10 &  Eclipse Mars\\
     \item Open Project
     \item GitHub
     \item Whatsapp
-    \item \gls{Slack}
+    \item Slack
 \end{itemize}
 
 \section{Qualitätsmassnahmen}
 \subsection{Dokumentation}
-Die Dokumentation befindet sich auf einem privaten GitHub Repository (SDDC\_Doku).
-Die Texte werden in \LaTeX geschrieben, aber auch als PDF auf das Repository gestellt.\\
+Die Dokumentation befindet sich auf einem GitHub Repository 
+(\href{https://github.com/hsr-sa-hs15-sddc/sa-doc}{sa-doc}).
+Die Dokumentation wird in \LaTeX geschrieben.\\
 
 \subsection{Projektmanagement}
 Für das Projektmanagement wird OpenProject verwendet.\\
@@ -201,7 +200,8 @@ Die Klassen werden mit Hilfe von Test-Driven Development implementiert.
 \subsubsection{Code Review}
 Nach jedem Sprint oder bei Abschluss grosser Arbeitspakete wird ein Code Review durchgeführt.\\
 \\
-Die Review Protokolle werden auf dem GitHub Repository SDDC-Doku abgelegt.
+Die Review Protokolle werden auf dem GitHub Repository \href{https://github.com/hsr-sa-hs15-sddc/sa-doc}{sa-doc}
+ abgelegt.
 
 \subsubsection{Logging}
 Für das Logging wird log4j verwendet.\\
@@ -217,7 +217,7 @@ FATAL: Kritischer Fehler\\
 \subsubsection{Metrikanalyse}
 Die Metriken werden nach jedem Sprint protokolliert und Analysiert. 
 Die Metriken helfen während einem Code-Review auf problematische 
-Code Stücke hinzuweisen. Sie können auch beim Debugen hilfreich sein.
+Code Stücke hinzuweisen. Sie können auch beim Debuggen hilfreich sein.
 
 
 \subsection{Testen}
@@ -240,9 +240,7 @@ Produkte:
 Bei den Integrationstests kommt eine Kombination aus automatisierten Tests, 
 sowie eine Analyse des Ablaufs zum Einsatz.
 Die Tests werden an verschiedenen Schichten angesetzt (Presentation und Business-Layer). 
-Die Unteren Schichten, die für den Integrationstest nicht relevant sind werden gemockt. 
-Nachdem die automatische Tests durchgelaufen sind, werden die Log-Daten ausgewertet und mit den 
-Sequenzdiagrammen abgeglichen. Es ist wichtig, das die Komponenten korrekt miteinander kommunizieren.\\
+Die Unteren Schichten, die für den Integrationstest nicht relevant sind werden gemockt. \\
 
 Produkte:
 \begin{itemize}
