@@ -38,7 +38,7 @@ Der Workflow erstellt/löscht einen Service.
 \subsection{GenericAPI}
 \subsubsection{ServiceModuleHandler}
 Der ServiceModuleHandler entscheidet an welchen ResourceController ein ServiceModule/Identifier übergeben wird.
-Der Entscheidungsalgorithmus kann auf verschiedenste Weise implementiert werden, deshalb gibt es ein Interface.
+Der Entscheidungsalgorithmus kann auf verschiedenste Arten implementiert werden, deshalb gibt es ein Interface.
 
 \subsubsection{ResourceController}
 Der ResourceController ist eine Abstraktion eines Controllers, die nicht auf irgendwelche 
@@ -55,10 +55,6 @@ Die konkrete Klasse des Controllers implementiert nur noch die abstrakten Method
 
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/genericapi}
 
-\subsection{persistence}
-
-Wird durch OR Mapper (Hibernate) vorgenommen, dieser mappt die Java Objekte auf 
-die Datenbank.
 
 \section{Dependency Injection}
 
@@ -69,40 +65,40 @@ Code in den oberen Schichten zu vermeiden, wird die GenericAPI mit Hilfe von Dep
 \section{Deployment}
 
 Spring liefert einen Application Server mit, bei welchem es sich um einen Tomcat 
-Server handelt, der Datenbankserver wird über den JDBC Treiber angesprochen.
+Server handelt. Der Datenbankserver wird über den JDBC Treiber angesprochen.
 
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/deployment}
 
 \section{Persistierung}
-Für die Persistierung wird ein OR Mapper verwendet, wodurch die vorhanden 
-Objekte 1:1 auf die Datenbank abgebildet werden können.
+Für die Persistierung wird ein OR Mapper verwendet, wodurch die Java 
+Objekte auf die Datenbank abgebildet werden.
 
 \subsection{Service}
 Der Service wird mit einer automatisch generierten ID und einem Namen 
 abgespeichert, dabei ist der Name des Service Unique und kann nur einmal 
-verwendet werden, was das finden eines Service vereinfacht.
+verwendet werden, was das auffinden eines Service vereinfacht.
 
 \subsection{Servicemodule}
-Das Servicemodul wird mit einer automatisch generierten ID und besitzt einen 
-Name (zur Identifizierung Unqique).
-Category, Size und Provider sind Enums und geben feste werte vor z.B.: Size: 
+Das Servicemodul wird mit einer automatisch generierten ID abgespeichert und besitzt einen 
+Namen (zur Identifizierung Unique).
+Category, Size und Provider sind Enums und geben feste Werte vor z.B.: Size: 
 S,M,L.
 Das Configfile ist ein Text, wodurch es keine Rolle Spielt ob nun ein \ac{XML}, \ac{JSON} 
 oder \ac{YAML} abgespeichert wird.
 
 \subsection{Orderedservice}
-Der Orderedservice besitzt eine automatisch generierte ID + einen nicht Uniqen 
+Der Orderedservice besitzt eine automatisch generierte ID + einen nicht Uniquen 
 Namen, um einen Service auch mehrfach abonnieren zu können.
 
 \subsection{Identifier}
 Der Identifier besitzt eine generierte ID + den Namen des dazugehörigen 
 Servicemodul.
-Kategorie, Size und Provider werden ebenfalls vom Servicemodul übernohmen.
+Kategorie, Size und Provider werden ebenfalls vom Servicemodul übernommen.
 Die uuid ist je nach Provider verschieden und wird durch diesen vorgegeben.
 
 \subsection{Identifier Infos}
 Die Identifier Infos beinhalten die vorhanden Infos zu einem abonnierten 
-Servicemodul, welche schlussendlich auf dem Dashboard ausgegeben werden können.
+Servicemodul, welche auf dem Dashboard ausgegeben werden.
 
 \includegraphics[width=\textwidth]{./05_Design/04_Architektur/Datenmodell}
 
