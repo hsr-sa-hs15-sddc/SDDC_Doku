@@ -2,8 +2,7 @@
 Hier wird die RESTful API beschrieben, welche die Verwaltung von Services und 
 Servicemodulen beschreibt.
 \section{Service Controller}
-Im Service Controller befinden sich alle Funktionen um Services verwalten 
-können und abonnieren zu können.
+Im Service Controller befinden sich alle Funktionen um Services verwalten und abonnieren zu können.
 \subsection{Services}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /api/services\\
@@ -320,7 +319,10 @@ http://example.com/api/orderedservices/1
 \end{lstlisting}
 
 \section{ServiceModule Controller}
-\subsection{Servicemodule}
+Im ServiceModules Controller befinden sich alle Funktionen um die 
+Servicemodule verwalten zu können und alle Grössen,Provider und Kategorien zu 
+holen.
+\subsection{ServiceModules}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /api/servicemodules\\
 \textbf{Methods} & GET\\
@@ -360,10 +362,7 @@ http://example.com/api/servicemodules
 ]
 \end{lstlisting}
 
-\subsection{ServiceModules Controller}
-Im ServiceModules Controller befinden sich alle Funktionen um die 
-Servicemodule verwalten zu können und alle Grössen,Provider und Kategorien zu 
-holen.
+\subsection{ServiceModule}
 \begin{tabularx}{\linewidth}{l l}
 \textbf{URI Path} & /api/servicemodules\\
 \textbf{Methods} & GET,PUT,POST,DELETE\\

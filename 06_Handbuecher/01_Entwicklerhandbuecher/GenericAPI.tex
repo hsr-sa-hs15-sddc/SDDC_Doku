@@ -10,8 +10,9 @@ Jede Implementation einer Library gehört in ein eigenes Package. In diesem Fall
 Damit der neue Provider (LibVirt) als solches erkannt werden kann, muss im Enumerator 
 \textbf{sddc.services.domain.Provider} ein Eintrag "LibVirt" hinzugefügt werden.
 
+
 \section{Category}
-Es existieren bereits die Kategorien Compute, Storage und Network. Es währen auch andere Kategorien, wie Database, denkbar. In unserem Fall benötigen wir also keine neue Kategorie.
+Es existieren bereits die Categories Compute, Storage und Network. Es währen auch andere Categories, wie Database, denkbar. In unserem Fall benötigen wir also keine neue Kategorie.
 
 \newpage
 
@@ -41,7 +42,11 @@ public abstract class LibVirtController
 
 }
 \end{lstlisting}
+<<<<<<< HEAD
 Im Konstruktor werden Libraryabhängige Klassen (Connect), sowie die Kategory übergeben. Die Category wird später von den konkreten Implementationen an den LibVirtController weitergeleitet. Der Kostruktor übergibt die Category dann nochmals eine Stufe weiter an den ResourceController und definiert mit Provider.LibVirt die eigene Zugehörigkeit.
+=======
+Im Konstruktor werden Libraryabhängige Klassen (Connect), sowie die Category übergeben. Die Category wird später von den konkreten Implementationen an den LibVirtController weitergeleitet. Der Kostruktor übergibt die Kategory dann nochmals eine Stufe weiter an den ResourceController und definiert mit Provider.LibVirt die eigene Zugehörigkeit.
+>>>>>>> 501c97076292d9137c58188ab90dc1cbd8a05e77
 Die Hilfsmethode ReplaceUUID wird für die Bearbeitung der Configfiles benötigt.
 
 \newpage
@@ -267,9 +272,15 @@ im Rootverzeichnis liegt.
 
 \end{lstlisting}
 Als erstes wird die Klasse Connect erstellt. Wie schon erwähnt handelt es sich hier 
+<<<<<<< HEAD
 um eine Klasse aus der LibVirt Library. Bei anderen Libraries kann die Instanzierung 
 also komplett anders ausfallen. Wichtig ist hier, dass die Connect Klasse mit \texbf{test:///default}
 instanziert wird, ansonsten funktionieren die Tests nicht. Danach können die konkreten 
+=======
+um eine Klasse aus der LibVirt Library. Bei anderen Libraries kann die Instanziierung 
+also komplett anders ausfallen. Wichtig ist hier, dass die Connect Klasse mit \textbf{test:///default} 
+instanziiert wird, ansonsten funktionieren die Tests nicht. Danach können die konkreten 
+>>>>>>> 501c97076292d9137c58188ab90dc1cbd8a05e77
 Controller (LibVirtComputeController) definiert werden. Hier muss dann nur noch die Connect 
 Klasse übergeben werden. Am Ende wird noch der LibVirtServiceModuleHandler benötigt, 
 der alle Controller bündelt.\\
