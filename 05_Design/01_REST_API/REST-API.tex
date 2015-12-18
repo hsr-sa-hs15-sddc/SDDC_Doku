@@ -273,7 +273,7 @@ http://example.com/api/orderedservices
 \textbf{URI Path} & /api/OrderedServices/\{id\}\\
 \textbf{Methods} & GET, DELETE\\
 \end{tabularx}
-
+\newpage
 \subsection{GET}
 \subsubsection{Curl}
 \begin{lstlisting}[] 
@@ -393,8 +393,8 @@ http://example.com/api/servicemodules/1
 }
 \end{lstlisting}
 
-
-\subsection{PUT (update Servicemodul)}
+\newpage
+\subsection{PUT (update ServiceModule)}
 \subsubsection{CURL}
 \begin{lstlisting}[] 
 curl -X PUT --header "Content-Type: application/json" --header "Accept: */*" -d "{
@@ -413,7 +413,7 @@ curl -X PUT --header "Content-Type: application/json" --header "Accept: */*" -d 
 http://example.com/api/servicemodules/1
 \end{lstlisting}
 
-\subsection{POST (neues Servicemodul)}
+\subsection{POST (neues ServiceModule)}
 \begin{lstlisting}[] 
 curl -X POST --header "Content-Type: application/json" --header "Accept: */*" -d "{
   \"category\": \"Compute\",
